@@ -1,74 +1,8 @@
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="..\..\assets\imagenes\logo\logo-marioblanco-02.png" alt="" width="190" height="90" />
-    </a>
-    <form class="d-flex position-absolute top-50 start-50 translate-middle">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-      <button class="btn btn-dark" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
-<hr />
 
-<div class="container-fluid" id="body">
-  <div class="col">
-    <h1 style="text-align: center">Tu voto, Tu emprendimiento</h1>
-  </div>
-  <hr />
-  <div class="row">
-    <div class="col-3">
-      <h3 style="text-align: center">Otros productos</h3>
-      <div class="row row-cols-1 row-cols-md-1 g-3">
-
-        <div class="col">
-          <div class="card h-100">
-            <img src="..\..\assets\imagenes\descarga.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a short card.</p>
-              <button type="button" class="btn btn-danger">Warning</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card h-100">
-            <img src="..\..\assets\imagenes\descarga.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a short card.</p>
-              <button type="button" class="btn btn-danger">Warning</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="..\..\assets\imagenes\descarga.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a short card.</p>
-              <button type="button" class="btn btn-danger">Warning</button>
-            </div>
-          </div>
-        </div>
-       </div>
-    </div>
-    <div class="col">
-      <h3 style="text-align: center">Producto Destacado</h3>
-
-      <div class="card bg-dark text-black">
-        <img src="..\..\assets\imagenes\sitioconstruccion.jpg" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <button type="button" class="btn btn-danger">Warning</button>
-          <p class="card-text">Last updated 3 mins ago</p>
-        </div>
-      </div>
+<app-nav-bar></app-nav-bar>
 
 
+<router-outlet></router-outlet>
 
-    </div>
-  </div>
-</div>
+
+<app-footer></app-footer>

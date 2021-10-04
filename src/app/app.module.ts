@@ -13,6 +13,7 @@ import { RegistroTiendaComponent } from './component/registro-tienda/registro-ti
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ProductoTarjetaComponent } from './component/producto-tarjeta/producto-tarjeta.component';
+import { RegistroComponent } from './screens/registro/registro.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ProductoTarjetaComponent } from './component/producto-tarjeta/producto-
     NavBarComponent,
     FooterComponent,
     ProductoTarjetaComponent,
+    RegistroComponent,
 
   ],
   imports: [
