@@ -1,3 +1,28 @@
-<app-registro-usuario></app-registro-usuario>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-9 offset-lg-2">
+      <div class="card">
+        <div class="card-body">
+          <nav>
+            <div class="nav nav-tabs justify-content-center" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true">Registro Usuario</button>
+              <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Registro Tienda</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <app-registro-usuario></app-registro-usuario>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <app-registro-tienda></app-registro-tienda>
+            </div>
+          </div>
+        </div>
 
-<app-registro-tienda></app-registro-tienda>
+      </div>
+
+    </div>
+  </div>
+</div>
