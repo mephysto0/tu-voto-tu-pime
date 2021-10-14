@@ -1,3 +1,4 @@
+import { CategoriasComponent } from './screens/categorias/categorias.component';
 import { VotacionesComponent } from './screens/votaciones/votaciones.component';
 import { LoginComponent } from './screens/login/login.component';
 import { RegistroComponent } from './screens/registro/registro.component';
@@ -17,6 +18,9 @@ const routes: Routes = [
   },
   {
     path: 'votaciones', component: VotacionesComponent
+  },
+  {
+    path: 'categorias', component: CategoriasComponent
   },
 ];
 
