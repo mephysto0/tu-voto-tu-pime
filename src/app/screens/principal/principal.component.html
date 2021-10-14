@@ -14,8 +14,6 @@
         <div class="col" *ngFor='let product of productos'>
           <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
         </div>
-
-
       </div>
       <hr>
     </div>
@@ -42,8 +40,23 @@
               <button type="button" class="btn btn-danger">Ver Tienda</button>
 
             </div>
-
           </div>
+
+          <div class="carousel-item">
+            <img src="..\..\assets\imagenes\44100.jpg" class="d-block w-100 rounded-start" alt="...">
+            <div class="card-img-overlay">
+              <h3>Vota por tus productos Favoritos</h3>
+              <div class="d-grid gap-3 col-4 ">
+                <button type="button " class="btn btn-danger btn-lg">Vota aqui</button>
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
