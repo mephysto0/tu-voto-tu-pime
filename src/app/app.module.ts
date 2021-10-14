@@ -14,6 +14,7 @@ import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ProductoTarjetaComponent } from './component/producto-tarjeta/producto-tarjeta.component';
 import { RegistroComponent } from './screens/registro/registro.component';
+import { CategoriasComponent } from './screens/categorias/categorias.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { RegistroComponent } from './screens/registro/registro.component';
     FooterComponent,
     ProductoTarjetaComponent,
     RegistroComponent,
+    CategoriasComponent,
 
   ],
   imports: [
