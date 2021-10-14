@@ -1,4 +1,3 @@
-
 <hr />
 
 <div class="container-fluid" id="body">
@@ -11,38 +10,12 @@
       <h3 style="text-align: center">Otros productos</h3>
       <div class="row row-cols-1 row-cols-md-1 g-3">
 
-        <div class="col">
-          <div class="card h-100">
-            <img src="..\..\assets\imagenes\descarga.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a short card.</p>
-              <button type="button" class="btn btn-danger">Warning</button>
-            </div>
-          </div>
+        <div class="col" *ngFor='let product of productos'>
+          <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
         </div>
 
-        <div class="col">
-          <div class="card h-100">
-            <img src="..\..\assets\imagenes\descarga.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a short card.</p>
-              <button type="button" class="btn btn-danger">Warning</button>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="..\..\assets\imagenes\descarga.png" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a short card.</p>
-              <button type="button" class="btn btn-danger">Warning</button>
-            </div>
-          </div>
-        </div>
-       </div>
+
+      </div>
     </div>
     <div class="col">
       <h3 style="text-align: center">Producto Destacado</h3>
@@ -51,7 +24,8 @@
         <img src="..\..\assets\imagenes\sitioconstruccion.jpg" class="card-img" alt="...">
         <div class="card-img-overlay">
           <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+            content. This content is a little bit longer.</p>
           <button type="button" class="btn btn-danger">Warning</button>
           <p class="card-text">Last updated 3 mins ago</p>
         </div>
