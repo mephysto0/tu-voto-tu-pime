@@ -9,7 +9,7 @@
     <div class="col-3">
       <h3 style="text-align: center">Otros productos</h3>
       <hr>
-      <div class="row row-cols-1 row-cols-md-1 g-3 mt-3" style="overflow-y: scroll; height: 1000px;">
+      <div class="row row-cols-1 row-cols-md-1 g-3 mt-3" style="overflow-y: scroll; height: 1500px;">
 
         <div class="col" *ngFor='let product of productos'>
           <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
@@ -17,22 +17,43 @@
 
 
       </div>
+      <hr>
     </div>
     <div class="col">
       <h3 style="text-align: center">Producto Destacado</h3>
 
-      <div class="card bg-dark text-black">
-        <img src="..\..\assets\imagenes\sitioconstruccion.jpg" class="card-img" alt="...">
-        <div class="card-img-overlay">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content. This content is a little bit longer.</p>
-          <button type="button" class="btn btn-danger">Warning</button>
-          <p class="card-text">Last updated 3 mins ago</p>
+      <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="..\..\assets\imagenes\sitioconstruccion.jpg" class="d-block w-100 rounded-start" alt="...">
+            <div class="card-img-overlay">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                content. This content is a little bit longer.</p>
+              <button type="button" class="btn btn-danger">Warning</button>
+              <p class="card-text">Last updated 3 mins ago</p>
+            </div>
+
+          </div>
+          <div class="carousel-item">
+            <img src="..\..\assets\imagenes\le_tallere\Sin título.png" class="d-block w-100 rounded-start" alt="...">
+            <div class="card-img-overlay">
+
+              <button type="button" class="btn btn-danger">Ver Tienda</button>
+
+            </div>
+
+          </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
-
-
 
     </div>
   </div>
