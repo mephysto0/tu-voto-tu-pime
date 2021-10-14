@@ -1,9 +1,15 @@
-
-<div class="card h-100">
-  <img src="{{producto.imgUrl}}" class="card-img-top" alt="...">
+<div class="card h-100 border-dark mb-3">
+  <h5 class="card-header text-center">{{producto.tienda}}</h5>
+  <img src="{{producto.imgUrl}}" class="card-img-top rounded-start img-thumbnail img-fluid" alt="...">
   <div class="card-body">
-    <h5 class="card-title">{{producto.nombre}}</h5>
-    <p class="card-text">{{producto.tienda}}</p>
-    <button type="button" class="btn btn-danger">Warning</button>
+    <h3 class="card-title">{{producto.nombre}}</h3>
+    <p class="card-text">{{producto.comentario}}</p>
+    <h5>{{ producto.precio| currency:'CLP' }}</h5>
+  </div>
+  <div class="card-footer">
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-danger btn-lg " >Ver Producto</button>
+    </div>
+
   </div>
 </div>

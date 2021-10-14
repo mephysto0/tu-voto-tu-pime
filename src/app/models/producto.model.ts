@@ -4,4 +4,6 @@ export interface Product{
   tienda:string;
   imgUrl: string;
   categoria:string;
+  comentario:string;
+  precio: string;
 }
