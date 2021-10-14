@@ -5,6 +5,7 @@ import { RegistroComponent } from './screens/registro/registro.component';
 import { PrincipalComponent } from './screens/principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TiendaComponent } from './screens/tienda/tienda.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,9 @@ const routes: Routes = [
   },
   {
     path: 'categorias', component: CategoriasComponent
+  },
+  {
+    path: 'tienda', component: TiendaComponent
   },
 ];
 
