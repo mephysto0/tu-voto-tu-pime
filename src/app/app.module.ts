@@ -15,6 +15,7 @@ import { FooterComponent } from './component/footer/footer.component';
 import { ProductoTarjetaComponent } from './component/producto-tarjeta/producto-tarjeta.component';
 import { RegistroComponent } from './screens/registro/registro.component';
 import { CategoriasComponent } from './screens/categorias/categorias.component';
+import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CategoriasComponent } from './screens/categorias/categorias.component';
     ProductoTarjetaComponent,
     RegistroComponent,
     CategoriasComponent,
+    PerfilTiendaComponent,
 
   ],
   imports: [
