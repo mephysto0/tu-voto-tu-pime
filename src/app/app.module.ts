@@ -16,6 +16,7 @@ import { ProductoTarjetaComponent } from './component/producto-tarjeta/producto-
 import { RegistroComponent } from './screens/registro/registro.component';
 import { CategoriasComponent } from './screens/categorias/categorias.component';
 import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.component';
+import { ProductformComponent } from './component/productform/productform.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.com
     RegistroComponent,
     CategoriasComponent,
     PerfilTiendaComponent,
+    ProductformComponent,
 
   ],
   imports: [

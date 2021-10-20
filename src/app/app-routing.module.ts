@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TiendaComponent } from './screens/tienda/tienda.component';
 import { ProductoComponent } from './screens/producto/producto.component';
+import { ProductformComponent } from './component/productform/productform.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
   },
   {
     path: 'tienda', component: TiendaComponent
+  },
+  {
+    path: 'tienda/newpr', component: ProductformComponent
   },
   {
     path: 'producto', component: ProductoComponent
