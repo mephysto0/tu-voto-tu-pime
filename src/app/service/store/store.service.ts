@@ -18,7 +18,9 @@ export class StoreService {
   }
 
 
-
+  public getByName(name: string): Store | undefined{
+    return this.tiendas.find((tienda : Store ) => tienda.nombreTienda === name);
+  }
 
 
 }

@@ -25,7 +25,7 @@ const routes: Routes = [
     path: 'categorias', component: CategoriasComponent
   },
   {
-    path: 'tienda', component: TiendaComponent
+    path: 'tienda/:name', component: TiendaComponent
   },
   {
     path: 'perfil-tienda', component: PerfilTiendaComponent
