@@ -1,4 +1,5 @@
 export interface Store{
+  id: string;
   nombreTienda: string;
   imgUrl:string;
   descripcion: string;

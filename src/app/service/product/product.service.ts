@@ -18,4 +18,7 @@ export class ProductService {
     return this.productos;
   }
 
+  public getByTienda( id : string): Product | undefined{
+    return this.productos.find((producto : Product) => producto._id === id);
+  }
 }
