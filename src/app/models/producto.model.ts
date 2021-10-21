@@ -2,7 +2,7 @@ export interface Product{
   _id: string;
   nombre:string;
   tienda:string;
-  imgUrl: string;
+  imagePath: string;
   categoria:string;
   comentario:string;
   precio: string;
