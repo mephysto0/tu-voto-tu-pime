@@ -14,7 +14,7 @@ export class PrincipalComponent implements OnInit {
 
   public productos : Product[] | undefined;
   public tiendas: Store [] | undefined;
-  public bannerTienda: string | undefined;
+  public bannerTienda: 'Le tallere' | undefined;
 
   constructor(
     private productService: ProductService,
@@ -25,7 +25,6 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
     this.productos = this.productService.getAllProduct();
     this.tiendas = this.StoreService.getAllStore();
-    this.bannerTienda = 'Le tallere';
   }
 
 }

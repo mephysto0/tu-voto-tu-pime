@@ -1,3 +1,4 @@
+import { ProductoComponent } from './screens/producto/producto.component';
 import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.component';
 import { CategoriasComponent } from './screens/categorias/categorias.component';
 import { VotacionesComponent } from './screens/votaciones/votaciones.component';
@@ -29,6 +30,9 @@ const routes: Routes = [
   },
   {
     path: 'perfil-tienda', component: PerfilTiendaComponent
+  },
+  {
+    path: 'producto/:id', component: ProductoComponent
   },
 
 ];
