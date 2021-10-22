@@ -1,1 +1,28 @@
-<p>producto works!</p>
+<div class="container" id="fondo">
+  <div class="row mt-4">
+    <div class="col-4">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">{{producto!.nombre}}</h3>
+        </div>
+        <img src="{{producto!.imagePath}}" alt="">
+      </div>
+    </div>
+    <div class="col-5 col-lg">
+      <div class="card">
+        <div class="card-header">
+           <h3 class="text-center">{{producto!.tienda}}</h3>
+        </div>
+        <div class="card-body">
+          <h3 class="text">{{producto!.comentario}}</h3>
+        </div>
+        <div class="card-footer">
+          <h2>{{ producto!.precio| currency:'CLP'}}</h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+

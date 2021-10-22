@@ -1,3 +1,4 @@
+import { ProductoComponent } from './screens/producto/producto.component';
 import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.component';
 import { CategoriasComponent } from './screens/categorias/categorias.component';
 import { VotacionesComponent } from './screens/votaciones/votaciones.component';
@@ -7,7 +8,7 @@ import { PrincipalComponent } from './screens/principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TiendaComponent } from './screens/tienda/tienda.component';
-import { ProductoComponent } from './screens/producto/producto.component';
+
 import { ProductformComponent } from './component/productform/productform.component';
 
 const routes: Routes = [
