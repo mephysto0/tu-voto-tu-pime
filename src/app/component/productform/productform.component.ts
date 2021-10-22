@@ -41,7 +41,7 @@ export class ProductformComponent implements OnInit {
   }
 
 
-
+//enviara los datos del formulario
   uploadProduct(nombre: HTMLInputElement, tienda: HTMLTextAreaElement, categoria: HTMLTextAreaElement, comentario: HTMLTextAreaElement, precio: HTMLTextAreaElement ) {
     this.productService
       .createProduct(nombre.value, tienda.value, this.archivos[0], categoria.value, comentario.value, precio.value)
@@ -56,11 +56,12 @@ export class ProductformComponent implements OnInit {
     return false;
   }
 
+//para limpiar la vista previa de las imagens
   clearImage(): any {
     this.previsualizacion = '';
     this.archivos = [];
   }
-  
+//pasa las imagenes a formato 64 bits  
   extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
     try {
       const unsafeImg = window.URL.createObjectURL($event);
