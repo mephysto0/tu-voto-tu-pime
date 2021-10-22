@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Product } from '../../models/producto.model';
-import { ProductService } from 'src/app/service/product/product.service';
 import {Store} from '../../models/tienda.model';
 import { StoreService } from 'src/app/service/store/store.service';
-import { ActivatedRoute, Params } from '@angular/router';
-//import { ProductService } from 'src/app/services/product.services';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+
+
+import { ProductService } from '../../services/product.services'
+import { Product } from '../../models/producto.model'
 
 @Component({
   selector: 'app-tienda',
@@ -13,22 +13,37 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./tienda.component.css']
 })
 export class TiendaComponent implements OnInit {
-
   public productos : Product[] | undefined;
   public tiendas :  Store[] | undefined;
   public store :  Store | undefined;
   public nombre: string | undefined;
 
+
+  products: Product[] = [];
+
   constructor(
     private productService: ProductService,
+    private router: Router,
     private StoreService: StoreService,
     private activatedRoute: ActivatedRoute,
-  ) {}
+ 
+  ) { }
 
-  ngOnInit(): void {
-    this.productos = this.productService.getAllProduct();
+  ngOnInit() {
     this.nombre = this.activatedRoute.snapshot.params.name;
     this.store = this.StoreService.getByName(this.nombre as string);
+
+    this.productService.getProducts()
+      .subscribe(
+        res => {
+          this.products = res;
+        },
+        err => console.log(err)
+      )
+  }
+
+  selectedCard(id: string) {
+    this.router.navigate(['/tienda/newpr', id]);
   }
 
 }
