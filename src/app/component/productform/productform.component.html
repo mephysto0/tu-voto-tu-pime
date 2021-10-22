@@ -1,0 +1,45 @@
+
+<div class="col-lg-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            subir producto
+        </div>
+        <div class="card-body">
+            <form (submit)="uploadProduct(nombre, tienda, categoria, comentario, precio)">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="nombre producto" #nombre required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="nombre tienda" required #tienda></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="categoria" required #categoria></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="comentario" required #comentario></textarea>
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="2" class="form-control" placeholder="precio " required #precio></textarea>
+                </div>
+
+                <h3>Subir imagen</h3>
+                <input class="input-file" (change)="capturarFile($event)" type="file">
+                <div class="preview-img" *ngIf="previsualizacion">
+                    <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
+                    <img  [src]="previsualizacion" alt="">
+                </div>
+              
+                <div class="p-1">
+                    <small>Se aceptan archivos imágenes de tipo .png</small>
+                </div>
+                <div class="wrapper-button" *ngIf="previsualizacion">
+                    <button type="button" class="button" [disabled]="loading" (click)="uploadProduct(nombre, tienda,categoria,comentario,precio)">
+                        {{(loading) ? 'Cargando.....' : 'uploadProduct'}}
+                    </button>
+                </div>    
+            </form>
+        </div>
+    </div>
