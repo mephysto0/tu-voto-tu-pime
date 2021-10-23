@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/models/producto.model';
 import { Store } from 'src/app/models/tienda.model';
-import { ProductService } from 'src/app/service/product/product.service';
+import { ProductService } from 'src/app/services/product.services';
 import { StoreService } from 'src/app/service/store/store.service';
+
 
 @Component({
   selector: 'app-producto',
@@ -12,24 +13,45 @@ import { StoreService } from 'src/app/service/store/store.service';
 })
 export class ProductoComponent implements OnInit {
 
-  public productos : Product[] | undefined;
-  public tiendas: Store [] | undefined;
-  private id : string | undefined;
-  public producto : Product | undefined;
+  id: string | any;
+  product: Product | any;
 
   constructor(
-    private productService: ProductService,
-    private StoreService: StoreService,
     private activatedRoute: ActivatedRoute,
+    private productService: ProductService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.id = this.activatedRoute.snapshot.params.id;
-    this.productos = this.productService.getAllProduct();
-    this.tiendas = this.StoreService.getAllStore();
-    this.producto = this.productService.getById(this.id  as string);
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params['id'];
+      this.productService.getProduct(this.id)
+        .subscribe(
+          res => {
+            this.product = res;
+          },
+          err => console.log(err)
+        )
+    });
   }
 
+  deleteProduct(id: string) {
+    this.productService.deleteProduct(id)
+      .subscribe(res => {
+        console.log(res)
+        //ruta a la cual redigira al borrar
+        this.router.navigate(['/tienda']);
+      })
+  }
+
+  updateProduct(nombre: HTMLInputElement, tienda: HTMLTextAreaElement, categoria: HTMLTextAreaElement, comentario: HTMLTextAreaElement, precio: HTMLTextAreaElement): boolean {
+    this.productService.updateProduct(this.product._id, nombre.value, tienda.value, categoria.value, comentario.value, precio.value )
+      .subscribe(res => {
+        console.log(res);
+        //ruta a la cual redigira al editar
+        this.router.navigate(['/tienda']);
+      });
+    return false;
+  }
 
 }
-

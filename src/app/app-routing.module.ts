@@ -34,7 +34,7 @@ const routes: Routes = [
     path: 'tienda/newpr', component: ProductformComponent
   },
   {
-    path: 'producto', component: ProductoComponent
+    path: 'producto/:id', component: ProductoComponent
   },
 ];
 

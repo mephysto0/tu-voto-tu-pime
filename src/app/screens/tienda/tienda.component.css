@@ -5,3 +5,10 @@
   margin-right: 3px;
   color: rgb(0, 0, 0);
 }
+.card-product {
+  cursor: pointer;
+}
+
+.card-product:hover {
+  border: 1px solid #333;
+}

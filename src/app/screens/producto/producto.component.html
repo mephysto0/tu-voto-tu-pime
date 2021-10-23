@@ -1,28 +1,44 @@
-<div class="container" id="fondo">
-  <div class="row mt-4">
-    <div class="col-4">
-      <div class="card">
-        <div class="card-header">
-          <h3 class="text-center">{{producto!.nombre}}</h3>
-        </div>
-        <img src="{{producto!.imagePath}}" alt="">
-      </div>
-    </div>
-    <div class="col-5 col-lg">
-      <div class="card">
-        <div class="card-header">
-           <h3 class="text-center">{{producto!.tienda}}</h3>
-        </div>
-        <div class="card-body">
-          <h3 class="text">{{producto!.comentario}}</h3>
-        </div>
-        <div class="card-footer">
-          <h2>{{ producto!.precio| currency:'CLP'}}</h2>
-        </div>
-
-      </div>
-    </div>
-  </div>
+<div class="row" *ngIf="!product; else main_content">
+  <h1>Loading...</h1>
 </div>
-
-
+<ng-template #main_content>
+  <div class="row">
+      <div class="col-md-5">
+          <div class="card">
+              <img [src]="'http://localhost:4000/' + product.imagePath" class="img-fluid">
+          </div>
+      </div>
+      <div class="col-md-7">
+          <div class="card">
+              <form class="card-body" (submit)="updateProduct(nombre,tienda,categoria,comentario,precio)">
+                  <div class="form-group">
+                    <h6 class="text">Nombre </h6>
+                      <input type="text" class="form-control" placeholder="Nombre producto" [value]="product.nombre" #nombre>
+                  </div>
+                  <div class="form-group">
+                    <h6 class="text">Tienda </h6>
+                      <textarea rows="2" class="form-control" placeholder="nombre tienda" [value]="product.tienda" #tienda></textarea>
+                  </div>
+                  <div class="form-group">
+                    <h6 class="text">Categoria </h6>
+                    <textarea rows="2" class="form-control" placeholder="categoria" [value]="product.categoria" #categoria></textarea>
+                </div>
+                <div class="form-group">
+                  <h6 class="text">Comentario </h6>
+                  <textarea rows="2" class="form-control" placeholder="comentario del producto" [value]="product.comentario" #comentario></textarea>
+              </div>
+              <div class="form-group">
+                <h6 class="text">Precio </h6>
+                <textarea rows="2" class="form-control" placeholder="precio del producto" [value]="product.precio" #precio></textarea>
+            </div>
+                  <button class="btn btn-primary btn-block" >
+                      Editar
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <button class="btn btn-danger" (click)="deleteProduct(product._id)">
+      Eliminar producto
+  </button>
+</ng-template>

@@ -43,7 +43,7 @@ export class TiendaComponent implements OnInit {
   }
 
   selectedCard(id: string) {
-    this.router.navigate(['/tienda/newpr', id]);
+    this.router.navigate(['/producto', id]);
   }
 
 }
