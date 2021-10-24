@@ -16,8 +16,8 @@ export class ProductformComponent implements OnInit {
   //file: File | undefined |any;
   photoSelected: any;
 
-  
- 
+
+
   constructor(private productService: ProductService, private router: Router, private sanitizer: DomSanitizer) { }
   public previsualizacion: any;
   public archivos: any = [];
@@ -27,7 +27,7 @@ export class ProductformComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   capturarFile(event:any): any {
     const archivoCapturado = event.target.files[0]
     this.extraerBase64(archivoCapturado).then((imagen: any) => {
@@ -36,19 +36,19 @@ export class ProductformComponent implements OnInit {
 
     })
     this.archivos.push(archivoCapturado)
-    // 
+    //
      console.log(event.target.files);
   }
 
 
 //enviara los datos del formulario
-  uploadProduct(nombre: HTMLInputElement, tienda: HTMLTextAreaElement, categoria: HTMLTextAreaElement, comentario: HTMLTextAreaElement, precio: HTMLTextAreaElement ) {
+  uploadProduct(nombre: HTMLInputElement, tienda:  HTMLInputElement, categoria: HTMLInputElement, comentario:  HTMLInputElement, precio:  HTMLInputElement ) {
     this.productService
       .createProduct(nombre.value, tienda.value, this.archivos[0], categoria.value, comentario.value, precio.value)
       .subscribe(
         res => {
           console.log(res);
-          
+
           this.router.navigate(['tienda/newpr'])
         },
         err => console.log(err)
@@ -61,7 +61,7 @@ export class ProductformComponent implements OnInit {
     this.previsualizacion = '';
     this.archivos = [];
   }
-//pasa las imagenes a formato 64 bits  
+//pasa las imagenes a formato 64 bits
   extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
     try {
       const unsafeImg = window.URL.createObjectURL($event);
