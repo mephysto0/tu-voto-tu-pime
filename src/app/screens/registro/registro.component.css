@@ -1,0 +1,15 @@
+.global-container{
+  background-image: url(https://www.elrancaguino.cl/wp-content/uploads/2021/06/pyme.jpg) ;
+  padding-top: 20px;
+  padding-bottom: 20px
+}
+
+.card{
+  width: 600px;
+  background-color: rgb(255, 255, 255);
+}
+
+#nav-tab{
+  height: 40px;
+  width: 100%;
+}

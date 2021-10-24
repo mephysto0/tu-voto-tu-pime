@@ -1,62 +1,63 @@
-
 <div class="col-lg-4 mx-auto mt-5">
-    <div class="card border-dark">
-        <div class="card-header">
-            <h3 class="text-center">Agregar Producto</h3>
-        </div>
-        <div class="card-body">
-            <form (submit)="uploadProduct(nombre, tienda, categoria, comentario, precio)">
-                <div class="form-floating mt-3">
-                    <input type="text" class="form-control"  id="floatingInput" placeholder="nombre producto" #nombre required>
-                    <label for="floatingInput">Nombre producto</label>
-                </div>
-                <div class="form-floating mt-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="nombre tienda" required #tienda>
-                    <label for="floatingInput">Nombre tienda</label>
-                </div>
-                <div class="input-group mt-3">
-                  <label for="inputSelect" class="input-group-text" >Categorias</label>
-                  <select class="form-select" id="inputSelect" >
-                    <option selected>Elija su Categoria...</option>
-                    <option value="1">Carpinteria</option>
-                    <option value="2">Tejidos</option>
-                    <option value="3">Muebles</option>
-                  </select>
-                </div>
-                <div class="form-floating mt-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="categoria" required #categoria>
-                    <label for="floatingInput">Categoria</label>
-                </div>
-                <div class="form-floating mt-3">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="comentario" required #comentario>
-                    <label for="floatingInput">Descripcion</label>
-                </div>
-                <div class="input-group mt-3">
-                  <span class="input-group-text">$</span>
-                  <input type="text" class="form-control" placeholder="Precio" required #precio>
-                </div>
-
-
-                <div class="form-floating mt-3">
-                    <input type="text"class="form-control" id="floatingInput" placeholder="precio" required #precio>
-                    <label for="floatingInput">Precio</label>
-                </div>
-
-                <h3>Subir imagen</h3>
-                <input class="input-file" (change)="capturarFile($event)" type="file">
-                <div class="preview-img" *ngIf="previsualizacion">
-                    <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
-                    <img  [src]="previsualizacion" alt="">
-                </div>
-
-                <div class="p-1">
-                    <small>Se aceptan archivos imágenes de tipo .png</small>
-                </div>
-                <div class="wrapper-button" *ngIf="previsualizacion">
-                    <button type="button" class="button" [disabled]="loading" (click)="uploadProduct(nombre, tienda,categoria,comentario,precio)">
-                        {{(loading) ? 'Cargando.....' : 'uploadProduct'}}
-                    </button>
-                </div>
-            </form>
-        </div>
+  <div class="card border-dark">
+    <div class="card-header">
+      <h3 class="text-center">Agregar Producto</h3>
     </div>
+    <div class="card-body">
+      <form (submit)="uploadProduct(nombre, tienda, categoria, comentario, precio)">
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="nombre producto" #nombre required>
+          <label for="floatingInput">Nombre producto</label>
+        </div>
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="nombre tienda" required #tienda>
+          <label for="floatingInput">Nombre tienda</label>
+        </div>
+        <div class="input-group mt-3">
+          <label for="inputSelect" class="input-group-text">Categorias</label>
+          <select class="form-select" id="inputSelect" required #categoria>
+            <option selected>Elija su Categoria...</option>
+            <option value="1">Carpinteria</option>
+            <option value="2">Tejidos</option>
+            <option value="3">Muebles</option>
+          </select>
+        </div>
+        <!--
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="categoria" required #categoria>
+          <label for="floatingInput">Categoria</label>
+        </div>
+        -->
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="comentario" required #comentario>
+          <label for="floatingInput">Descripcion</label>
+        </div>
+        <div class="input-group mt-3">
+          <span class="input-group-text">$</span>
+          <input type="text" class="form-control" placeholder="Precio" required #precio>
+        </div>
+        <!--
+        <div class="form-floating mt-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="precio" required #precio>
+          <label for="floatingInput">Precio</label>
+        </div>
+        -->
+        <h3>Subir imagen</h3>
+        <input class="input-file" (change)="capturarFile($event)" type="file">
+        <div class="preview-img" *ngIf="previsualizacion">
+          <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
+          <img [src]="previsualizacion" alt="">
+        </div>
+
+        <div class="p-1">
+          <small>Se aceptan archivos imágenes de tipo .png</small>
+        </div>
+        <div class="wrapper-button" *ngIf="previsualizacion">
+          <button type="button" class="button" [disabled]="loading"
+            (click)="uploadProduct(nombre, tienda,categoria,comentario,precio)">
+            {{(loading) ? 'Cargando.....' : 'uploadProduct'}}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
