@@ -42,7 +42,7 @@ export class ProductformComponent implements OnInit {
 
 
 //enviara los datos del formulario
-  uploadProduct(nombre: HTMLInputElement, tienda:  HTMLInputElement, categoria: HTMLInputElement, comentario:  HTMLInputElement, precio:  HTMLInputElement ) {
+  uploadProduct(nombre: HTMLInputElement, tienda:  HTMLInputElement, categoria: HTMLSelectElement, comentario:  HTMLInputElement, precio:  HTMLInputElement ) {
     this.productService
       .createProduct(nombre.value, tienda.value, this.archivos[0], categoria.value, comentario.value, precio.value)
       .subscribe(

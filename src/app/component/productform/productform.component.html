@@ -1,4 +1,3 @@
-
 <div class="col-lg-4 mx-auto mt-5">
     <div class="card border-dark">
         <div class="card-header">
@@ -17,15 +16,15 @@
                 <div class="input-group mt-3">
                   <label for="inputSelect" class="input-group-text" >.categoria</label>
                   <select class="form-select" id="inputSelect" >
-                    <option selected>Elija su Categoria...</option>
-                    <option value="1">Carpinteria</option>
-                    <option value="2">Tejidos</option>
-                    <option value="3">Muebles</option>
+                    <option selected>Elija su Categoria...</options>
+                    <option value="1">Carpinteria</options>
+                    <option value="2">Tejidos</options>
+                    <option value="3">Muebles</options>
                   </select>
                 </div>
                 <div class="form-floating mt-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="categoria" required #categoria>
-                    <label for="floatingInput">Categoria</label>
+                    <label for="floatingInput">categoria</label>
                 </div>
                 <div class="form-floating mt-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="comentario" required #comentario>
@@ -46,14 +45,15 @@
                     <img  [src]="previsualizacion" alt="">
                 </div>
 
-                <div class="p-1">
-                    <small>Se aceptan archivos imágenes de tipo .png</small>
-                </div>
-                <div class="wrapper-button" *ngIf="previsualizacion">
-                    <button type="button" class="button" [disabled]="loading" (click)="uploadProduct(nombre, tienda,categoria,comentario,precio)">
-                        {{(loading) ? 'Cargando.....' : 'uploadProduct'}}
-                    </button>
-                </div>
-            </form>
+        <div class="p-1">
+          <small>Se aceptan archivos imágenes de tipo .png</small>
         </div>
+        <div class="wrapper-button" *ngIf="previsualizacion">
+          <button type="button" class="button" [disabled]="loading"
+            (click)="uploadProduct(nombre, tienda,categoria,comentario,precio)">
+            {{(loading) ? 'Cargando.....' : 'uploadProduct'}}
+          </button>
+        </div>
+      </form>
     </div>
+  </div>

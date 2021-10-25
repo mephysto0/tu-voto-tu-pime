@@ -25,6 +25,10 @@ export class PrincipalComponent implements OnInit {
   ngOnInit(): void {
     this.productos = this.productService.getAllProduct();
     this.tiendas = this.StoreService.getAllStore();
+
+
+
+
   }
 
 }
