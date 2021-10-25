@@ -1,18 +1,18 @@
-body {
-  background-color: #039BE5
+#cont-product{
+  margin-top: 20px;
+  border: 1px solid;
+  width: 1300px;
+
+  background-color: rgb(206, 63, 63);
 }
 
-.items {
-  width: 90%;
-  margin: 0px auto;
-  margin-top: 100px
+#card-p{
+  margin-right: 10px;
 }
 
-.slick-slide {
-  margin: 10px
-}
-
-.slick-slide img {
-  width: 100%;
-  border: 0px solid #fff
+#cont-product-vertical{
+  display: flex;
+  align-items: stretch;
+  width: 1100px;
+  margin-top: 20px
 }
