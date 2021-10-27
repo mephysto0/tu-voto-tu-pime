@@ -6,44 +6,31 @@
           <h4>Registro Tienda</h4>
           <hr>
           <form >
-            <form class="form-floating mt-3">
+            <form class="form-floating mt-3"(submit)="registrarse()">
               <div class="form-floating mb-3">
-                <input type="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Nombre</label>
+                <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
               </div>
               <div class="form-floating mb-3">
-                <input type="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Apellido</label>
+                <input type="text" [(ngModel)]="user.apellido" name="apellido" class="form-control" placeholder="Apellido" required autofocus>
               </div>
               <div class="form-floating mb-3">
-                <input type="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Rut</label>
+                <input type="text" [(ngModel)]="user.rut" name="rut" class="form-control" placeholder="Rut" required autofocus>
               </div>
               <div class="form-floating mb-3">
-                <input type="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Razon Social</label>
+                <input type="text" [(ngModel)]="user.razon_social" name="razon_social" class="form-control" placeholder="Razon_social" required autofocus>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Correo</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="nombre" class="form-control" id="floatingInput" placeholder="name@example.com">
-                <label for="floatingInput">Confirmar Correo</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Contraseña</label>
+                <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword">Confirmar Contraseña</label>
+                <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
               </div>
 
-
-              <input class="btn btn-primary" type="submit" value="Registrar">
+              <button class="btn btn-primary btn-block">
+                registrarse
+            </button>
             </form>
           </form>
         </div>

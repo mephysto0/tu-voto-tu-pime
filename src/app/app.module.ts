@@ -18,7 +18,7 @@ import { RegistroComponent } from './screens/registro/registro.component';
 import { CategoriasComponent } from './screens/categorias/categorias.component';
 import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.component';
 import { ProductformComponent } from './component/productform/productform.component';
-
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { ProductformComponent } from './component/productform/productform.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
