@@ -26,7 +26,7 @@ export class TiendaComponent implements OnInit {
     private router: Router,
     private StoreService: StoreService,
     private activatedRoute: ActivatedRoute,
- 
+
   ) { }
 
   ngOnInit() {

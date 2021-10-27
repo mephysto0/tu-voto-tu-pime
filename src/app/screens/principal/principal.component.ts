@@ -13,8 +13,6 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class PrincipalComponent implements OnInit {
 
   public productos : Product[] | undefined;
-  public bannerTienda: 'Le tallere' | undefined;
-
   products: Product[] = [];
 
   constructor(
