@@ -55,22 +55,4 @@
       <!--  Banner derecha  -->
     </div>
 
-    <div class="col-md-4 p-4" *ngFor="let product of products" >
-      <div class="card card-product"(click)="selectedCard(product._id)">
-        <h5 class="card-header text-center">{{product.tienda}}</h5>
-        <div class="card-body">
-          <img [src]="'http://localhost:4000/' + product.imagePath" class="img-card-top w-100">
 
-          <h3 class="card-title">{{product.nombre}}</h3>
-          <p class="card-text">{{product.categoria}}</p>
-          <p class="card-text">{{product.comentario}}</p>
-          <h5>{{product.precio | currency:'CLP'}}</h5>
-        </div>
-        <div class="card-footer">
-          <div class="d-grid gap-2">
-            <a type="button" class="btn btn-danger btn-lg " [routerLink]="['producto',product._id]">Ver
-              Producto</a>
-          </div>
-        </div>
-      </div>
-    </div>

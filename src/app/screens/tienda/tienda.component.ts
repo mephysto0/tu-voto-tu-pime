@@ -42,8 +42,4 @@ export class TiendaComponent implements OnInit {
       )
   }
 
-  selectedCard(id: string) {
-    this.router.navigate(['/producto', id]);
-  }
-
 }

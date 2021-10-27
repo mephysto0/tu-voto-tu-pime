@@ -1,3 +1,4 @@
+import { VistaProductoComponent } from './screens/vista-producto/vista-producto.component';
 import { ProductoComponent } from './screens/producto/producto.component';
 import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.component';
 import { CategoriasComponent } from './screens/categorias/categorias.component';
@@ -34,7 +35,10 @@ const routes: Routes = [
     path: 'tienda/newpr', component: ProductformComponent
   },
   {
-    path: 'producto/:id', component: ProductoComponent
+    path: 'edit_producto/:id', component: ProductoComponent
+  },
+  {
+    path: 'producto/:id', component: VistaProductoComponent
   },
 ];
 
