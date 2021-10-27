@@ -7,16 +7,15 @@
       <div class="card-text">
         <!--
 			<div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
-        <form action="" method="POST">
+        <form (submit)="logIn()">
           <!-- to error: add class "has-danger" -->
           <div class="form-group">
-            <label for="exampleInputEmail1">Correo electronico</label>
-            <input type="email" class="form-control form-control-sm" id="lp" />
+            <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
           </div>
           <div class="form-group mt-3">
             <label for="exampleInputPassword1">Contraseña</label>
             <a href="#" style="float: right; font-size: 12px">Olvido su Contraseña?</a>
-            <input type="password" class="form-control form-control-sm" id="password" />
+            <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
           </div>
           <button type="submit" class="btn btn-primary btn-block" 
          >

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { UserService } from '../../services/user/user.services';
+import { AuthService } from 'src/app/services/auth/auth.services';
+
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -12,27 +13,33 @@ interface HtmlInputEvent extends Event {
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  userService: any;
+  user = {
+    nombre: String,
+    apellido : String,
+    rut: String,
+    razon_social: String,
+    email: String,
+    password: String
+  };
 
-  constructor(private router: Router) { }
+  constructor(
+    private authService: AuthService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
 
-  
-
-  login(email: HTMLInputElement, contraseña:  HTMLInputElement ) {
-    this.userService
-      
+  logIn() {
+    this.authService.signInUser(this.user)
       .subscribe(
-        (        res: any) => {
+        res => {
           console.log(res);
-
-          this.router.navigate(['tienda/newpr'])
+          localStorage.setItem('token', res.token);
+          this.router.navigate(['/private']);
         },
-        (        err: any) => console.log(err)
-      );
-    return false;
+        err => console.log(err)
+      )
   }
 
 }
