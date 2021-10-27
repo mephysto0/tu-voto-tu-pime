@@ -10,12 +10,12 @@ import { AuthService } from 'src/app/services/auth/auth.services';
 })
 export class RegistroTiendaComponent implements OnInit {
   user= {
-    nombre: String,
-    apellido : String,
-    rut: String,
-    razon_social: String,
-    email: String,
-    password: String
+    nombre: '',
+    apellido : '',
+    rut: '',
+    razon_social: '',
+    email: '',
+    password: ''
 
 
    }

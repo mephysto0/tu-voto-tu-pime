@@ -14,12 +14,8 @@ interface HtmlInputEvent extends Event {
 })
 export class LoginComponent implements OnInit {
   user = {
-    nombre: String,
-    apellido : String,
-    rut: String,
-    razon_social: String,
-    email: String,
-    password: String
+    email: '',
+    password: ''
   };
 
   constructor(
