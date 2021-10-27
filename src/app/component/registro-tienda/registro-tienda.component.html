@@ -9,23 +9,29 @@
             <form class="form-floating mt-3"(submit)="registrarse()">
               <div class="form-floating mb-3">
                 <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
+                <label for="floatingInput">Nombre</label>
               </div>
               <div class="form-floating mb-3">
                 <input type="text" [(ngModel)]="user.apellido" name="apellido" class="form-control" placeholder="Apellido" required autofocus>
+                <label for="floatingInput">Apellido</label>
               </div>
               <div class="form-floating mb-3">
                 <input type="text" [(ngModel)]="user.rut" name="rut" class="form-control" placeholder="Rut" required autofocus>
+                <label for="floatingInput">Rut</label>
               </div>
               <div class="form-floating mb-3">
                 <input type="text" [(ngModel)]="user.razon_social" name="razon_social" class="form-control" placeholder="Razon_social" required autofocus>
+                <label for="floatingInput">Razon social</label>
               </div>
 
               <div class="form-floating mb-3">
                 <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
+                <label for="floatingInput">Email</label>
               </div>
 
               <div class="form-floating mb-3">
                 <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
+                <label for="floatingInput">Contraseña</label>
               </div>
 
               <button class="btn btn-primary btn-block">
