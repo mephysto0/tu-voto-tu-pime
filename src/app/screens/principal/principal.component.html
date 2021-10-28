@@ -43,20 +43,48 @@
     </div>
   </div>
 </div>
-
 <hr>
 <h3 class="text-center">Categorias</h3>
 <hr>
+<div class="container-fluid border-dark" id="cat">
+  <div class="card border-dark" >
+    <div class="col mt-3 mb-3" >
+      <div class="card-group"id="car-cat">
+        <div class="card">
+        <i class="fas fa-baby mt-4"></i>
+        <h4 class="text-center">bebe</h4>
+      </div>
+      <div class="card">
+        <i class="fas fa-air-freshener mt-4"></i>
+        <h4 class="text-center">Perfumes y Cosmeticos</h4>
+      </div>
+      <div class="card">
+        <i class="fas fa-cat"></i>
+        <h4 class="text-center">Mascotas</h4>
+      </div>
+      <div class="card">
+        <i class="fas fa-tshirt"></i>
+        <h4 class="text-center">Vestuario</h4>
+      </div>
+      <div class="card">
+        <i class="fas fa-cat"></i>
+        <h4 class="text-center">Muebles</h4>
+      </div>
+      <div class="card">
+        <i class="fas fa-utensils"></i>
+        <h4 class="text-center">Alimentos</h4>
+      </div>
 
+
+
+      </div>
+    </div>
+  </div>
+</div>
 <hr>
 <h3 class="text-center">Otros productos</h3>
 <hr>
-
-
-
-
-
-<div class="container-fluid" id="cont-product">
+<div class="container-fluid border-dark" id="cont-product">
   <div class="col" id="cont-product-vertical">
     <div class="col-4" *ngFor='let product of products' id="card-p">
       <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>

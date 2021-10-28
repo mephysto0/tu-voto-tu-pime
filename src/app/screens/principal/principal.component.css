@@ -30,3 +30,19 @@
   margin: auto;
   width: 80%;
 }
+
+.fas{
+  font-size: 6em;
+  margin: auto;
+  color: rgb(0, 0, 0);
+}
+
+#cat{
+  margin: auto;
+
+}
+
+#car-cat{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
