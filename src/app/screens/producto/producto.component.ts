@@ -44,7 +44,7 @@ export class ProductoComponent implements OnInit {
       })
   }
 
-  updateProduct(nombre: HTMLInputElement, tienda: HTMLTextAreaElement, categoria: HTMLTextAreaElement, comentario: HTMLTextAreaElement, precio: HTMLTextAreaElement): boolean {
+  updateProduct(nombre: HTMLInputElement, tienda: HTMLInputElement, categoria: HTMLSelectElement, comentario: HTMLInputElement, precio: HTMLInputElement): boolean {
     this.productService.updateProduct(this.product._id, nombre.value, tienda.value, categoria.value, comentario.value, precio.value )
       .subscribe(res => {
         console.log(res);

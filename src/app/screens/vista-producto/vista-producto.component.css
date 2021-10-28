@@ -1,0 +1,14 @@
+img{
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  width:450px;
+  height:400px;
+}
+
+.container-fluid{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  }
