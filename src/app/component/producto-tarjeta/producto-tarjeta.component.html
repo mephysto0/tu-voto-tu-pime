@@ -1,8 +1,9 @@
 <div class="card h-100 border-dark mb-3" >
-  <h5 class="card-header text-center">{{producto.tienda}}</h5>
+  <h5 class="card-header text-center">{{producto.categoria}}</h5>
   <img [src]="'http://localhost:4000/' + producto.imagePath" class="card-img-top rounded-start img-thumbnail mx-auto" alt="...">
   <div class="card-body">
     <h3 class="card-title">{{producto.nombre}}</h3>
+    <h5 class="card-subtitle">{{producto.tienda}}</h5>
     <p class="card-text">{{producto.comentario}}</p>
     <h5>{{ producto.precio| currency:'CLP' }}</h5>
   </div>
