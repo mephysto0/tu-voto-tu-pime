@@ -5,21 +5,29 @@
         <div class="card-header">
           <h3 class="text-center">Categorias</h3>
         </div>
-      <div class="d-grid gap-2 mx-auto mt-4 mb-4">
-        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-          <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
-            type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Todos los productos</button>
-          <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
-            type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Los Mas Votados</button>
-          <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages"
-            type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
-          <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings"
-            type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+        <div class="d-grid gap-2 mx-auto mt-4 mb-4">
+          <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home"
+              type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Todos los productos</button>
+            <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile"
+              type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Los Mas Votados</button>
+            <button class="nav-link" id="v-pills-bebe-tab" data-bs-toggle="pill" data-bs-target="#v-pills-bebe"
+              type="button" role="tab" aria-controls="v-pills-bebe" aria-selected="false">Bebes</button>
+            <button class="nav-link" id="v-pills-Perfumes-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Perfumes"
+              type="button" role="tab" aria-controls="v-pills-Perfumes" aria-selected="false">Perfumes y
+              Cosmeticos</button>
+            <button class="nav-link" id="v-pills-mascotas-tab" data-bs-toggle="pill" data-bs-target="#v-pills-mascotas"
+              type="button" role="tab" aria-controls="v-pills-mascotas" aria-selected="false">Mascotas</button>
+            <button class="nav-link" id="v-pills-vestuario-tab" data-bs-toggle="pill" data-bs-target="#v-pills-vestuario"
+              type="button" role="tab" aria-controls="v-pills-vestuario" aria-selected="false">Vestuario</button>
+            <button class="nav-link" id="v-pills-hogar-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hogar"
+              type="button" role="tab" aria-controls="v-pills-hogar" aria-selected="false">Hogar y
+              decoracion</button>
+            <button class="nav-link" id="v-pills-alimentos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-alimentos"
+              type="button" role="tab" aria-controls="v-pills-alimentos" aria-selected="false">Alimentos</button>
+          </div>
         </div>
-
       </div>
-      </div>
-
     </div>
     <div class="col-9">
       <h3 class="text-center">Productos</h3>
@@ -27,16 +35,69 @@
       <div class="tab-content" id="v-pills-tabContent">
         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
           <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col" *ngFor='let product of productos'>
+            <div class="col" *ngFor='let product of products'>
               <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
             </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">.2</div>
-        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">.3
+        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+          los mas votados pendiente
         </div>
-        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">4
+        <div class="tab-pane fade" id="v-pills-bebe" role="tabpanel" aria-labelledby="v-pills-bebe-tab">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <ng-container *ngFor='let product of products'>
+               <div class="col" *ngIf="product.categoria === bebe">
+                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+              </div>
+            </ng-container>
+          </div>
         </div>
+        <div class="tab-pane fade" id="v-pills-Perfumes" role="tabpanel" aria-labelledby="v-pills-Perfumes-tab">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <ng-container *ngFor='let product of products'>
+               <div class="col" *ngIf="product.categoria === PeryCos">
+                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-mascotas" role="tabpanel" aria-labelledby="v-pills-mascotas-tab">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <ng-container *ngFor='let product of products'>
+               <div class="col" *ngIf="product.categoria === mascotas">
+                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-vestuario" role="tabpanel" aria-labelledby="v-pills-vestuario-tab">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <ng-container *ngFor='let product of products'>
+               <div class="col" *ngIf="product.categoria === vestuario">
+                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-hogar" role="tabpanel" aria-labelledby="v-pills-hogar-tab">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <ng-container *ngFor='let product of products'>
+               <div class="col" *ngIf="product.categoria === hogar">
+                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="v-pills-alimentos" role="tabpanel" aria-labelledby="v-pills-alimentos-tab">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+            <ng-container *ngFor='let product of products'>
+               <div class="col" *ngIf="product.categoria === alimentos">
+                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+
       </div>
       <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="list-todos" role="tabpanel" aria-labelledby="list-todos-list">
