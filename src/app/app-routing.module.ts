@@ -38,7 +38,8 @@ const routes: Routes = [
     path: 'tienda/newpr', component: ProductformComponent
   },
   {
-    path: 'edit_producto/:id', component: ProductoComponent
+    path: 'edit_producto/:id', component: ProductoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'producto/:id', component: VistaProductoComponent
