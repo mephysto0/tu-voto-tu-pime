@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,9 @@ import { PerfilTiendaComponent } from './screens/perfil-tienda/perfil-tienda.com
 import { ProductformComponent } from './component/productform/productform.component';
 import { FormsModule } from '@angular/forms';
 import { VistaProductoComponent } from './screens/vista-producto/vista-producto.component';
+import { PrivateComponent } from './screens/private/private.component';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './services/token-interceptor/token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { VistaProductoComponent } from './screens/vista-producto/vista-producto.
     PerfilTiendaComponent,
     ProductformComponent,
     VistaProductoComponent,
+    PrivateComponent,
 
   ],
   imports: [
@@ -47,7 +51,13 @@ import { VistaProductoComponent } from './screens/vista-producto/vista-producto.
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,{
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

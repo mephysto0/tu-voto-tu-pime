@@ -9,8 +9,10 @@ import { PrincipalComponent } from './screens/principal/principal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TiendaComponent } from './screens/tienda/tienda.component';
+import { PrivateComponent } from './screens/private/private.component';
 
 import { ProductformComponent } from './component/productform/productform.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -39,6 +41,10 @@ const routes: Routes = [
   },
   {
     path: 'producto/:id', component: VistaProductoComponent
+  },
+  {
+    path: 'private', component: PrivateComponent,
+    canActivate: [AuthGuard]
   },
 ];
 

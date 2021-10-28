@@ -12,12 +12,21 @@
 
 
     <ul class="nav justify-content-end">
-      <li class="nav-bt-log">
-        <a class="btn btn-dark m-lg-2" id="btNavbar" href="login">Iniciar sesion</a>
-      </li>
-      <li class="nav-bt-log ">
-        <a class="btn btn-dark m-lg-2" id="btNavbar" href="registro">Registrarse</a>
-      </li>
+      <!--se revisara si estoy logeado y si no mostrara esto en el nav-bar -->
+      <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+        <li class="nav-bt-log">
+          <a class="btn btn-dark m-lg-2" id="btNavbar" href="login">Iniciar sesion</a>
+        </li>
+        <li class="nav-bt-log ">
+          <a class="btn btn-dark m-lg-2" id="btNavbar" href="registro">Registrarse</a>
+        </li>
+      </ng-container>
+      <!--se revisara si estoy logeado y si lo estoy mostrara esto en el nav-bar -->
+      <ng-template #loggedIn>
+        <li class="nav-item">
+          <a class="btn btn-dark m-lg-2" style="cursor: pointer;" (click)="authService.logout()">Cerrar sesion</a>
+        </li>
+      </ng-template>
     </ul>
   </div>
 </nav>

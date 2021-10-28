@@ -19,12 +19,13 @@ export class AuthService {
   }
 
   loggedIn() {
+    //si el token existe entrega un true
     return !!localStorage.getItem('token');
   }
 
   logout() {
     localStorage.removeItem('token');
-    this.router.navigate(['/tasks']);
+    this.router.navigate(['/login']);
   }
 
   getToken() {
