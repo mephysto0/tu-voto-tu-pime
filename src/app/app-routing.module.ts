@@ -31,7 +31,8 @@ const routes: Routes = [
     path: 'categorias', component: CategoriasComponent
   },
   {
-    path: 'tienda', component: TiendaComponent
+    path: 'tienda', component: TiendaComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'tienda/newpr', component: ProductformComponent
