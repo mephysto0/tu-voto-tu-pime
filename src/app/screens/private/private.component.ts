@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute,Router } from '@angular/router';
 
 @Component({
   selector: 'app-private',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrivateComponent implements OnInit {
 
-  constructor() { }
+  emial : string | undefined;
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+
+  ) {  }
 
   ngOnInit(): void {
+    this.emial = this.activatedRoute.snapshot.params.email,
+    console.log(this.emial)
   }
+
 
 }

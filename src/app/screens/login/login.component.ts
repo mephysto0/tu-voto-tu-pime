@@ -32,10 +32,16 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
+
+          //this.router.navigate(['/private']);
+          this.id = res.user;
+          console.log(this.id)
         },
         err => console.log(err)
       )
+  }
+  id(id: any) {
+    throw new Error('Method not implemented.');
   }
 
 }
