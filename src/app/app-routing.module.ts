@@ -45,7 +45,7 @@ const routes: Routes = [
     path: 'producto/:id', component: VistaProductoComponent
   },
   {
-    path: 'private', component: PrivateComponent,
+    path: 'private/:id', component: PrivateComponent,
     canActivate: [AuthGuard]
   },
 ];
