@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  id : string |  undefined;
   constructor(
     private authService: AuthService,
     private router: Router
@@ -32,16 +33,11 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-
-          //this.router.navigate(['/private']);
-          this.id = res.user;
-          console.log(this.id)
+          this.router.navigate(['/private', res.user]);
         },
         err => console.log(err)
       )
   }
-  id(id: any) {
-    throw new Error('Method not implemented.');
-  }
+
 
 }

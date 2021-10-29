@@ -16,7 +16,7 @@ export class PrivateComponent implements OnInit {
   ) {  }
 
   ngOnInit(): void {
-    this.emial = this.activatedRoute.snapshot.params.email,
+    this.emial = this.activatedRoute.snapshot.params.id,
     console.log(this.emial)
   }
 
