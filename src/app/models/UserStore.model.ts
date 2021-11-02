@@ -4,6 +4,6 @@ export interface UserStore{
   apellido: string;
   rut:string;
   razon_social:string;
-  correo: string;
-  contraseña?: string;
+  email: string;
+  password?: string;
 }

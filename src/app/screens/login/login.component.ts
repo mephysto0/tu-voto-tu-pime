@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.services';
 
 
+
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
 }
@@ -38,6 +39,5 @@ export class LoginComponent implements OnInit {
         err => console.log(err)
       )
   }
-
 
 }
