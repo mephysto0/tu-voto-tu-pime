@@ -1,4 +1,5 @@
-<p>private works!</p>
+
+<p>Bienvenido {{user.nombre}} {{user.apellido}}</p>
 <div class="container-fluid">
     <div class="row" *ngIf="!user; else main_content">
       <h1>Loading...</h1>
@@ -13,27 +14,27 @@
                 <input type="text" class="form-control" placeholder="Nombre producto" [value]="user.nombre" #nombre>
               </div>
               <div class="form-group">
-                <h6 class="text mt-2">Tienda </h6>
+                <h6 class="text mt-2">Apellido </h6>
                 <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.apellido" #apellido>
               </div>
 
               <div class="form-group">
-                <h6 class="text mt-2">Tienda </h6>
+                <h6 class="text mt-2">Rut </h6>
                 <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.rut" #rut>
               </div>
 
               <div class="form-group">
-                <h6 class="text mt-2">Tienda </h6>
+                <h6 class="text mt-2">Razon_social </h6>
                 <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.razon_social" #razon_social>
               </div>
 
               <div class="form-group">
-                <h6 class="text mt-2">Tienda </h6>
+                <h6 class="text mt-2">Email </h6>
                 <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.email" #email>
               </div>
 
               <div class="form-group">
-                <h6 class="text mt-2">Tienda </h6>
+                <h6 class="text mt-2">Contraseña </h6>
                 <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.password" #password>
               </div>
   
