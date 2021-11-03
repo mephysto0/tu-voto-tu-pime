@@ -13,7 +13,6 @@ export class RegistroTiendaComponent implements OnInit {
     nombre: '',
     apellido : '',
     rut: '',
-    razon_social: '',
     email: '',
     password: ''
 

@@ -3,7 +3,6 @@ export interface UserStore{
   nombre: string;
   apellido: string;
   rut:string;
-  razon_social:string;
   email: string;
   password?: string;
 }

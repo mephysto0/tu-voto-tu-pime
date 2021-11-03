@@ -34,7 +34,14 @@ export class LoginComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private', res.user]);
+          //para guardar el id del usuario conectado
+          //const idUsuario = res.user;
+          sessionStorage.setItem('id',res.user);
+
+          var data = sessionStorage.getItem('id');
+          //console.log(data) 
+          this.router.navigate(['/private', data]);
+          
         },
         err => console.log(err)
       )
