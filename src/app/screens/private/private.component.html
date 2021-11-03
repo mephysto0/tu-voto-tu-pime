@@ -7,68 +7,169 @@
             <div class="row">
                 <h3 class="text mt-3">Perfil de usuario</h3>
                 <div class="container">
-                    <div class="col-md-5">
-                        <div class="card border-dark  mt-2 mb-3 m-lg-5">
-                            <div class="card-body">
-                                <h5>nombre : {{user.nombre}}</h5>
-                                <hr>
-                                <h5>apellido : {{user.apellido}}</h5>
-                                <hr>
-                                <h5>rut : {{user.rut}}</h5>
-                                <hr>
-                                <h5>correo : {{user.email}}</h5>
-                            </div>
-                            <div class="card-footer">
-                                <div class="d-grid gap-2 col-6 ">
-                                    <button type="button" class="btn btn-primary btn-sm">Editar Perfil</button>
-                                </div>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="card border-dark mt-2 mb-3 m-lg-5">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h5>nombre</h5>
+                                            <label>{{ user.nombre }}</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="">editar</a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h5>apellido</h5>
+                                            <label>{{ user.apellido }}</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="">editar</a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h5>rut</h5>
+                                            <label>{{ user.rut }}</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="">editar</a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h5>correo</h5>
+                                            <label>{{ user.email }}</label>
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="">editar</a>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <h5>contraseña</h5>
 
+                                            <p class="text" type="password">{{user.password}}</p>
+                                        </div>
+                                        <div class="col-2">
+                                            <a href="">editar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda</button>
+
+                            <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas-header">
+                                    <h4 id="offcanvasRightLabel">Datos tienda</h4>
+                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <hr>
+                                <div class="offcanvas-body">
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text"> Nombre tienda</span>
+                                        <input type="text">
+                                    </div>
+                                    <hr>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text"> instagram</span>
+                                        <input type="text">
+                                    </div>
+                                    <hr>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text">twitter</span>
+                                        <input type="text">
+                                    </div>
+                                    <hr>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text"> facebook</span>
+                                        <input type="text">
+                                    </div>
+                                    <hr>
+                                    <div class="input-group input-group-sm">
+                                        <span class="input-group-text"> telefono</span>
+                                        <input type="text">
+                                    </div>
+                                    <hr>
+                                    <h4>Subir imagen</h4>
+                                    <input class="input-file" (change)="capturarFile($event)" type="file">
+                                    <div class="preview-img" *ngIf="previsualizacion">
+                                        <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
+                                        <img [src]="previsualizacion" alt="">
+                                    </div>
+
+                                    <div class="p-1">
+                                        <small>Se aceptan archivos imágenes de tipo .png</small>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
+
+            <div class="row">
+
+            </div>
+
         </div>
-
-
 
         <div class="row">
             <div class="col-md-7">
                 <div class="card border-dark">
-                    <form class="card-body" (submit)="updateProduct(nombre,apellido,rut,razon_social,email,password)">
+                    <form class="card-body" (submit)="
+              updateProduct(
+                nombre,
+                apellido,
+                rut,
+                razon_social,
+                email,
+                password
+              )
+            ">
                         <div class="form-group">
-                            <h6 class="text">Nombre </h6>
-                            <input type="text" class="form-control" placeholder="Nombre producto" [value]="user.nombre" #nombre>
+                            <h6 class="text">Nombre</h6>
+                            <input type="text" class="form-control" placeholder="Nombre producto" [value]="user.nombre" #nombre />
                         </div>
                         <div class="form-group">
-                            <h6 class="text mt-2">Apellido </h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.apellido" #apellido>
-                        </div>
-
-                        <div class="form-group">
-                            <h6 class="text mt-2">rut (hayq ue hacer un validador de rut) </h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.rut" #rut>
-                        </div>
-
-                        <div class="form-group">
-                            <h6 class="text mt-2">Razon social (eliminar) </h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.razon_social" #razon_social>
-                        </div>
-
-                        <div class="form-group">
-                            <h6 class="text mt-2">Correo </h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.email" #email>
+                            <h6 class="text mt-2">Apellido</h6>
+                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.apellido" #apellido />
                         </div>
 
                         <div class="form-group">
-                            <h6 class="text mt-2">Contraseña </h6>
-                            <input rows="2" type="password" class="form-control" placeholder="nombre tienda" [value]="user.password" #password>
+                            <h6 class="text mt-2">rut (hayq ue hacer un validador de rut)</h6>
+                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.rut" #rut />
                         </div>
 
+                        <div class="form-group">
+                            <h6 class="text mt-2">Razon social (eliminar)</h6>
+                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.razon_social" #razon_social />
+                        </div>
+
+                        <div class="form-group">
+                            <h6 class="text mt-2">Correo</h6>
+                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.email" #email />
+                        </div>
+
+                        <div class="form-group">
+                            <h6 class="text mt-2">Contraseña</h6>
+                            <input rows="2" type="password" class="form-control" placeholder="nombre tienda" [value]="user.password" #password />
+                        </div>
 
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
-                            <button class="btn btn-primary btn-block ">Editar</button>
-                            <button class="btn btn-danger" (click)="deleteUser(user._id)">Eliminar usuario</button>
+                            <button class="btn btn-primary btn-block">Editar</button>
+                            <button class="btn btn-danger" (click)="deleteUser(user._id)">
+                Eliminar usuario
+              </button>
                         </div>
                     </form>
                 </div>

@@ -1,0 +1,16 @@
+.input-group {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: auto;
+}
+
+.input-group-text {
+    width: auto;
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute,Router } from '@angular/router';
 import { UserStore } from 'src/app/models/UserStore.model';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-private',
@@ -12,11 +13,14 @@ export class PrivateComponent implements OnInit {
   id: string | any;
   user: UserStore | any;
   emial : string | undefined;
+  public previsualizacion: any;
+  public archivos: any = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private usuarioservice: UsuarioService,
-    private router: Router
+    private router: Router,
+    private sanitizer: DomSanitizer
   ) {  }
 
   ngOnInit(): void {
@@ -51,6 +55,46 @@ export class PrivateComponent implements OnInit {
         //this.router.navigate(['/tienda']);
       });
     return false;
+  }
+
+  clearImage(): any {
+    this.previsualizacion = '';
+    this.archivos = [];
+  }
+
+  //pasa las imagenes a formato 64 bits
+  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
+    try {
+      const unsafeImg = window.URL.createObjectURL($event);
+      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+      const reader = new FileReader();
+      reader.readAsDataURL($event);
+      reader.onload = () => {
+        resolve({
+          base: reader.result
+        });
+      };
+      reader.onerror = error => {
+        resolve({
+          base: null
+        });
+      };
+
+    } catch (e) {
+      return null;
+    }
+    return $event
+  })
+  capturarFile(event:any): any {
+    const archivoCapturado = event.target.files[0]
+    this.extraerBase64(archivoCapturado).then((imagen: any) => {
+      this.previsualizacion = imagen.base;
+      console.log(imagen);
+
+    })
+    this.archivos.push(archivoCapturado)
+    //
+     console.log(event.target.files);
   }
 
 }
