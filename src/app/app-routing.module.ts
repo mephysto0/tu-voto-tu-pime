@@ -48,6 +48,11 @@ const routes: Routes = [
     path: 'private/:id', component: PrivateComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'perfil-user/:id', component: PerfilTiendaComponent,
+    canActivate: [AuthGuard]
+  },
+
 ];
 
 @NgModule({

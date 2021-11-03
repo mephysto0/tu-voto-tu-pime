@@ -23,6 +23,7 @@ import { VistaProductoComponent } from './screens/vista-producto/vista-producto.
 import { PrivateComponent } from './screens/private/private.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor/token-interceptor.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { TokenInterceptorService } from './services/token-interceptor/token-inte
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthGuard,{
