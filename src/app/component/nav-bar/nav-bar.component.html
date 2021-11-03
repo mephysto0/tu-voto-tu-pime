@@ -1,45 +1,48 @@
 <nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="..\..\assets\imagenes\logo\logo-marioblanco-02.png" alt="" width="190" height="90" />
-    </a>
-    <form class="d-flex position-absolute top-50 start-50 translate-middle">
-      <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
-      <button class="btn btn-dark" type="submit">Buscar</button>
-    </form>
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="..\..\assets\imagenes\logo\logo-marioblanco-02.png" alt="" width="190" height="90" />
+        </a>
+        <form class="d-flex position-absolute top-50 start-50 translate-middle">
+            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+            <button class="btn btn-dark" type="submit">Buscar</button>
+        </form>
 
 
 
 
-    <ul class="nav justify-content-end">
-      <!--se revisara si estoy logeado y si no mostrara esto en el nav-bar -->
-      <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
-        <li class="nav-bt-log">
-          <a class="btn btn-dark m-lg-2" id="btNavbar" href="login">Iniciar sesion</a>
-        </li>
-        <li class="nav-bt-log ">
-          <a class="btn btn-dark m-lg-2" id="btNavbar" href="registro">Registrarse</a>
-        </li>
-      </ng-container>
-      <!--se revisara si estoy logeado y si lo estoy mostrara esto en el nav-bar -->
-      <ng-template #loggedIn>
-        <li class="nav-item">
-          <div class="btn-group">
-            <button class="btn btn-dark  m-lg-2  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="tienda">Tienda</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" >Perfil</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" >aun no se</a></li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="btn btn-dark m-lg-2" style="cursor: pointer;" (click)="authService.logout()">Cerrar sesion</a>
-        </li>
-      </ng-template>
-    </ul>
-  </div>
+        <ul class="nav justify-content-end">
+            <!--se revisara si estoy logeado y si no mostrara esto en el nav-bar -->
+            <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+                <li class="nav-bt-log">
+                    <a class="btn btn-dark m-lg-2" id="btNavbar" href="login">Iniciar sesion</a>
+                </li>
+                <li class="nav-bt-log ">
+                    <a class="btn btn-dark m-lg-2" id="btNavbar" href="registro">Registrarse</a>
+                </li>
+            </ng-container>
+            <!--se revisara si estoy logeado y si lo estoy mostrara esto en el nav-bar -->
+            <ng-template #loggedIn>
+                <li class="nav-item">
+                    <div class="btn-group">
+                        <button class="btn btn-dark  m-lg-2  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tienda">Tienda</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="">Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item">aun no se</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-dark m-lg-2" style="cursor: pointer;" (click)="authService.logout()">Cerrar sesion</a>
+                </li>
+            </ng-template>
+        </ul>
+    </div>
 </nav>
-
