@@ -21,4 +21,6 @@ export class NavBarComponent implements OnInit {
     this.aux2 = aux.user;
   }
 
+
+
 }
