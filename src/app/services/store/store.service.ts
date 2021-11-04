@@ -11,8 +11,9 @@ export class StoreService {
 
   constructor(private http: HttpClient) { }
 
-  createStore(nombre_tienda: string, instagram: string, image: File, twitter: string, facebook: string, telefono: string) {
+  createStore(usuario:string ,nombre_tienda: string, instagram: string, image: File, twitter: string, facebook: string, telefono: string) {
     const fd = new FormData();
+    fd.append('usuario', usuario);
     fd.append('nombre_tienda', nombre_tienda);
     fd.append('instagram', instagram);
     fd.append('image', image);

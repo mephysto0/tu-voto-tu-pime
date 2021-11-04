@@ -67,7 +67,7 @@ export class PrivateComponent implements OnInit {
 //enviara los datos del formulario
 uploadStore(nombre_tienda: HTMLInputElement, instagram:  HTMLInputElement, twitter:  HTMLInputElement, facebook:  HTMLInputElement, telefono:  HTMLInputElement ) {
   this.storeservice
-    .createStore(nombre_tienda.value, instagram.value, this.archivos[0], twitter.value, facebook.value, telefono.value)
+    .createStore(this.user._id,nombre_tienda.value, instagram.value, this.archivos[0], twitter.value, facebook.value, telefono.value)
     .subscribe(
       res => {
         console.log(res);
