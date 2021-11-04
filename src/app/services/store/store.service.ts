@@ -21,7 +21,7 @@ export class StoreService {
     phone: string,
   ){
     const fd = new FormData();
-    fd.append();
+
   }
 
 }
