@@ -71,8 +71,9 @@ uploadStore(nombre_tienda: HTMLInputElement, instagram:  HTMLInputElement, twitt
     .subscribe(
       res => {
         console.log(res);
-
-        //this.router.navigate(['tienda/newpr'])
+        var aux = this.user._id;
+        console.log(aux)
+        this.router.navigate(['/tienda',aux])
       },
       err => console.log(err)
     );
