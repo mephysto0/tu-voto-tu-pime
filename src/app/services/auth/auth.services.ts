@@ -20,6 +20,7 @@ export class AuthService {
 
   loggedIn() {
     //si el token existe entrega un true
+    sessionStorage.getItem('id')
     return !!localStorage.getItem('token');
   }
 
