@@ -1,4 +1,3 @@
-import { UserStore } from "./UserStore.model";
 import { UserPerson } from "./UserPerson.model";
 
 
