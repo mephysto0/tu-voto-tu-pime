@@ -18,6 +18,7 @@ export class TiendaComponent implements OnInit {
   public store :  Store | undefined;
   public nombre: string | undefined;
 
+  aux2 : string | undefined;
 
   products: Product[] = [];
 
@@ -36,7 +37,11 @@ export class TiendaComponent implements OnInit {
     this.store = this.StoreService.getByName(this.nombre as string);
 
 
-    console.log(this.localstorage.get('usuario'));
+
+    const aux = this.localstorage.get('usuario');
+    console.log(aux.user);
+    this.aux2 = aux.user;
+
 
     this.productService.getProducts()
       .subscribe(
