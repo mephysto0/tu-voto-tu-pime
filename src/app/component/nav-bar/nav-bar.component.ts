@@ -20,5 +20,7 @@ export class NavBarComponent implements OnInit {
     console.log(aux.user);
     this.aux2 = aux.user;
   }
-  
+
+
+
 }

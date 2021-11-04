@@ -3,6 +3,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 import { UserStore } from 'src/app/models/UserStore.model';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { DomSanitizer } from '@angular/platform-browser';
+import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
   selector: 'app-private',
@@ -21,7 +22,8 @@ export class PrivateComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private usuarioservice: UsuarioService,
     private router: Router,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private storeservice: StoreService,
   ) {  }
 
   ngOnInit(): void {
@@ -47,9 +49,9 @@ export class PrivateComponent implements OnInit {
         this.router.navigate(['/tienda']);
       })
   }
-
-  updateProduct(nombre: HTMLInputElement, apellido: HTMLInputElement,rut: HTMLInputElement,razon_social: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
-    this.usuarioservice.updateUser(this.user._id, nombre.value, apellido.value, rut.value, razon_social.value, email.value,password.value)
+//---------------------------------------------------------------seccion tienda---------------------------------------------------
+  updateStore(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,telefono: HTMLInputElement): boolean {
+    this.storeservice.updateStore(this.user._id, nombre_tienda.value, instagram.value, twitter.value, facebook.value, telefono.value)
       .subscribe(res => {
         console.log(res);
         //ruta a la cual redigira al editar

@@ -1,19 +1,17 @@
-<div class="card h-100 border-dark mb-3" >
-  <h5 class="card-header text-center">{{producto.categoria}}</h5>
-  <img [src]="'http://localhost:4000/' + producto.imagePath" class="card-img-top rounded-start img-thumbnail mx-auto" alt="...">
-  <div class="card-body">
-    <h3 class="card-title">{{producto.nombre}}</h3>
-    <h5 class="card-subtitle">{{producto.tienda}}</h5>
-    <p class="card-text">{{producto.comentario}}</p>
-    <h5>{{ producto.precio| currency:'CLP' }}</h5>
-  </div>
-  <div class="card-footer">
-    <div class="d-grid gap-2">
-      <a  type="button" class="btn btn-danger btn-lg "
-      [routerLink]="['/producto',producto._id]" >Ver Producto</a>
-      <a  type="button" class="btn btn-danger btn-lg "
-      [routerLink]="['/edit_producto',producto._id]" >Editar Producto</a>
+<div class="card h-100 border-dark mb-3">
+    <h5 class="card-header text-center">{{producto.categoria}}</h5>
+    <img [src]="'http://localhost:4000/' + producto.imagePath" class="card-img-top rounded-start img-thumbnail mx-auto" alt="...">
+    <div class="card-body">
+        <h3 class="card-title">{{producto.nombre}}</h3>
+        <h5 class="card-subtitle">{{producto.tienda}}</h5>
+        <p class="card-text">{{producto.comentario}}</p>
+        <h5>{{ producto.precio| currency:'CLP' }}</h5>
     </div>
-
-  </div>
+    <div class="card-footer">
+        <div class="d-grid gap-2">
+            <a type="button" class="btn btn-danger btn-lg " [routerLink]="['/producto',producto._id]">Ver Producto</a>
+            <a type="button" class="btn btn-danger btn-lg " [routerLink]="['/edit_producto',producto._id]">Editar Producto</a>
+        </div>
+        hola
+    </div>
 </div>

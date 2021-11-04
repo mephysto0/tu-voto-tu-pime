@@ -9,7 +9,6 @@ import { LoginComponent } from './screens/login/login.component';
 import { TiendaComponent } from './screens/tienda/tienda.component';
 import { ProductoComponent } from './screens/producto/producto.component';
 import { PrincipalComponent } from './screens/principal/principal.component';
-import { RegistroUsuarioComponent } from './component/registro-usuario/registro-usuario.component';
 import { RegistroTiendaComponent } from './component/registro-tienda/registro-tienda.component';
 import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 import { FooterComponent } from './component/footer/footer.component';
@@ -33,7 +32,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     TiendaComponent,
     ProductoComponent,
     PrincipalComponent,
-    RegistroUsuarioComponent,
     RegistroTiendaComponent,
     NavBarComponent,
     FooterComponent,

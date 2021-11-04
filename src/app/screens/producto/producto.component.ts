@@ -26,8 +26,12 @@ export class ProductoComponent implements OnInit {
 
   ngOnInit(): void {
     console.log(this.localstorage.get('usuario'));
+
+
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
+
+
       this.productService.getProduct(this.id)
         .subscribe(
           res => {
