@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div class="col-sm-3">
-                        <form (submit)="uploadStore(nombre_tienda, instagra, twitter, facebook, telefono)"></form>
+                        <form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono)">
                             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda</button>
 
                             <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -112,8 +112,9 @@
                                     </div>
                                     <div class="wrapper-button" *ngIf="previsualizacion">
                                         <button type="button" class="button" [disabled]="loading" (click)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono)">
-                                {{(loading) ? 'Cargando.....' : 'uploadStore'}}
-                              </button>
+                                         {{(loading) ? 'Cargando.....' : 'uploadStore'}}
+                                        </button>
+                                    </div>
 
                                 </div>
                             </div>
@@ -134,7 +135,7 @@
             <div class="col-md-7">
                 <div class="card border-dark">
                     <form class="card-body" (submit)="
-              updateProduct(
+              updateUser(
                 nombre,
                 apellido,
                 rut,

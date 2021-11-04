@@ -49,9 +49,9 @@ export class PrivateComponent implements OnInit {
         this.router.navigate(['/tienda']);
       })
   }
-//---------------------------------------------------------------seccion tienda---------------------------------------------------
-  updateStore(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,telefono: HTMLInputElement): boolean {
-    this.storeservice.updateStore(this.user._id, nombre_tienda.value, instagram.value, twitter.value, facebook.value, telefono.value)
+
+  updateUser(nombre: HTMLInputElement, apellido: HTMLInputElement,rut: HTMLInputElement,razon_social: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
+    this.usuarioservice.updateUser(this.user._id, nombre.value, apellido.value, rut.value, razon_social.value, email.value,password.value)
       .subscribe(res => {
         console.log(res);
         //ruta a la cual redigira al editar
@@ -59,6 +59,25 @@ export class PrivateComponent implements OnInit {
       });
     return false;
   }
+
+
+
+
+//---------------------------------------------------------------seccion tienda---------------------------------------------------
+//enviara los datos del formulario
+uploadStore(nombre_tienda: HTMLInputElement, instagram:  HTMLInputElement, twitter:  HTMLInputElement, facebook:  HTMLInputElement, telefono:  HTMLInputElement ) {
+  this.storeservice
+    .createStore(nombre_tienda.value, instagram.value, this.archivos[0], twitter.value, facebook.value, telefono.value)
+    .subscribe(
+      res => {
+        console.log(res);
+
+        //this.router.navigate(['tienda/newpr'])
+      },
+      err => console.log(err)
+    );
+  return false;
+}
 
   clearImage(): any {
     this.previsualizacion = '';
