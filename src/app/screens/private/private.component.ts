@@ -15,6 +15,7 @@ export class PrivateComponent implements OnInit {
   emial : string | undefined;
   public previsualizacion: any;
   public archivos: any = [];
+  public loading: boolean | undefined
 
   constructor(
     private activatedRoute: ActivatedRoute,

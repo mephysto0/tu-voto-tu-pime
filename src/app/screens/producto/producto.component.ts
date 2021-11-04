@@ -4,7 +4,7 @@ import { Product } from 'src/app/models/producto.model';
 import { Store } from 'src/app/models/tienda.model';
 import { ProductService } from 'src/app/services/product.services';
 import { StoreService } from 'src/app/service/store/store.service';
-
+import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
 
 @Component({
   selector: 'app-producto',
@@ -19,10 +19,13 @@ export class ProductoComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private localstorage : LocalStorageService
   ) { }
 
+
   ngOnInit(): void {
+    console.log(this.localstorage.get('usuario'));
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
       this.productService.getProduct(this.id)
