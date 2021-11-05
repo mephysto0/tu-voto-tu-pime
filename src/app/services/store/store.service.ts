@@ -6,6 +6,7 @@ import { Store } from 'src/app/models/tienda.model';
   providedIn: 'root'
 })
 export class StoreService {
+  
 
   URI = 'http://localhost:4000/store';
   URI2 = 'http://localhost:4000/stores';

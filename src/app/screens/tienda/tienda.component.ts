@@ -21,7 +21,7 @@ export class TiendaComponent implements OnInit {
   aux2 : string | undefined;
 
   products: Product[] = [];
-  idU: any;
+  id: any;
   userstore: UserStore | any;
 
 
@@ -39,8 +39,8 @@ export class TiendaComponent implements OnInit {
   ngOnInit() {
     this.nombre = this.activatedRoute.snapshot.params.name;
     this.activatedRoute.params.subscribe(params => {
-      this.idU = params['id'];
-      this.storeservice.getUserStore(this.idU)
+      this.id = params['id'];
+      this.storeservice.getUserStore(this.id)
         .subscribe(
           res => {
             this.userstore = res;
