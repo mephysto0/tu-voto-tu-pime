@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {ProductService} from '../../services/product.services';
 import { DomSanitizer } from '@angular/platform-browser';
+import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -16,9 +17,15 @@ export class ProductformComponent implements OnInit {
   //file: File | undefined |any;
   photoSelected: any;
 
+  aux2 : string | undefined;
 
 
-  constructor(private productService: ProductService, private router: Router, private sanitizer: DomSanitizer) { }
+  constructor(
+    private productService: ProductService,
+    private router: Router,
+    private sanitizer: DomSanitizer,
+    private localstorage : LocalStorageService) { }
+
   public previsualizacion: any;
   public archivos: any = [];
   public loading: boolean | undefined
@@ -26,7 +33,12 @@ export class ProductformComponent implements OnInit {
 
 
   ngOnInit(): void {
+    const aux = this.localstorage.get('usuario');
+    console.log(aux.user);
+    this.aux2 = aux.user;
   }
+
+
 
   capturarFile(event:any): any {
     const archivoCapturado = event.target.files[0]
@@ -49,7 +61,7 @@ export class ProductformComponent implements OnInit {
         res => {
           console.log(res);
 
-          this.router.navigate(['tienda/newpr'])
+          this.router.navigate(['/tienda',this.aux2])
         },
         err => console.log(err)
       );
