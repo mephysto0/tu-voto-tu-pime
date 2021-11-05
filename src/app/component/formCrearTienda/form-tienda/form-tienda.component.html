@@ -1,0 +1,54 @@
+<form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono)">
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda de component</button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header mt-4">
+            <h4 id="offcanvasRightLabel">Datos tienda</h4>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <hr>
+        <div class="offcanvas-body">
+            <div class="input-group input-group-sm">
+                <span class="input-group-text"> Nombre tienda</span>
+                <input type="text" class="form-control" id="nombre_tienda" placeholder="nombre tienda" #nombre_tienda required>
+            </div>
+            <hr>
+            <div class="input-group input-group-sm">
+                <span class="input-group-text"> instagram</span>
+                <input type="text" class="form-control" id="instagram" placeholder="instagram" #instagram required>
+            </div>
+            <hr>
+            <div class="input-group input-group-sm">
+                <span class="input-group-text">twitter</span>
+                <input type="text" class="form-control" id="twitter" placeholder="twitter" #twitter required>
+            </div>
+            <hr>
+            <div class="input-group input-group-sm">
+                <span class="input-group-text"> facebook</span>
+                <input type="text" class="form-control" id="facebookt" placeholder="facebook" #facebook required>
+            </div>
+            <hr>
+            <div class="input-group input-group-sm">
+                <span class="input-group-text"> telefono</span>
+                <input type="text" class="form-control" id="telefono" placeholder="telefono" #telefono required>
+            </div>
+            <hr>
+            <h4>Subir imagen</h4>
+            <input class="input-file" (change)="capturarFile($event)" type="file">
+            <div class="preview-img" *ngIf="previsualizacion">
+                <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
+                <img [src]="previsualizacion" alt="">
+            </div>
+
+            <div class="p-1">
+                <small>Se aceptan archivos imágenes de tipo .png</small>
+            </div>
+            <div class="wrapper-button" *ngIf="previsualizacion">
+                <button type="button" class="button" [disabled]="loading" (click)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono)">
+               {{(loading) ? 'Cargando.....' : 'uploadStore'}}
+              </button>
+            </div>
+
+        </div>
+    </div>
+</form>

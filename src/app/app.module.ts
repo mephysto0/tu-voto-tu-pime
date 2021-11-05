@@ -23,6 +23,7 @@ import { PrivateComponent } from './screens/private/private.component';
 import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor/token-interceptor.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormTiendaComponent } from './component/formCrearTienda/form-tienda/form-tienda.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductformComponent,
     VistaProductoComponent,
     PrivateComponent,
+    FormTiendaComponent,
 
   ],
   imports: [
