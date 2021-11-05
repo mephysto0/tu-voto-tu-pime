@@ -12,7 +12,7 @@ export class StoreService {
 
   constructor(private http: HttpClient) { }
 
-  createStore(usuario:string ,nombre_tienda: string, instagram: string, image: File, twitter: string, facebook: string, telefono: string) {
+  createStore(usuario:string ,nombre_tienda: string, instagram: string, image: File, twitter: string, facebook: string, numero_telefono: string) {
     const fd = new FormData();
     fd.append('usuario', usuario);
     fd.append('nombre_tienda', nombre_tienda);
@@ -20,7 +20,7 @@ export class StoreService {
     fd.append('image', image);
     fd.append('twitter', twitter);
     fd.append('facebook', facebook);
-    fd.append('telefono', telefono);
+    fd.append('numero_telefono', numero_telefono);
     return this.http.post(this.URI, fd);
   }
 
@@ -42,7 +42,7 @@ export class StoreService {
     return this.http.delete(`${this.URI}/${id}`);
   }
 
-  updateStore(id: string, nombre_tienda: string, instagram: string, twitter: string, facebook: string, telefono: string) {
-    return this.http.put(`${this.URI}/${id}`, {nombre_tienda, instagram, twitter, facebook ,telefono });
+  updateStore(id: string, nombre_tienda: string, instagram: string, twitter: string, facebook: string, numero_telefono: string) {
+    return this.http.put(`${this.URI}/${id}`, {nombre_tienda, instagram, twitter, facebook ,numero_telefono });
   }
 }
