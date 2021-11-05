@@ -44,6 +44,8 @@ export class TiendaComponent implements OnInit {
         .subscribe(
           res => {
             this.userstore = res;
+            console.log(this.userstore)
+            console.log(res.usuario)
           },
           err => console.log(err)
         )

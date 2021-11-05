@@ -33,7 +33,7 @@ export class RegistroTiendaComponent implements OnInit {
         res => {
           console.log(res);
           localStorage.setItem('token', res.token);
-          this.router.navigate(['/private']);
+          this.router.navigate(['/login']);
         },
         err => console.log(err)
       )
