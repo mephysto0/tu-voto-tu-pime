@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {Store} from '../../models/tienda.model';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
-
+import { UserStore } from 'src/app/models/UserStore.model';
 import { ProductService } from '../../services/product.services'
 import { Product } from '../../models/producto.model'
+import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
   selector: 'app-tienda',
@@ -20,10 +21,14 @@ export class TiendaComponent implements OnInit {
   aux2 : string | undefined;
 
   products: Product[] = [];
+  idU: any;
+  userstore: UserStore | any;
+
 
   constructor(
     private productService: ProductService,
     private router: Router,
+    private storeservice: StoreService,
 
     private activatedRoute: ActivatedRoute,
     private localstorage : LocalStorageService
@@ -33,6 +38,16 @@ export class TiendaComponent implements OnInit {
 
   ngOnInit() {
     this.nombre = this.activatedRoute.snapshot.params.name;
+    this.activatedRoute.params.subscribe(params => {
+      this.idU = params['idU'];
+      this.storeservice.getUserStore(this.idU)
+        .subscribe(
+          res => {
+            this.userstore = res;
+          },
+          err => console.log(err)
+        )
+    });
 
 
 

@@ -8,6 +8,7 @@ import { Store } from 'src/app/models/tienda.model';
 export class StoreService {
 
   URI = 'http://localhost:4000/store';
+  URI2 = 'http://localhost:4000/stores';
 
   constructor(private http: HttpClient) { }
 
@@ -30,6 +31,12 @@ export class StoreService {
   getStore(id: string) {
     return this.http.get<Store>(`${this.URI}/${id}`);
   }
+//idU es el parametro de id del usuario conectado a tienda que se ustilizara para buscarla en el back
+  getUserStore(idU: string) {
+    return this.http.get<Store>(`${this.URI2}/${idU}`);
+  }
+
+
 
   deleteStore(id: string) {
     return this.http.delete(`${this.URI}/${id}`);
