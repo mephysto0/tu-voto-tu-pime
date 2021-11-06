@@ -33,8 +33,8 @@ export class StoreService {
     return this.http.get<Store>(`${this.URI}/${id}`);
   }
 //idU es el parametro de id del usuario conectado a tienda que se ustilizara para buscarla en el back
-  getUserStore(idU: string) {
-    return this.http.get<Store>(`${this.URI2}/${idU}`);
+  getUserStore(id: string) {
+    return this.http.get<Store>(`${this.URI2}/${id}`);
   }
 
 

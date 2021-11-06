@@ -1,10 +1,10 @@
 export interface Store{
-  id: string;
-  nombreTienda: string;
-  imgUrl:string;
+  _id: string;
+  nombre_tienda: string;
+  imagePath:string;
   usuario: string;
-  instaUrl: string;
-  faceUrl: string;
-  twitUrl: string;
-  phone: string;
+  instagram: string;
+  facebook: string;
+  twitter: string;
+  numero_telefono: string;
 }

@@ -7,6 +7,7 @@ import { ProductService } from '../../services/product.services'
 import { Product } from '../../models/producto.model'
 import { StoreService } from 'src/app/services/store/store.service';
 
+
 @Component({
   selector: 'app-tienda',
   templateUrl: './tienda.component.html',
@@ -15,14 +16,16 @@ import { StoreService } from 'src/app/services/store/store.service';
 export class TiendaComponent implements OnInit {
   public productos : Product[] | undefined;
   public tiendas :  Store[] | undefined;
-  public store :  Store | undefined;
-  public nombre: string | undefined;
+  //public store :  Store | any;
+  public nombre: string | any;
 
   aux2 : string | undefined;
 
   products: Product[] = [];
   id: any;
   userstore: UserStore | any;
+  idU: any;
+  store :  Store | any;
 
 
   constructor(
@@ -43,13 +46,12 @@ export class TiendaComponent implements OnInit {
       this.storeservice.getUserStore(this.id)
         .subscribe(
           res => {
-            this.userstore = res;
-            console.log(this.userstore)
-            console.log(res.usuario)
+            this.store = res;
+            
           },
           err => console.log(err)
         )
-    });
+    })
 
 
 
