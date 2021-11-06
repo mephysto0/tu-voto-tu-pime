@@ -1,7 +1,7 @@
 export interface Store{
   _id: string;
   nombre_tienda: string;
-  imagePath:string;
+  imagePath: string;
   usuario: string;
   instagram: string;
   facebook: string;
