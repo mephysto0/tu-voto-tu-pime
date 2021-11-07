@@ -1,14 +1,28 @@
-.fab{
-  font-size: 2em;
-  margin-top: 3px;
-  margin-left: 3px;
-  margin-right: 3px;
-  color: rgb(0, 0, 0);
+.fab {
+    font-size: 2em;
+    margin-top: 5px;
+    margin-left: 3px;
+    margin-right: 3px;
+    color: rgb(0, 0, 0);
 }
+
 .card-product {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .card-product:hover {
-  border: 1px solid #333;
+    border: 1px solid #333;
+}
+
+#imgTienda {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 400px;
+    height: auto;
+}
+
+#card-p {
+    margin: auto;
 }

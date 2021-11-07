@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../../services/product.services';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
@@ -19,12 +19,15 @@ export class ProductformComponent implements OnInit {
 
   aux2 : string | undefined;
 
+  nombreT : string | any;
+
 
   constructor(
     private productService: ProductService,
     private router: Router,
     private sanitizer: DomSanitizer,
-    private localstorage : LocalStorageService) { }
+    private localstorage : LocalStorageService,
+    private rutaActiva: ActivatedRoute) { }
 
   public previsualizacion: any;
   public archivos: any = [];
@@ -33,8 +36,11 @@ export class ProductformComponent implements OnInit {
 
 
   ngOnInit(): void {
+
+    this.nombreT= this.rutaActiva.snapshot.params.id;
+
+
     const aux = this.localstorage.get('usuario');
-    console.log(aux.user);
     this.aux2 = aux.user;
   }
 
@@ -56,7 +62,7 @@ export class ProductformComponent implements OnInit {
 //enviara los datos del formulario
   uploadProduct(nombre: HTMLInputElement, tienda:  HTMLInputElement, categoria: HTMLSelectElement, comentario:  HTMLInputElement, precio:  HTMLInputElement ) {
     this.productService
-      .createProduct(nombre.value, tienda.value, this.archivos[0], categoria.value, comentario.value, precio.value)
+      .createProduct(nombre.value, this.nombreT, this.archivos[0], categoria.value, comentario.value, precio.value)
       .subscribe(
         res => {
           console.log(res);

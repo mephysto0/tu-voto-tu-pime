@@ -35,7 +35,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'newpr', component: ProductformComponent
+    path: 'newpr/:id', component: ProductformComponent
   },
   {
     path: 'edit_producto/:id', component: ProductoComponent,
