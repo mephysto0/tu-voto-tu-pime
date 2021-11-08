@@ -1,4 +1,4 @@
-<form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono)">
+<form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono,  descripcion)">
     <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda de component</button>
 
     <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -32,6 +32,12 @@
                 <span class="input-group-text"> telefono</span>
                 <input type="text" class="form-control" id="telefono" placeholder="telefono" #telefono required>
             </div>
+
+            <div class="input-group input-group-sm">
+                <span class="input-group-text"> descripcion</span>
+                <input type="text" class="form-control" id="descripcion" placeholder="descripcion" #descripcion required>
+            </div>
+
             <hr>
             <h4>Subir imagen</h4>
             <input class="input-file" (change)="capturarFile($event)" type="file">
@@ -44,7 +50,7 @@
                 <small>Se aceptan archivos imágenes de tipo .png</small>
             </div>
             <div class="wrapper-button" *ngIf="previsualizacion">
-                <button type="button" class="button" [disabled]="loading" (click)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono)">
+                <button type="button" class="button" [disabled]="loading" (click)="uploadStore(nombre_tienda, instagram, twitter, facebook, telefono, descripcion)">
                {{(loading) ? 'Cargando.....' : 'uploadStore'}}
               </button>
             </div>

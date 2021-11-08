@@ -7,4 +7,5 @@ export interface Store{
   facebook: string;
   twitter: string;
   numero_telefono: string;
+  descripcion: string;
 }
