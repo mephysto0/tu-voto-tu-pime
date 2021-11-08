@@ -61,17 +61,13 @@
                     </div>
                     <!--  para mostrar productos -->
                     <div class="row">
-                        <div class="col-md-4 p-4" *ngFor="let product of products" id="card-p">
-                            <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
-                        </div>
+                        <ng-container *ngFor="let product of products">
+                            <div class="col-md-4 p-4" *ngIf="product.tienda === store.nombre_tienda" id="card-p">
+                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                            </div>
+                        </ng-container>
                     </div>
-
-
                 </div>
-
             </div>
-
-
-
             <!--  Banner derecha  -->
         </div>

@@ -24,6 +24,7 @@ import { AuthGuard } from './auth.guard';
 import { TokenInterceptorService } from './services/token-interceptor/token-interceptor.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormTiendaComponent } from './component/formCrearTienda/form-tienda/form-tienda.component';
+import { TiendaCardComponent } from './component/tienda-card/tienda-card.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { FormTiendaComponent } from './component/formCrearTienda/form-tienda/for
     VistaProductoComponent,
     PrivateComponent,
     FormTiendaComponent,
+    TiendaCardComponent,
 
   ],
   imports: [
