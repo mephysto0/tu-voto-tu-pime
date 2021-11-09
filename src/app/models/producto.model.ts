@@ -1,3 +1,5 @@
+import { NumberSymbol } from "@angular/common";
+
 export interface Product{
   _id: string;
   nombre:string;
@@ -6,4 +8,5 @@ export interface Product{
   categoria:string;
   comentario:string;
   precio: string;
+  likes : number;
 }

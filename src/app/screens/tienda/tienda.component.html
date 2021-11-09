@@ -63,7 +63,7 @@
                     <div class="row">
                         <ng-container *ngFor="let product of products">
                             <div class="col-md-4 p-4" *ngIf="product.tienda === store.nombre_tienda" id="card-p">
-                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                                <app-tienda-card [producto]='product'></app-tienda-card>
                             </div>
                         </ng-container>
                     </div>

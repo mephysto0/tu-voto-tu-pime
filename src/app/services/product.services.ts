@@ -13,7 +13,14 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  createProduct(nombre: string, tienda: string, image: File, categoria: string, comentario: string, precio: string) {
+  createProduct(
+    nombre: string,
+    tienda: string,
+    image: File,
+    categoria: string,
+    comentario: string,
+    precio: string)
+  {
     const fd = new FormData();
     fd.append('nombre', nombre);
     fd.append('tienda', tienda);
@@ -36,7 +43,14 @@ export class ProductService {
     return this.http.delete(`${this.URI}/${id}`);
   }
 
-  updateProduct(id: string, nombre: string, tienda: string, categoria: string, comentario: string, precio: string) {
+  updateProduct(
+    id: string,
+    nombre: string,
+    tienda: string,
+    categoria: string,
+    comentario: string,
+    precio: string)
+  {
     return this.http.put(`${this.URI}/${id}`, {nombre, tienda, categoria, comentario ,precio });
   }
 }
