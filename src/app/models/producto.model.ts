@@ -6,4 +6,5 @@ export interface Product{
   categoria:string;
   comentario:string;
   precio: string;
+  likes: number;
 }
