@@ -2,11 +2,18 @@
     <h5 class="card-header text-center">{{producto.categoria}}</h5>
     <img [src]="'http://localhost:4000/' + producto.imagePath" class="card-img-top rounded-start img-thumbnail mx-auto" alt="...">
     <div class="card-body">
-        <button class="btn">
-            <a class="fas fa-heart"> {{producto.likes}}</a>
-            <h5></h5>
-        </button>
 
+        <div class="row">
+            <div class="col-2 ">
+                <button type="button" class="btn btn-sm btn-danger">
+                   <i class="bi bi-suit-heart"></i>
+                </button>
+            </div>
+            <div class="col-8 text-start">
+                <h4>{{producto.likes}} Votos</h4>
+            </div>
+        </div>
+        <hr>
         <h3 class="card-title">{{producto.nombre}}</h3>
         <h5 class="card-subtitle">{{producto.tienda}}</h5>
         <p class="card-text">{{producto.comentario}}</p>
