@@ -7,13 +7,24 @@ import { Product} from '../../models/producto.model';
   styleUrls: ['./producto-tarjeta.component.css']
 })
 export class ProductoTarjetaComponent implements OnInit {
+ votos = 0 ;
+
 
   @Input()
   public producto!: Product;
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit(): void {
   }
+
+  like(voto: number){
+    voto = voto ++
+    console.log(voto)
+    return voto;
+  }
+
 
 }
