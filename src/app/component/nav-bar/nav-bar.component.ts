@@ -17,7 +17,7 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     const aux = this.localstorage.get('usuario');
-    console.log(aux.user);
+
     this.aux2 = aux.user;
   }
 

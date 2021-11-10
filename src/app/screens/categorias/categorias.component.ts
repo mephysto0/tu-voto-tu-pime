@@ -12,6 +12,7 @@ export class CategoriasComponent implements OnInit {
   public productos : Product[] | undefined;
 
   products: Product[] = [];
+  sort: Product[] = [];
 
   public bebe : string | undefined;
   public PeryCos : string | undefined;
@@ -35,8 +36,13 @@ export class CategoriasComponent implements OnInit {
       .subscribe(
         res => {
           this.products = res;
+          this.sort =  res.sort((a,b)=>(a.likes > b.likes ? -1:1))
         },
         err => console.log(err)
       )
+
+
   }
+
+
 }

@@ -23,7 +23,7 @@ export class ProductoTarjetaComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    console.log(this.producto._id)
+
   }
 
 

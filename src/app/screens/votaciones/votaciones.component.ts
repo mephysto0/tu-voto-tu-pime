@@ -11,6 +11,13 @@ export class VotacionesComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+
+
+    var arr = new Array("orange", "mango", "banana", "sugar");
+    var sorted = arr.sort();
+    console.log("Returned string is : " + sorted );
   }
+
+
 
 }
