@@ -5,6 +5,7 @@ import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { StoreService } from 'src/app/services/store/store.service';
 import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
+import { AuthService } from 'src/app/services/auth/auth.services';
 
 @Component({
   selector: 'app-private',
@@ -27,7 +28,8 @@ export class PrivateComponent implements OnInit {
     private router: Router,
     private sanitizer: DomSanitizer,
     private storeservice: StoreService,
-    private localstorage : LocalStorageService
+    private localstorage : LocalStorageService,
+    public authService: AuthService,
   ) {  }
 
   ngOnInit(): void {

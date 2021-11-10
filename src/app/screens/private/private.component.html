@@ -42,21 +42,20 @@
                                             <label>{{ user.email }}</label>
                                         </div>
 
-                                        <hr />
+
                                     </div>
+                                    <hr />
                                     <div class="row">
                                         <div class="col-10">
                                             <h5>contraseña</h5>
-
-                                            <p class="text" type="password">{{user.password}}</p>
+                                            <input rows="2" type="password" class="form-control" [value]="user.password" disabled />
                                         </div>
-
                                     </div>
-                                    <div class="row">
+                                    <hr>
+                                    <div class="row mt-3">
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
                                         Editar Perfil
                                       </button>
-
                                     </div>
                                 </div>
                             </div>
@@ -65,6 +64,7 @@
                         <!-- Modal -->
 
                         <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <!--modal 1-->
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content ">
                                     <div class="modal-header">
@@ -124,6 +124,7 @@
                             </div>
                         </div>
                         <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                            <!--modal 2-->
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -132,24 +133,18 @@
                                     </div>
                                     <div class="modal-body">
                                         <h3>Esta seguro de eliminar el usuario?</h3>
-
                                     </div>
                                     <div class="modal-footer">
-                                        <button class="btn btn-danger" (click)="deleteUser(user._id)">Eliminar usuario</button>
+                                        <button class="btn btn-danger" (click)="deleteUser(user._id)" (click)="authService.logout()">Eliminar usuario</button>
                                         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Volver</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-
-
                         <!--agregar productos-->
                         <div class="col-sm-3">
-
                             <form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, numero_telefono, descripcion)">
                                 <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda de private</button>
-
                                 <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                                     <div class="offcanvas-header mt-4">
                                         <h4 id="offcanvasRightLabel">Datos tienda</h4>
@@ -186,7 +181,6 @@
                                             <span class="input-group-text"> descripcion</span>
                                             <input type="text" class="form-control" id="descripcion" placeholder="descripcion" #descripcion required>
                                         </div>
-
                                         <hr>
                                         <h4>Subir imagen</h4>
                                         <input class="input-file" (change)="capturarFile($event)" type="file">
@@ -194,7 +188,6 @@
                                             <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
                                             <img [src]="previsualizacion" alt="">
                                         </div>
-
                                         <div class="p-1">
                                             <small>Se aceptan archivos imágenes de tipo .png</small>
                                         </div>
@@ -203,22 +196,15 @@
                                          {{(loading) ? 'Cargando.....' : 'uploadStore'}}
                                         </button>
                                         </div>
-
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
-
             <div class="row">
-
             </div>
-
         </div>
-
-
     </ng-template>
 </div>
