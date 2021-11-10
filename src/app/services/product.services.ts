@@ -10,6 +10,7 @@ import {Product} from '../models/producto.model'
 export class ProductService {
 
   URI = 'http://localhost:4000/tienda/newpr';
+  URI2 = 'http://localhost:4000/tienda/newpr';
 
   constructor(private http: HttpClient) { }
 
@@ -37,6 +38,10 @@ export class ProductService {
 
   getProduct(id: string) {
     return this.http.get<Product>(`${this.URI}/${id}`);
+  }
+
+  likeProduct(id: string) {
+    return this.http.post(this.URI2, id);
   }
 
   deleteProduct(id: string) {

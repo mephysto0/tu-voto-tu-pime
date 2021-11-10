@@ -28,8 +28,10 @@ export class VistaProductoComponent implements OnInit {
             this.product = res;
           },
           err => console.log(err)
-        )
+        ) 
     });
   }
+
+  
 
 }
