@@ -23,8 +23,6 @@ export class ProductoTarjetaComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    //quitar despues
-    //console.log(this.producto._id)
   }
 
 

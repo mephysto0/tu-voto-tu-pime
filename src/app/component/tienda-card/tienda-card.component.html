@@ -3,10 +3,9 @@
     <img [src]="'http://localhost:4000/' + producto.imagePath" class="card-img-top rounded-start img-thumbnail mx-auto" alt="...">
     <div class="card-body">
         <h3 class="card-title">{{producto.nombre}}</h3>
-        <button class="btn">
-          <a class="fas fa-heart"> </a>
 
-      </button>
+        <i class="fas fa-heart"> {{producto.likes}} Votos</i>
+
         <h5 class="card-subtitle">{{producto.tienda}}</h5>
         <p class="card-text">{{producto.comentario}}</p>
         <h5>{{ producto.precio| currency:'CLP' }}</h5>
