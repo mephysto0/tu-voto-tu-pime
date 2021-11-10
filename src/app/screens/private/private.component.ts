@@ -57,8 +57,8 @@ export class PrivateComponent implements OnInit {
       })
   }
 
-  updateUser(nombre: HTMLInputElement, apellido: HTMLInputElement,rut: HTMLInputElement,razon_social: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
-    this.usuarioservice.updateUser(this.user._id, nombre.value, apellido.value, rut.value, razon_social.value, email.value,password.value)
+  updateUser(nombre: HTMLInputElement, apellido: HTMLInputElement,rut: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
+    this.usuarioservice.updateUser(this.user._id, nombre.value, apellido.value, rut.value, email.value,password.value)
       .subscribe(res => {
         console.log(res);
         //ruta a la cual redigira al editar
