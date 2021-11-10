@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http'
 
 import {Product} from '../models/producto.model'
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,7 @@ import {Product} from '../models/producto.model'
 export class ProductService {
 
   URI = 'http://localhost:4000/tienda/newpr';
-  URI2 = 'http://localhost:4000/tienda/newpr';
+  URI2 = 'http://localhost:4000/tienda/producto';
 
   constructor(private http: HttpClient) { }
 
@@ -32,6 +33,10 @@ export class ProductService {
     return this.http.post(this.URI, fd);
   }
 
+  likeProduct(id: string) {
+    return this.http.post<any>(`${this.URI2}/${id}`,id);
+  }
+
   getProducts() {
     return this.http.get<Product[]>(this.URI);
   }
@@ -40,9 +45,7 @@ export class ProductService {
     return this.http.get<Product>(`${this.URI}/${id}`);
   }
 
-  likeProduct(id: string) {
-    return this.http.post(this.URI2, id);
-  }
+ 
 
   deleteProduct(id: string) {
     return this.http.delete(`${this.URI}/${id}`);

@@ -18,6 +18,7 @@ export class PrincipalComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
+
     ){}
 
   ngOnInit(): void {

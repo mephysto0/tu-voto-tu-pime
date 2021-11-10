@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.services';
 
 @Component({
   selector: 'app-votaciones',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VotacionesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
   }

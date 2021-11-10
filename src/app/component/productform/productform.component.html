@@ -41,7 +41,7 @@
                 <h3>Subir imagen</h3>
                 <input class="input-file" (change)="capturarFile($event)" type="file">
                 <div class="preview-img" *ngIf="previsualizacion">
-                    <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
+                    <button class="btn btn-danger" type="button" (click)="clearImage()">Limpiar imagen</button>
                     <img [src]="previsualizacion" alt="">
                 </div>
 
@@ -49,10 +49,14 @@
                     <small>Se aceptan archivos imágenes de tipo .png</small>
                 </div>
                 <div class="wrapper-button" *ngIf="previsualizacion">
-                    <button type="button" class="button" [disabled]="loading" (click)="uploadProduct(nombre, tienda,categoria,comentario,precio)">
-            {{(loading) ? 'Cargando.....' : 'uploadProduct'}}
+                    <button type="button" class="btn btn-primary" [disabled]="loading" (click)="uploadProduct(nombre, tienda,categoria,comentario,precio)" [routerLink]="['/tienda',aux2]">
+            {{(loading) ? 'Cargando.....' : 'Guardar producto'}}
           </button>
                 </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-danger " [routerLink]="['/tienda',aux2]">Cancelar</button>
+                </div>
+
             </form>
         </div>
     </div>

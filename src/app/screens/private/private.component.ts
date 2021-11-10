@@ -4,6 +4,7 @@ import { UserStore } from 'src/app/models/UserStore.model';
 import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { StoreService } from 'src/app/services/store/store.service';
+import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
 
 @Component({
   selector: 'app-private',
@@ -18,15 +19,21 @@ export class PrivateComponent implements OnInit {
   public archivos: any = [];
   public loading: boolean | undefined
 
+  aux2 : string | undefined;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private usuarioservice: UsuarioService,
     private router: Router,
     private sanitizer: DomSanitizer,
     private storeservice: StoreService,
+    private localstorage : LocalStorageService
   ) {  }
 
   ngOnInit(): void {
+    const aux = this.localstorage.get('usuario');
+
+    this.aux2 = aux.user;
     //this.emial = this.activatedRoute.snapshot.params.id,
     //console.log(this.emial)
     this.activatedRoute.params.subscribe(params => {
@@ -60,6 +67,9 @@ export class PrivateComponent implements OnInit {
     return false;
   }
 
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 
 
 
