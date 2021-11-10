@@ -15,6 +15,7 @@ export class ProductoComponent implements OnInit {
 
   id: string | any;
   product: Product | any;
+  aux2 : string | undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -25,7 +26,10 @@ export class ProductoComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.localstorage.get('usuario'));
+
+
+    const aux = this.localstorage.get('usuario');
+    this.aux2 = aux.user;
 
 
     this.activatedRoute.params.subscribe(params => {

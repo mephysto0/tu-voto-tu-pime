@@ -54,8 +54,8 @@
 
                                     </div>
                                     <div class="row">
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        editar Perfil
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+                                        Editar Perfil
                                       </button>
 
                                     </div>
@@ -64,27 +64,27 @@
                         </div>
 
                         <!-- Modal -->
-                        <div class="modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content">
+
+                        <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content ">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <h5 class="modal-title" id="exampleModalToggleLabel">Editar Perfil</h5>
+
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card border-dark">
                                                     <form class="card-body" (submit)="
-                                          updateUser(
-                                            nombre,
-                                            apellido,
-                                            rut,
-                                            razon_social,
-                                            email,
-                                            password
-                                          )
-                                        ">
+                                      updateUser(
+                                        nombre,
+                                        apellido,
+                                        rut,
+                                        email,
+                                        password
+                                      )
+                                    ">
                                                         <div class="form-group">
                                                             <h6 class="text">Nombre</h6>
                                                             <input type="text" class="form-control" placeholder="Nombre producto" [value]="user.nombre" #nombre />
@@ -100,11 +100,6 @@
                                                         </div>
 
                                                         <div class="form-group">
-                                                            <h6 class="text mt-2">Razon social (eliminar)</h6>
-                                                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.razon_social" #razon_social />
-                                                        </div>
-
-                                                        <div class="form-group">
                                                             <h6 class="text mt-2">Correo</h6>
                                                             <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.email" #email />
                                                         </div>
@@ -116,9 +111,7 @@
 
                                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
                                                             <button class="btn btn-primary btn-block" (click)="reloadCurrentPage()">Editar</button>
-                                                            <button class="btn btn-danger" (click)="deleteUser(user._id)">
-                                            Eliminar usuario
-                                          </button>
+
                                                         </div>
                                                     </form>
                                                 </div>
@@ -126,12 +119,31 @@
                                         </div>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Eliminar usuario</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalToggleLabel2">Advertencia</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h3>Esta seguro de eliminar el usuario?</h3>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-danger" (click)="deleteUser(user._id)">Eliminar usuario</button>
+                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Volver</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
 
                         <!--agregar productos-->
                         <div class="col-sm-3">
