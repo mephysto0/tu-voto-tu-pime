@@ -34,7 +34,7 @@ export class ProductService {
   }
 
   likeProduct(id: string) {
-    return this.http.post<any>(`${this.URI}/${id}`,id);
+    return this.http.post<any>(`${this.URI2}/${id}`,id);
   }
 
   getProducts() {
