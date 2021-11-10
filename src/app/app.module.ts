@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormTiendaComponent } from './component/formCrearTienda/form-tienda/form-tienda.component';
 import { TiendaCardComponent } from './component/tienda-card/tienda-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

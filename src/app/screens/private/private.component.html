@@ -5,6 +5,7 @@
     <ng-template #main_content>
         <div class="container-fluid">
             <div class="row">
+                <!--perfil de usuario -->
                 <h3 class="text mt-3">Perfil de usuario</h3>
                 <div class="container">
                     <div class="row">
@@ -16,9 +17,7 @@
                                             <h5>nombre</h5>
                                             <label>{{ user.nombre }}</label>
                                         </div>
-                                        <div class="col-2">
-                                            <a href="">editar</a>
-                                        </div>
+
                                     </div>
                                     <hr />
                                     <div class="row">
@@ -26,9 +25,7 @@
                                             <h5>apellido</h5>
                                             <label>{{ user.apellido }}</label>
                                         </div>
-                                        <div class="col-2">
-                                            <a href="">editar</a>
-                                        </div>
+
                                     </div>
                                     <hr />
                                     <div class="row">
@@ -36,9 +33,7 @@
                                             <h5>rut</h5>
                                             <label>{{ user.rut }}</label>
                                         </div>
-                                        <div class="col-2">
-                                            <a href="">editar</a>
-                                        </div>
+
                                     </div>
                                     <hr />
                                     <div class="row">
@@ -46,9 +41,7 @@
                                             <h5>correo</h5>
                                             <label>{{ user.email }}</label>
                                         </div>
-                                        <div class="col-2">
-                                            <a href="">editar</a>
-                                        </div>
+
                                         <hr />
                                     </div>
                                     <div class="row">
@@ -57,13 +50,89 @@
 
                                             <p class="text" type="password">{{user.password}}</p>
                                         </div>
-                                        <div class="col-2">
-                                            <a href="">editar</a>
-                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        editar Perfil
+                                      </button>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Modal -->
+                        <div class="modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card border-dark">
+                                                    <form class="card-body" (submit)="
+                                          updateUser(
+                                            nombre,
+                                            apellido,
+                                            rut,
+                                            razon_social,
+                                            email,
+                                            password
+                                          )
+                                        ">
+                                                        <div class="form-group">
+                                                            <h6 class="text">Nombre</h6>
+                                                            <input type="text" class="form-control" placeholder="Nombre producto" [value]="user.nombre" #nombre />
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <h6 class="text mt-2">Apellido</h6>
+                                                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.apellido" #apellido />
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <h6 class="text mt-2">rut (hayq ue hacer un validador de rut)</h6>
+                                                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.rut" #rut />
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <h6 class="text mt-2">Razon social (eliminar)</h6>
+                                                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.razon_social" #razon_social />
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <h6 class="text mt-2">Correo</h6>
+                                                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.email" #email />
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <h6 class="text mt-2">Contraseña</h6>
+                                                            <input rows="2" type="password" class="form-control" placeholder="nombre tienda" [value]="user.password" #password />
+                                                        </div>
+
+                                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
+                                                            <button class="btn btn-primary btn-block" (click)="reloadCurrentPage()">Editar</button>
+                                                            <button class="btn btn-danger" (click)="deleteUser(user._id)">
+                                            Eliminar usuario
+                                          </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--agregar productos-->
                         <div class="col-sm-3">
 
                             <form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, numero_telefono, descripcion)">
@@ -138,57 +207,6 @@
 
         </div>
 
-        <div class="row">
-            <div class="col-md-7">
-                <div class="card border-dark">
-                    <form class="card-body" (submit)="
-              updateUser(
-                nombre,
-                apellido,
-                rut,
-                razon_social,
-                email,
-                password
-              )
-            ">
-                        <div class="form-group">
-                            <h6 class="text">Nombre</h6>
-                            <input type="text" class="form-control" placeholder="Nombre producto" [value]="user.nombre" #nombre />
-                        </div>
-                        <div class="form-group">
-                            <h6 class="text mt-2">Apellido</h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.apellido" #apellido />
-                        </div>
 
-                        <div class="form-group">
-                            <h6 class="text mt-2">rut (hayq ue hacer un validador de rut)</h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.rut" #rut />
-                        </div>
-
-                        <div class="form-group">
-                            <h6 class="text mt-2">Razon social (eliminar)</h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.razon_social" #razon_social />
-                        </div>
-
-                        <div class="form-group">
-                            <h6 class="text mt-2">Correo</h6>
-                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.email" #email />
-                        </div>
-
-                        <div class="form-group">
-                            <h6 class="text mt-2">Contraseña</h6>
-                            <input rows="2" type="password" class="form-control" placeholder="nombre tienda" [value]="user.password" #password />
-                        </div>
-
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
-                            <button class="btn btn-primary btn-block">Editar</button>
-                            <button class="btn btn-danger" (click)="deleteUser(user._id)">
-                Eliminar usuario
-              </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </ng-template>
 </div>

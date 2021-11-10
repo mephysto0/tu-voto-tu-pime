@@ -14,6 +14,7 @@ import { PrivateComponent } from './screens/private/private.component';
 import { ProductformComponent } from './component/productform/productform.component';
 import { AuthGuard } from './auth.guard';
 
+
 const routes: Routes = [
   {
     path: '', component: PrincipalComponent

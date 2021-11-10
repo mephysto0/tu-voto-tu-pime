@@ -31,5 +31,10 @@ export class VistaProductoComponent implements OnInit {
         )
     });
   }
+  like(): void{
+    this.productService.likeProduct(this.product._id).subscribe();
+    window.location.reload();
+  }
+
 
 }
