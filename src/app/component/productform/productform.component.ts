@@ -44,8 +44,6 @@ export class ProductformComponent implements OnInit {
     this.aux2 = aux.user;
   }
 
-
-
   capturarFile(event:any): any {
     const archivoCapturado = event.target.files[0]
     this.extraerBase64(archivoCapturado).then((imagen: any) => {
@@ -57,6 +55,8 @@ export class ProductformComponent implements OnInit {
     //
      console.log(event.target.files);
   }
+
+
 
 
 //enviara los datos del formulario
@@ -102,4 +102,8 @@ export class ProductformComponent implements OnInit {
     }
     return $event
   })
+
+  reload(){
+    window.location.reload();
+  }
 }
