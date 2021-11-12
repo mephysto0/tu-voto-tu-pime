@@ -8,4 +8,5 @@ export interface Store{
   twitter: string;
   numero_telefono: string;
   descripcion: string;
+  imageUrl: string;
 }
