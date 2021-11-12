@@ -29,16 +29,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" [(ngModel)]="user.rut" name="rut" class="form-control" placeholder="Rut" id="rut" #rut="ngModel" required autofocus>
-                                <label for="floatingInput">Rut</label>
-                                <div *ngIf="rut.invalid && (rut.dirty || rut.touched)" class="alert">
 
-                                    <div *ngIf="rut.errors?.['required']">
-                                        <p>*El rut es requerido</p>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="form-floating mb-3">
                                 <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" id="email" #email="ngModel" required autofocus>
                                 <label for="floatingInput">Email</label>

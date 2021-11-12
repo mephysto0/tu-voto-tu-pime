@@ -21,11 +21,21 @@ export class NavBarComponent implements OnInit {
     this.aux2 = aux.user;
   }
 
+clear(){
+  console.log('funciona?')
+  this.clearLS();
+  this.reload();
+}
 
 
 clearLS(){
 
-  this.localstorage.clear;
+  this.localstorage.remove('usuario');
+
+}
+
+reload(){
+  window.location.reload();
 }
 
 }

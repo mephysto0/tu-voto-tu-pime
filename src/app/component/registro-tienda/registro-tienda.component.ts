@@ -15,11 +15,8 @@ export class RegistroTiendaComponent implements OnInit {
   user= {
     nombre: '',
     apellido : '',
-    rut: '',
     email: '',
     password: ''
-
-
    }
 
 
