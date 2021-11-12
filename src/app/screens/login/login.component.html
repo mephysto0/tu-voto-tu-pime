@@ -1,32 +1,31 @@
-<div class="global-container ">
-  <div class="card login-form border-dark">
-    <div class="card-header">
-      <h3 class="card-title text-center">Log in</h3>
-    </div>
-    <div class="card-body">
-      <div class="card-text">
-        <!--
-			<div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
-        <form (submit)="logIn()">
-          <!-- to error: add class "has-danger" -->
-          <div class="form-group">
-            <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
-          </div>
-          <div class="form-group mt-3">
+<div class="global-container " id="login">
+    <div class="card login-form ">
+        <div class="card-body">
+            <h1 class="card-title text-center fw-bolder">Log in</h1>
+            <div class="card-text">
+                <form (submit)="logIn()">
+                    <div class="form-group">
+                        <h4 class="fw-bolder">Correo</h4>
+                        <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Correo" required autofocus>
+                    </div>
+                    <div class="form-group mt-3">
+                        <h4 class="fw-bolder">Contraseña</h4>
+                        <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Contraseña" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-block">
+                          <h6 class="text-center fw-bolder mt-1" id="log">Iniciar Sesión</h6>
+                    </button>
+                    </div>
 
-            <a href="#" style="float: right; font-size: 12px">Olvido su Contraseña?</a>
-            <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Contraseña" required>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block"
-         >
-            Iniciar Sesion
-          </button>
-
-          <div class="sign-up">
-            No tienes tu cuenta aun? <a href="registro">Crear cuenta</a>
-          </div>
-        </form>
-      </div>
+                    <div class="sign-up">
+                        <div class="text-center">
+                            No tienes tu cuenta aun?
+                        </div>
+                        <a href="registro">Crear cuenta</a>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

@@ -1,47 +1,81 @@
-html,body {
-	height: 100%;
-  width: 100%;
+html,
+body {
+    height: 100%;
+    width: 100%;
 }
 
-.global-container{
-	height: 600px;
-  width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #f0e4e4;
-  background-image: url(https://www.elrancaguino.cl/wp-content/uploads/2021/06/pyme.jpg) ;
-
+#login {
+    background-image: url(https://res.cloudinary.com/mepifotos/image/upload/v1636757217/respaldo/1_uxlmfe.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
-form{
-	padding-top: 10px;
-	font-size: 14px;
-	margin-top: 30px;
-
+.global-container {
+    height: 550px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0e4e4;
 }
 
-.card-title{ font-weight:400; }
-
-.btn{
-	font-size: 14px;
-	margin-top:20px;
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 430px;
 }
 
-
-.login-form{
-	width:330px;
-	margin:20px;
-
+form {
+    padding-top: 10px;
+    font-size: 14px;
+    margin-top: 30px;
 }
 
-.sign-up{
-	text-align:center;
-	padding:20px 0 0;
+.card-title {
+    font-weight: 400;
 }
 
-.alert{
-	margin-bottom:-30px;
-	font-size: 13px;
-	margin-top:20px;
+#log {
+    color: #f0e4e4;
+}
+
+.btn {
+    font-size: 14px;
+    margin-top: 20px;
+    border-radius: 15px;
+    background: #ed274e;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-form {
+    width: 330px;
+    margin: 20px;
+}
+
+.sign-up {
+    text-align: center;
+    padding: 20px 0 0;
+    margin-bottom: 2px;
+}
+
+.alert {
+    margin-bottom: -30px;
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+.card-title {
+    text-decoration: underline;
+    text-decoration-color: #ed274e;
+}
+
+.ng-invalid:not(form) {
+    border-left: 5px solid #ed274e;
+    /* red */
+}
+
+.ng-valid:not(form),
+.ng-valid.required:not(form) {
+    border-left: 5px solid #42A948;
+    /* green */
 }

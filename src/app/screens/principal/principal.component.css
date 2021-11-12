@@ -1,48 +1,47 @@
-#cont-product{
-  margin-top: 20px;
-  border: 2px solid;
-  width: auto;
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 10px;
-  background-color: rgb(206, 63, 63);
+#cont-product {
+    margin-top: 20px;
+    border: 2px solid;
+    width: auto;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(206, 63, 63);
 }
 
-#card-p{
-  margin-right: 8px;
-  margin-left: 8px;
+#card-p {
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
-#cont-product-vertical{
-  display: flex;
-  align-items: stretch;
-  width: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  overflow-x: scroll;
+#cont-product-vertical {
+    display: flex;
+    align-items: stretch;
+    width: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-x: scroll;
 }
 
-.container-fluid::-webkit-scrollbar-thumb{
-  background: black;
+.container-fluid::-webkit-scrollbar-thumb {
+    background: black;
 }
 
-#carouselExampleControls{
-  margin: auto;
-  width: 80%;
+#carouselExampleControls.img {
+    width: 600px;
+    height: 1200px;
 }
 
-.fas{
-  font-size: 6em;
-  margin: auto;
-  color: rgb(0, 0, 0);
+.fas {
+    font-size: 6em;
+    margin: auto;
+    color: rgb(0, 0, 0);
 }
 
-#cat{
-  margin: auto;
-
+#cat {
+    margin: auto;
 }
 
-#car-cat{
-  margin-top: 20px;
-  margin-bottom: 30px;
+#car-cat {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
