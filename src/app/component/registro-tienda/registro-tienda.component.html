@@ -7,28 +7,61 @@
                     <hr>
                     <form>
                         <form class="form-floating mt-3" (submit)="registrarse()">
+
                             <div class="form-floating mb-3">
-                                <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control" placeholder="Nombre" required autofocus>
+                                <input type="text" [(ngModel)]="user.nombre" name="nombre" class="form-control" id="nombre" placeholder="Nombre" #nombre="ngModel" required autofocus>
                                 <label for="floatingInput">Nombre</label>
+                                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="alert">
+
+                                    <div *ngIf="nombre.errors?.['required']">
+                                        <p>*El nombre es requerido</p>
+                                    </div>
+                                </div>
                             </div>
+
                             <div class="form-floating mb-3">
-                                <input type="text" [(ngModel)]="user.apellido" name="apellido" class="form-control" placeholder="Apellido" required autofocus>
+                                <input type="text" [(ngModel)]="user.apellido" name="apellido" class="form-control" id="apellido" placeholder="Apellido" #apellido="ngModel" required autofocus>
                                 <label for="floatingInput">Apellido</label>
+                                <div *ngIf="apellido.invalid && (apellido.dirty || apellido.touched)" class="alert">
+
+                                    <div *ngIf="apellido.errors?.['required']">
+                                        <p>*El apellido es requerido</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="text" [(ngModel)]="user.rut" name="rut" class="form-control" placeholder="Rut" required autofocus>
+                                <input type="text" [(ngModel)]="user.rut" name="rut" class="form-control" placeholder="Rut" id="rut" #rut="ngModel" required autofocus>
                                 <label for="floatingInput">Rut</label>
-                            </div>
-                            
+                                <div *ngIf="rut.invalid && (rut.dirty || rut.touched)" class="alert">
 
+                                    <div *ngIf="rut.errors?.['required']">
+                                        <p>*El rut es requerido</p>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-floating mb-3">
-                                <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" required autofocus>
+                                <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Email" id="email" #email="ngModel" required autofocus>
                                 <label for="floatingInput">Email</label>
+                                <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+
+                                    <div *ngIf="email.errors?.['required']">
+                                        <p>*El email es requerido</p>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="form-floating mb-3">
-                                <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Password" required>
+                                <input type="password" [(ngModel)]="user.password" name="password" class="form-control" id="pass" minlength="8" placeholder="Password" #pass="ngModel" required>
                                 <label for="floatingInput">Contraseña</label>
+                                <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert">
+
+                                    <div *ngIf="pass.errors?.['required']">
+                                        <p>*La Contraseña es requerido</p>
+                                    </div>
+                                    <div *ngIf="pass.errors?.['minlength']">
+                                        <p>*Necesita un minimo de 8 caracteres</p>
+                                    </div>
+                                </div>
                             </div>
 
                             <button class="btn btn-primary btn-block">

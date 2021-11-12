@@ -25,6 +25,10 @@ import { TokenInterceptorService } from './services/token-interceptor/token-inte
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormTiendaComponent } from './component/formCrearTienda/form-tienda/form-tienda.component';
 import { TiendaCardComponent } from './component/tienda-card/tienda-card.component';
+import { FormUserComponent } from './component/form-user/form-user.component';
+
+
+
 
 
 @NgModule({
@@ -47,6 +51,7 @@ import { TiendaCardComponent } from './component/tienda-card/tienda-card.compone
     PrivateComponent,
     FormTiendaComponent,
     TiendaCardComponent,
+    FormUserComponent,
 
   ],
   imports: [
@@ -54,7 +59,11 @@ import { TiendaCardComponent } from './component/tienda-card/tienda-card.compone
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
+
+
   ],
   providers: [
     AuthGuard,{
