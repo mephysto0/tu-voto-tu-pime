@@ -20,9 +20,7 @@ const routes: Routes = [
   {
     path: '', component: PrincipalComponent
   },
-  {
-    path: 'registro', component: RegistroComponent
-  },
+
   {
     path: 'login', component: LoginComponent
   },
@@ -55,7 +53,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'prueba', component:  FormUserComponent
+    path: 'registro', component:  FormUserComponent
   },
 
 
