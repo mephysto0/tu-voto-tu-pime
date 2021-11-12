@@ -26,6 +26,7 @@ export class LocalStorageService {
   remove(key : string) : void{
     try {
       localStorage.removeItem(key);
+      console.log('se elimino')
     } catch (e) {
       console.error('error removing key',e);
     }
@@ -34,6 +35,7 @@ export class LocalStorageService {
   clear(): void{
     try {
       localStorage.clear();
+      console.log('se limpio')
     } catch (e) {
       console.error('error cleaning localstore',e);
     }

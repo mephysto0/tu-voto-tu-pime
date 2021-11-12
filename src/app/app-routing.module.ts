@@ -13,6 +13,7 @@ import { PrivateComponent } from './screens/private/private.component';
 
 import { ProductformComponent } from './component/productform/productform.component';
 import { AuthGuard } from './auth.guard';
+import { FormUserComponent } from './component/form-user/form-user.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,10 @@ const routes: Routes = [
     path: 'perfil-user/:id', component: PerfilTiendaComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'prueba', component:  FormUserComponent
+  },
+
 
 ];
 

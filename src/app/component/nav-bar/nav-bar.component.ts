@@ -23,4 +23,9 @@ export class NavBarComponent implements OnInit {
 
 
 
+clearLS(){
+
+  this.localstorage.clear;
+}
+
 }

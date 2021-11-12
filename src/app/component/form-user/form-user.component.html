@@ -1,0 +1,72 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h4>Registro Usuario</h4>
+                    <hr>
+                    <!--formulario-->
+                    <form class="form-floating mt-3" [formGroup]="form" (ngSubmit)="save($event);registrarse()">
+                        <!--campo nombre-->
+                        <div class="form-floating mb-3">
+                            <input type="text" formControlName="nombre" class="form-control" id="nombre" placeholder="Nombre">
+                            <label for="floatingInput">Nombre</label>
+                        </div>
+                        <!--validadores-->
+                        <div *ngIf="nombreField.errors && nombreField.touched">
+                            <p *ngIf="nombreField.hasError('required')">
+                                Es un campo requerido
+                            </p>
+                        </div>
+                        <!--campo apellido-->
+                        <div class="form-floating mb-3">
+                            <input type="text" formControlName="apellido" class="form-control" id="apellido" placeholder="Apellido">
+                            <label for="floatingInput">Apellido</label>
+                        </div>
+                        <!--validadores-->
+                        <div *ngIf="apellidoField.errors && apellidoField.touched">
+                            <p *ngIf="apellidoField.hasError('required')">
+                                Es un campo requerido
+                            </p>
+                        </div>
+                        <!--campo rut-->
+
+
+                        <!--campo email-->
+                        <div class="form-floating mb-3">
+                            <input type="text" formControlName="email" class="form-control" id="email" placeholder="Email">
+                            <label for="floatingInput">Email</label>
+                        </div>
+                        <!--validadores-->
+                        <div *ngIf="emailField.errors && emailField.touched">
+                            <p *ngIf="emailField.hasError('required')">
+                                Es un campo requerido
+                            </p>
+                            <p *ngIf="emailField.hasError('email')">
+                                no es un email
+                            </p>
+                        </div>
+                        <!--campo contraseña-->
+                        <div class="form-floating mb-3">
+                            <input type="password" formControlName="password" class="form-control" id="password" placeholder="Contraseña">
+                            <label for="floatingInput">Contraseña</label>
+                        </div>
+                        <!--validadores-->
+                        <div *ngIf="passwordField.errors && passwordField.touched">
+                            <p *ngIf="passwordField.hasError('required')">
+                                Es un campo requerido
+                            </p>
+                            <p *ngIf="passwordField.hasError('minlength')">
+                                necesitas un minimo de 8 caracteres
+                            </p>
+                        </div>
+
+                        <button class="btn btn-primary btn-block" type="submit">
+                          registrarse
+                      </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

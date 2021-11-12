@@ -9,6 +9,9 @@ import { AuthService } from 'src/app/services/auth/auth.services';
   styleUrls: ['./registro-tienda.component.css']
 })
 export class RegistroTiendaComponent implements OnInit {
+
+
+
   user= {
     nombre: '',
     apellido : '',
@@ -23,7 +26,10 @@ export class RegistroTiendaComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router
-  ) { }
+  )
+   {
+
+   }
 
   ngOnInit(): void {
   }
@@ -38,5 +44,7 @@ export class RegistroTiendaComponent implements OnInit {
         err => console.log(err)
       )
   }
+
+
 
 }
