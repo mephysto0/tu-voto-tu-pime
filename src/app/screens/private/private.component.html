@@ -31,14 +31,6 @@
                                     <hr />
                                     <div class="row">
                                         <div class="col-10">
-                                            <h5>rut</h5>
-                                            <label>{{ user.rut }}</label>
-                                        </div>
-
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-10">
                                             <h5>correo</h5>
                                             <label>{{ user.email }}</label>
                                         </div>
@@ -80,8 +72,7 @@
                                       updateUser(
                                         nombre,
                                         apellido,
-                                        rut,
-                                        email,
+                                                                             email,
                                         password
                                       )
                                     ">
@@ -94,10 +85,6 @@
                                                             <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.apellido" #apellido />
                                                         </div>
 
-                                                        <div class="form-group">
-                                                            <h6 class="text mt-2">rut (hayq ue hacer un validador de rut)</h6>
-                                                            <input rows="2" class="form-control" placeholder="nombre tienda" [value]="user.rut" #rut />
-                                                        </div>
 
                                                         <div class="form-group">
                                                             <h6 class="text mt-2">Correo</h6>
@@ -136,7 +123,7 @@
                                         <h3>Esta seguro de eliminar el usuario?</h3>
                                     </div>
                                     <div class="modal-footer">
-                                        <button class="btn btn-danger" (click)="deleteUser(user._id)" (click)="authService.logout()">Eliminar usuario</button>
+                                        <button class="btn btn-danger" (click)="eliminarUser(user._id)">Eliminar usuario</button>
                                         <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Volver</button>
                                     </div>
                                 </div>

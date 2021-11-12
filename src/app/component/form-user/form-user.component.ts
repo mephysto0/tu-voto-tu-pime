@@ -52,7 +52,7 @@ export class FormUserComponent implements OnInit {
       .subscribe(
         res => {
           console.log(res);
-          localStorage.setItem('token', res.token);
+
           this.router.navigate(['/login']);
         },
         err => console.log(err)

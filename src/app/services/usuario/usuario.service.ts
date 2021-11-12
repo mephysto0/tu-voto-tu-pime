@@ -19,7 +19,7 @@ export class UsuarioService {
     return this.http.delete(`${this.URI}/${id}`);
   }
 
-  updateUser(id: string, nombre: string, apellido: string, rut: string, email: string, password : string) {
-    return this.http.put(`${this.URI}/${id}`, {nombre, apellido,rut,email,password });
+  updateUser(id: string, nombre: string, apellido: string,  email: string, password : string) {
+    return this.http.put(`${this.URI}/${id}`, {nombre, apellido,password });
   }
 }

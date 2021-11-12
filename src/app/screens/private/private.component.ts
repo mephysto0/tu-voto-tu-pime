@@ -36,8 +36,7 @@ export class PrivateComponent implements OnInit {
     const aux = this.localstorage.get('usuario');
 
     this.aux2 = aux.user;
-    //this.emial = this.activatedRoute.snapshot.params.id,
-    //console.log(this.emial)
+
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
       this.usuarioservice.getUser(this.id)
@@ -50,17 +49,23 @@ export class PrivateComponent implements OnInit {
     });
   }
 
+  eliminarUser(id : string){
+    this.deleteUser(id)
+    this.authService.logout()
+    this.reloadCurrentPage();
+  }
+
   deleteUser(id: string) {
     this.usuarioservice.deleteUser(id)
       .subscribe(res => {
         console.log(res)
         //ruta a la cual redigira al borrar
-        this.router.navigate(['/tienda']);
+
       })
   }
 
-  updateUser(nombre: HTMLInputElement, apellido: HTMLInputElement,rut: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
-    this.usuarioservice.updateUser(this.user._id, nombre.value, apellido.value, rut.value, email.value,password.value)
+  updateUser(nombre: HTMLInputElement, apellido: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
+    this.usuarioservice.updateUser(this.user._id, nombre.value, apellido.value,email.value,password.value)
       .subscribe(res => {
         console.log(res);
         //ruta a la cual redigira al editar
