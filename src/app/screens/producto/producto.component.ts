@@ -51,7 +51,7 @@ export class ProductoComponent implements OnInit {
       .subscribe(res => {
         console.log(res)
         //ruta a la cual redigira al borrar
-        this.router.navigate(['/tienda']);
+        this.router.navigate(['/tienda',this.aux2]);
       })
   }
 
