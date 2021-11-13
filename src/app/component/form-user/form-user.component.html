@@ -6,7 +6,7 @@
                     <h4>Registro Usuario</h4>
                     <hr>
                     <!--formulario-->
-                    <form class="form-floating mt-3" [formGroup]="form" (ngSubmit)="save($event);registrarse()">
+                    <form class="form-floating mt-3" [formGroup]="form" (ngSubmit)="save($event)">
                         <!--campo nombre-->
                         <div class="form-floating mb-3">
                             <input type="text" formControlName="nombre" class="form-control" id="nombre" placeholder="Nombre">

@@ -3,15 +3,34 @@
         <div class="card-body">
             <h1 class="card-title text-center fw-bolder">Log in</h1>
             <div class="card-text">
-                <form (submit)="logIn()">
+                <form [formGroup]="form" (ngSubmit)="save($event)">
+                    {{error}}
+                    <!--campo email-->
                     <div class="form-group">
                         <h4 class="fw-bolder">Correo</h4>
-                        <input type="text" [(ngModel)]="user.email" name="email" class="form-control" placeholder="Correo" required autofocus>
+                        <input type="text" formControlName="email" name="email" class="form-control" placeholder="Correo" required autofocus>
                     </div>
+                    <!--validadores email-->
+                    <div *ngIf="emailField.errors && emailField.touched">
+                        <p class="text-center" *ngIf="emailField.hasError('required')">
+                            Es un campo requerido
+                        </p>
+                        <p class="text-center" *ngIf="emailField.hasError('email')">
+                            No es un email
+                        </p>
+                    </div>
+                    <!--campo contraseña-->
                     <div class="form-group mt-3">
                         <h4 class="fw-bolder">Contraseña</h4>
-                        <input type="password" [(ngModel)]="user.password" name="password" class="form-control" placeholder="Contraseña" required>
+                        <input type="password" formControlName="password" name="password" class="form-control" placeholder="Contraseña" required>
                     </div>
+                    <!--validadores-->
+                    <div *ngIf="passwordField.errors && passwordField.touched">
+                        <p class="text-center" *ngIf="passwordField.hasError('required')">
+                            Es un campo requerido
+                        </p>
+                    </div>
+
                     <div class="d-grid">
                         <button type="submit" class="btn btn-block">
                           <h6 class="text-center fw-bolder mt-1" id="log">Iniciar Sesión</h6>

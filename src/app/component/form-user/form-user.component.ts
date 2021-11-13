@@ -36,12 +36,15 @@ export class FormUserComponent implements OnInit {
 
   }
 
-
+  //este valida los campos que sean correctos y que esten todos llenos
+  //este se llama en el ngsummit del html
   save(event: Event) {
     event.preventDefault();
     if (this.form.valid) {
       const value = this.form.value;
       console.log(value);
+    //este envia los datos del formulario
+      this.registrarse()
     } else {
       this.form.markAllAsTouched();
     }
