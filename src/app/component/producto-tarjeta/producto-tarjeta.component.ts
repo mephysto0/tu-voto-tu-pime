@@ -42,7 +42,8 @@ export class ProductoTarjetaComponent implements OnInit {
 		this.producto.likes += (this.isActive) ? -1 : 1;
 		this.isActive = !this.isActive;
     this.productService.likeProduct(this.producto._id).subscribe();
-    this.productService.isliked(this.producto._id).subscribe();
+    this.productService.isliked(this.producto._id);
+    
 	}
 
 }
