@@ -28,8 +28,8 @@ export class FormUserComponent implements OnInit {
   private buildForm() {
 
     this.form = this.formBuilder.group({
-      nombre: ['',  [Validators.required]],
-      apellido: ['', [Validators.required]],
+      nombre: ['',  [Validators.required,Validators.pattern(/^[a-zA-Z ]+$/)]],
+      apellido: ['', [Validators.required,Validators.pattern(/^[a-zA-Z ]+$/)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required,  Validators.minLength(8)]],
     });

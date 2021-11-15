@@ -15,10 +15,10 @@
                     <!--validadores email-->
                     <div *ngIf="emailField.errors && emailField.touched">
                         <p class="text-center" *ngIf="emailField.hasError('required')">
-                            Es un campo requerido
+                            * Es un campo requerido *
                         </p>
                         <p class="text-center" *ngIf="emailField.hasError('email')">
-                            No es un email
+                            * No es un email valido *
                         </p>
                     </div>
                     <!--campo contraseña-->
@@ -29,7 +29,7 @@
                     <!--validadores-->
                     <div *ngIf="passwordField.errors && passwordField.touched">
                         <p class="text-center" *ngIf="passwordField.hasError('required')">
-                            Es un campo requerido
+                            * Es un campo requerido *
                         </p>
                     </div>
 
@@ -41,7 +41,7 @@
 
                     <div class="sign-up">
                         <div class="text-center">
-                            No tienes tu cuenta aun?
+                            ¿No tienes tu cuenta aun?
                         </div>
                         <a href="registro">Crear cuenta</a>
                     </div>

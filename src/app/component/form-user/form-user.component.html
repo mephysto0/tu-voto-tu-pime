@@ -1,15 +1,15 @@
-<div class="container mt-5">
+<div class="container">
     <div class="row">
         <div class="col-6">
-
+            <img src="https://res.cloudinary.com/mepifotos/image/upload/v1637005396/respaldo/22_mq7exn.png" alt="">
         </div>
-        <div class="col-lg-6 ">
+        <div class="col-lg-6 mt-4 ">
 
-            <div class="card-body text-center">
-                <h4>Registro Usuario</h4>
-                <hr>
+            <div class="card-body text">
+
+                <h2 class="card-title text fw-bolder mb-3">Registro Usuario</h2>
                 <!--formulario-->
-                <form class="form-floating mt-3" [formGroup]="form" (ngSubmit)="save($event)">
+                <form class="form-floating mt-4" [formGroup]="form" (ngSubmit)="save($event)">
                     <!--campo nombre-->
                     <div class="form-floating mb-3">
                         <input type="text" formControlName="nombre" class="form-control" id="nombre" placeholder="Nombre">
@@ -18,7 +18,10 @@
                     <!--validadores-->
                     <div *ngIf="nombreField.errors && nombreField.touched">
                         <p *ngIf="nombreField.hasError('required')">
-                            Es un campo requerido
+                            * Es un campo requerido *
+                        </p>
+                        <p *ngIf="nombreField.hasError('pattern')">
+                            * El campo debe contener solo letras *
                         </p>
                     </div>
                     <!--campo apellido-->
@@ -29,7 +32,10 @@
                     <!--validadores-->
                     <div *ngIf="apellidoField.errors && apellidoField.touched">
                         <p *ngIf="apellidoField.hasError('required')">
-                            Es un campo requerido
+                            * Es un campo requerido *
+                        </p>
+                        <p *ngIf="apellidoField.hasError('pattern')">
+                            * El campo debe contener solo letras *
                         </p>
                     </div>
                     <!--campo rut-->
@@ -41,10 +47,10 @@
                     <!--validadores-->
                     <div *ngIf="emailField.errors && emailField.touched">
                         <p *ngIf="emailField.hasError('required')">
-                            Es un campo requerido
+                            * Es un campo requerido *
                         </p>
                         <p *ngIf="emailField.hasError('email')">
-                            no es un email
+                            * No es un email *
                         </p>
                     </div>
                     <!--campo contraseña-->
@@ -55,15 +61,15 @@
                     <!--validadores-->
                     <div *ngIf="passwordField.errors && passwordField.touched">
                         <p *ngIf="passwordField.hasError('required')">
-                            Es un campo requerido
+                            * Es un campo requerido *
                         </p>
                         <p *ngIf="passwordField.hasError('minlength')">
-                            necesitas un minimo de 8 caracteres
+                            * Necesitas un minimo de 8 caracteres *
                         </p>
                     </div>
 
-                    <button class="btn btn-primary btn-block" type="submit">
-                          registrarse
+                    <button class="btn  btn-block col-6 mx-auto" type="submit">
+                      <h6 class="text-center fw-bolder mt-1" id="log">Registrarse</h6>
                       </button>
                 </form>
             </div>
