@@ -30,10 +30,10 @@ export class ProductoTarjetaComponent implements OnInit {
   ngOnInit(): void {
 
 
-    const aux2 = this.productService.isliked(this.productService.getUser());
+    const aux2 = this.productService.getUser();
     this.isActive = aux2;
-    console.log(this.productService.isliked(this.productService.getUser()))
-    console.log(this.productService.getUser())
+    
+    
   }
 
 
@@ -42,6 +42,7 @@ export class ProductoTarjetaComponent implements OnInit {
 		this.producto.likes += (this.isActive) ? -1 : 1;
 		this.isActive = !this.isActive;
     this.productService.likeProduct(this.producto._id).subscribe();
+    this.productService.isliked(this.producto._id).subscribe();
 	}
 
 }
