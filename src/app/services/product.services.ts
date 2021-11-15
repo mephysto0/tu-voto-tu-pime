@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 import {Product} from '../models/producto.model'
+import { LocalStorageService } from './localStorage/local-storage.service';
 
 
 @Injectable({
@@ -13,7 +14,16 @@ export class ProductService {
   URI = 'http://localhost:4000/tienda/newpr';
   URI2 = 'http://localhost:4000/tienda/producto';
 
-  constructor(private http: HttpClient) { }
+
+
+  constructor(
+    private http: HttpClient,
+    private localstorage : LocalStorageService,) { }
+
+  getUser(){
+    const aux = this.localstorage.get('usuario');
+    return aux.user
+  }
 
   createProduct(
     nombre: string,
@@ -34,6 +44,7 @@ export class ProductService {
   }
 
   likeProduct(id: string) {
+    const aux = this.getUser();
     return this.http.post<any>(`${this.URI2}/${id}`,id);
   }
 
@@ -45,7 +56,7 @@ export class ProductService {
     return this.http.get<Product>(`${this.URI}/${id}`);
   }
 
- 
+
 
   deleteProduct(id: string) {
     return this.http.delete(`${this.URI}/${id}`);
