@@ -44,8 +44,8 @@ export class ProductService {
   }
 
   likeProduct(id: string) {
-    const aux = this.getUser();
-    return this.http.post<any>(`${this.URI2}/${id}`,id);
+    const userId = this.getUser();
+    return this.http.post<any>(`${this.URI2}/${id}/${userId}`,id,userId);
   }
 
   getProducts() {

@@ -38,7 +38,7 @@ export class ProductoTarjetaComponent implements OnInit {
 
   like(): void{
     this.productService.likeProduct(this.producto._id).subscribe();
-    window.location.reload();
+    //window.location.reload();
   }
 
 
