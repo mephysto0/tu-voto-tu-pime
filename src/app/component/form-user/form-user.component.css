@@ -33,3 +33,7 @@ img {
     width: auto;
     height: 60%;
 }
+
+.container {
+    height: 500px;
+}
