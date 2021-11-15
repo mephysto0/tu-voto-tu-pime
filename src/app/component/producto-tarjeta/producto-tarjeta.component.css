@@ -1,18 +1,22 @@
-
-img {
-    width: 230px;
-    height: 230px;
-}
-
-.card {
-    margin-right: 20px;
-}
-
-.fas {
-    color: #333;
-    cursor: pointer;
-}
-
-.highlighted {
-    color: deeppink;
-}
+    img {
+        width: 230px;
+        height: 230px;
+    }
+    
+    .card {
+        margin-right: 20px;
+    }
+    
+    .bi {
+        margin-left: 20px;
+        color: rgb(162, 162, 162);
+        cursor: pointer;
+    }
+    
+    .highlighted {
+        color: #ed274e;
+    }
+    
+    #like {
+        font-size: 24px;
+    }

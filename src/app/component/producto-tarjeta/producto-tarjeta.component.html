@@ -3,23 +3,13 @@
     <img [src]="producto.imageUrl" class="card-img-top rounded-start img-thumbnail mx-auto" alt="...">
     <div class="card-body">
 
-        <div class="row">
-            <div class="col-2 ">
-                <button type="button" id="#btn-like" (click)="like()" class="btn btn-sm btn-danger">
-                   <i class="bi bi-suit-heart"></i>
-                </button>
-            </div>
-            <div class="col-8 text-start">
-                <h4>{{producto.likes}} Votos</h4>
-            </div>
 
-        </div>
-        <div class="row">
+        <div class="row" id="like">
             <div class="col-2 ">
-                <span class="bi bi-suit-heart" [class.highlighted]="isActive" (click)="onClick()" aria-hidden="true"></span> &nbsp;
+                <span class="bi bi-suit-heart-fill" [class.highlighted]="isActive" (click)="onClick()" aria-hidden="true"></span> &nbsp;
             </div>
             <div class="col-8 text-start">
-                <span>{{ producto.likes }}</span>
+                <h3>{{producto.likes}} Votos</h3>
             </div>
 
 
