@@ -14,7 +14,7 @@ import { PrivateComponent } from './screens/private/private.component';
 import { ProductformComponent } from './component/productform/productform.component';
 import { AuthGuard } from './auth.guard';
 import { FormUserComponent } from './component/form-user/form-user.component';
-
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -54,6 +54,9 @@ const routes: Routes = [
   },
   {
     path: 'registro', component:  FormUserComponent
+  },
+  {
+    path: '**', component:  PageNotFoundComponent
   },
 
 

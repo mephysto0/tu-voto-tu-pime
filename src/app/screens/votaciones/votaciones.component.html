@@ -1,1 +1,20 @@
 <p>votaciones works!</p>
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title"><strong>{{ movieTitle }}</strong></h3>
+	</div>
+	<div class="panel-body">
+		<p>{{ movieDescription }}</p>
+		<span
+			class="glyphicon glyphicon glyphicon-heart"
+			[class.highlighted]="isActive"
+			(click)="onClick()"
+			aria-hidden="true"></span>
+			&nbsp;
+			<span>{{ likesCount }}</span>
+	</div>
+</div>
+<button class="like__btn">
+    <span id="icon"><i class="far fa-thumbs-up"></i></span>
+    <span id="count">0</span> Like
+ </button>

@@ -26,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormTiendaComponent } from './component/formCrearTienda/form-tienda/form-tienda.component';
 import { TiendaCardComponent } from './component/tienda-card/tienda-card.component';
 import { FormUserComponent } from './component/form-user/form-user.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -52,6 +53,7 @@ import { FormUserComponent } from './component/form-user/form-user.component';
     FormTiendaComponent,
     TiendaCardComponent,
     FormUserComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [

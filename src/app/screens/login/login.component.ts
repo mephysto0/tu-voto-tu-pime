@@ -78,6 +78,7 @@ export class LoginComponent implements OnInit {
           //console.log(data)
           this.router.navigate(['/private', data]);
         },
+        
         err => console.log(err)
       )
   }

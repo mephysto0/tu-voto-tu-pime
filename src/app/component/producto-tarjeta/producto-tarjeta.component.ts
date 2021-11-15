@@ -30,6 +30,7 @@ export class ProductoTarjetaComponent implements OnInit {
     this.productService.likeProduct(this.producto._id).subscribe();
     window.location.reload();
   }
+  
 
 
 

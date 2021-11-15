@@ -1,23 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductService } from 'src/app/services/product.services';
 
 @Component({
-  selector: 'app-votaciones',
+  selector: 'like__btn',
   templateUrl: './votaciones.component.html',
   styleUrls: ['./votaciones.component.css']
 })
-export class VotacionesComponent implements OnInit {
+export class VotacionesComponent {
+  @Input() movieTitle: string | undefined;
+	@Input() movieDescription: string | undefined;
+	@Input() likesCount: number | any;
+	@Input() isActive: boolean | undefined;
 
-  constructor(private productService: ProductService) { }
-
-  ngOnInit(): void {
-
-
-    var arr = new Array("orange", "mango", "banana", "sugar");
-    var sorted = arr.sort();
-    console.log("Returned string is : " + sorted );
-  }
-
-
+	onClick() {
+		this.likesCount += (this.isActive) ? -1 : 1;
+		this.isActive = !this.isActive;
+	}
 
 }
+
