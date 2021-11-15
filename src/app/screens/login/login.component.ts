@@ -21,8 +21,11 @@ export class LoginComponent implements OnInit {
     password: ''
   };
 
+  loading : boolean | undefined
+  errorMessage : string | undefined
+
   form: FormGroup | any;
-  error : string |undefined;
+  error : string |any;
 
   id : string |  undefined;
   constructor(
@@ -62,6 +65,8 @@ export class LoginComponent implements OnInit {
   //funcion para login
 
   logIn() {
+    this.loading = true;
+    this.errorMessage = "";
     this.authService.signInUser(this.form.value)
       .subscribe(
         res => {
@@ -78,8 +83,14 @@ export class LoginComponent implements OnInit {
           //console.log(data)
           this.router.navigate(['/private', data]);
         },
-        
-        err => console.log(err)
+        (err) => {
+          console.log(err)
+          this.errorMessage = 'El email o contraseña son incorrectos'
+          this.loading = false;
+        }
+
+
+
       )
   }
   //get email y password

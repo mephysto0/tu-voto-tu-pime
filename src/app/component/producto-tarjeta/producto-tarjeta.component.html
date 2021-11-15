@@ -12,6 +12,8 @@
             <div class="col-8 text-start">
                 <h4>{{producto.likes}} Votos</h4>
             </div>
+            <span class="bi bi-suit-heart" [class.highlighted]="isActive" (click)="onClick()" aria-hidden="true"></span> &nbsp;
+            <span>{{ producto.likes }}</span>
         </div>
         <hr>
         <h3 class="card-title">{{producto.nombre}}</h3>
@@ -25,4 +27,4 @@
 
         </div>
     </div>
-</div>  
+</div>
