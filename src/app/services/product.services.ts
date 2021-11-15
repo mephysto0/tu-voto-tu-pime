@@ -48,6 +48,11 @@ export class ProductService {
     return this.http.post<any>(`${this.URI2}/${id}/${userId}`,id,userId);
   }
 
+  isliked(id: string) {
+    const userId = this.getUser();
+    return this.http.get<any>(`${this.URI2}/${id}/${userId}`);
+  }
+
   getProducts() {
     return this.http.get<Product[]>(this.URI);
   }
