@@ -34,10 +34,11 @@ export class ProductoTarjetaComponent implements OnInit {
 	onClick() {
 		this.producto.likes += (this.isActive) ? -1 : 1;
 		this.isActive = !this.isActive;
+    this.productService.likeProduct(this.producto._id).subscribe();
 	}
 
   like(): void{
-    this.productService.likeProduct(this.producto._id).subscribe();
+
     //window.location.reload();
   }
 
