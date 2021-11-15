@@ -16,6 +16,9 @@ export class ProductoTarjetaComponent implements OnInit {
   @Input()
   public producto!: Product;
 
+  isActive : boolean | undefined;
+
+
   constructor(
     private productService: ProductService,
     private router: Router,
@@ -23,13 +26,20 @@ export class ProductoTarjetaComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
+    this.isActive = false;
   }
+
 
 
   like(): void{
     this.productService.likeProduct(this.producto._id).subscribe();
     window.location.reload();
   }
+	onClick() {
+		this.producto.likes += (this.isActive) ? -1 : 1;
+		this.isActive = !this.isActive;
+	}
 
 
 

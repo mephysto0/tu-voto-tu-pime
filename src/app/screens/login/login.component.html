@@ -4,7 +4,9 @@
             <h1 class="card-title text-center fw-bolder">Log in</h1>
             <div class="card-text">
                 <form [formGroup]="form" (ngSubmit)="save($event)">
-                    {{error}}
+                    <p class="text-center">
+                        {{errorMessage}}
+                    </p>
                     <!--campo email-->
                     <div class="form-group">
                         <h4 class="fw-bolder">Correo</h4>
