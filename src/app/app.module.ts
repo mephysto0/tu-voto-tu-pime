@@ -27,7 +27,7 @@ import { FormTiendaComponent } from './component/formCrearTienda/form-tienda/for
 import { TiendaCardComponent } from './component/tienda-card/tienda-card.component';
 import { FormUserComponent } from './component/form-user/form-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { FilterPipe } from './pipes/filter.pipe';
+import { BuscardorPipe } from './pipes/buscardor.pipe';
 
 
 
@@ -55,7 +55,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     TiendaCardComponent,
     FormUserComponent,
     PageNotFoundComponent,
-    FilterPipe,
+    BuscardorPipe,
 
   ],
   imports: [

@@ -52,8 +52,8 @@ export class LoginComponent implements OnInit {
   save(event: Event) {
     event.preventDefault();
     if (this.form.valid) {
-      const value = this.form.value;
-      console.log(value);
+
+
     //este envia los datos del formulario
       this. logIn()
     } else {
@@ -77,10 +77,9 @@ export class LoginComponent implements OnInit {
           sessionStorage.setItem('id',res.user);
 
           this.localstorage.set('usuario', res);
-          console.log(this.localstorage.get('usuario'));
 
           var data = sessionStorage.getItem('id');
-          //console.log(data)
+
           this.router.navigate(['/private', data]);
         },
         (err) => {
