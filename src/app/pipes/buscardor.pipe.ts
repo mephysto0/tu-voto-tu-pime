@@ -6,9 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class BuscardorPipe implements PipeTransform {
 
   transform(value: any, ...arg: any): any {
-
-
-
     const resultPosts = [];
 
 
@@ -22,7 +19,6 @@ export class BuscardorPipe implements PipeTransform {
 
 
 
-    return null;
   }
 
 }

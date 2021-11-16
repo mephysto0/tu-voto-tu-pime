@@ -4,49 +4,33 @@
             <img src="..\..\assets\imagenes\logo\logo-marioblanco-02.png" alt="" width="190" height="90" />
         </a>
 
-
-        <form class="d-flex position-absolute top-50 start-50 translate-middle">
-            <input class="form-control me-2" type="search" placeholder="Buscar..." name="filterPost" aria-label="Search" [(ngModel)]="filterPost" />
-            <button class="btn btn-dark" type="submit">Buscar</button>
-        </form>
-
-
-
-
         <ul class="nav justify-content-end">
+
             <!--se revisara si estoy logeado y si no mostrara esto en el nav-bar -->
             <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+                <div class="navbar-nav">
+                    <a class="nav-link  fw-bolder" href="#">Home</a>
+                    <a class="nav-link  fw-bolder" href="categorias">Categorias</a>
+
+                </div>
                 <li class="nav-bt-log">
-                    <a class="btn btn-dark m-lg-2" id="btNavbar" href="login">Iniciar sesion</a>
+                    <a class="nav-link  fw-bolder" id="btNavbar" href="login">Iniciar sesion</a>
                 </li>
                 <li class="nav-bt-log ">
-                    <a class="btn btn-dark m-lg-2" id="btNavbar" href="registro">Registrarse</a>
+                    <a class="nav-link  fw-bolder" id="btNavbar" href="registro">Registrarse</a>
                 </li>
             </ng-container>
             <!--se revisara si estoy logeado y si lo estoy mostrara esto en el nav-bar -->
             <ng-template #loggedIn>
+                <div class="navbar-nav">
+                    <a class="nav-link  fw-bolder" href="#">Home</a>
+                    <a class="nav-link  fw-bolder" href="categorias">Categorias</a>
+                    <a class="nav-link  fw-bolder" [routerLink]="['/tienda',aux2]">Tienda</a>
+                    <a class="nav-link  fw-bolder" [routerLink]="['/private',aux2]">Perfil</a>
+                </div>
+
                 <li class="nav-item">
-                    <div class="btn-group">
-                        <button class="btn btn-dark  m-lg-2  dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" [routerLink]="['/tienda',aux2]">Tienda</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" [routerLink]="['/private',aux2]">Perfil</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="votaciones">votaciones</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="categorias">Categorias</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="btn btn-dark m-lg-2" style="cursor: pointer;" (click)="authService.logout();clear()">Cerrar sesion</a>
+                    <a class="nav-link  fw-bolder" style="cursor: pointer;" (click)="authService.logout();clear()">Cerrar sesion</a>
                 </li>
             </ng-template>
         </ul>
