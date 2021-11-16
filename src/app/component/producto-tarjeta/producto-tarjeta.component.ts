@@ -34,11 +34,11 @@ export class ProductoTarjetaComponent implements OnInit {
       this.valor = valor;
     if(this.valor.unliked === false) {
       this.isActive = false;
-      console.log('verdad')
+
     }
     else {
       this.isActive = true;
-      console.log('falsd')
+
     }
     })
 

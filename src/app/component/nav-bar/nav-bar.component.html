@@ -3,8 +3,10 @@
         <a class="navbar-brand" href="#">
             <img src="..\..\assets\imagenes\logo\logo-marioblanco-02.png" alt="" width="190" height="90" />
         </a>
+
+
         <form class="d-flex position-absolute top-50 start-50 translate-middle">
-            <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+            <input class="form-control me-2" type="search" placeholder="Buscar..." name="filterPost" aria-label="Search" [(ngModel)]="filterPost" />
             <button class="btn btn-dark" type="submit">Buscar</button>
         </form>
 

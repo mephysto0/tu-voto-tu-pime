@@ -9,6 +9,7 @@ import { ProductService } from '../../services/product.services'
 })
 export class CategoriasComponent implements OnInit {
 
+
   public productos : Product[] | undefined;
 
   products: Product[] = [];
@@ -22,6 +23,8 @@ export class CategoriasComponent implements OnInit {
   public alimentos : string | undefined;
 
   constructor(private productService: ProductService,) { }
+
+  filterPost = '';
 
   ngOnInit(): void {
 

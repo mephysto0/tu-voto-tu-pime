@@ -15,6 +15,8 @@ export class NavBarComponent implements OnInit {
     private localstorage : LocalStorageService
     ) { }
 
+    filterPost = '';
+
   ngOnInit(): void {
     const aux = this.localstorage.get('usuario');
 
