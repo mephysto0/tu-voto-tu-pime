@@ -28,10 +28,9 @@ export class ProductoTarjetaComponent implements OnInit {
    }
 
   ngOnInit(): void {
-
-
-    const aux2 = this.productService.getUser();
-    this.isActive = aux2;
+    const aux = false;
+    const aux2 = this.productService.isliked(this.producto._id);
+    this.isActive = aux;
     
     
   }
