@@ -17,8 +17,8 @@ export class ProductoTarjetaComponent implements OnInit {
   @Input()
   public producto!: Product;
 
-  isActive : boolean | any;
-
+  isActive : true | any;
+  valor : any;
 
   constructor(
     private productService: ProductService,
@@ -28,12 +28,22 @@ export class ProductoTarjetaComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    const aux = false;
-    const aux2 = this.productService.isliked(this.producto._id);
-    this.isActive = aux;
-    
-    
+ // console.log(this.valor.unliked)
+
+    this.productService.isliked(this.producto._id).subscribe((valor: any) => {
+      this.valor = valor;
+    if(this.valor.unliked === false) {
+      this.isActive = false;
+      console.log('verdad')
+    }
+    else {
+      this.isActive = true;
+      console.log('falsd')
+    }
+    })
+
   }
+
 
 
 	onClick() {
