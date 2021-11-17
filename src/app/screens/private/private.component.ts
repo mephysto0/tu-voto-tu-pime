@@ -16,12 +16,15 @@ export class PrivateComponent implements OnInit {
   id: string | any;
   user: UserStore | any;
   emial : string | undefined;
+
   public previsualizacion: any;
   public archivos: any = [];
-  public loading: boolean | undefined
+  public loading: boolean | undefined;
 
-  aux2 : string | undefined;
+  tienda : boolean| any;
 
+  aux2 : string | any;
+  valor : any;
   a : string | any;
   b : string | any;
 
@@ -37,7 +40,6 @@ export class PrivateComponent implements OnInit {
 
   ngOnInit(): void {
 
-
     const aux = this.localstorage.get('usuario');
 
     this.aux2 = aux.user;
@@ -52,7 +54,14 @@ export class PrivateComponent implements OnInit {
             this.b = this.user.apellido.charAt(0);
           },
           err => console.log(err)
-        )
+        );
+        this.storeservice.getUserStore(this.id).subscribe(res =>{
+          this.valor = res;
+          this.tienda = true;
+          console.log(this.valor)
+        },
+        err => console.log(err)
+        );
     });
 
 
@@ -60,18 +69,18 @@ export class PrivateComponent implements OnInit {
   }
 
   eliminarUser(id : string){
-    this.deleteUser(id)
-    this.authService.logout()
+    this.deleteUser(id);
+    this.authService.logout();
     this.reloadCurrentPage();
   }
 
   deleteUser(id: string) {
     this.usuarioservice.deleteUser(id)
       .subscribe(res => {
-        console.log(res)
+        console.log(res);
         //ruta a la cual redigira al borrar
 
-      })
+      });
   }
 
   updateUser(nombre: HTMLInputElement, apellido: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
@@ -99,8 +108,8 @@ uploadStore(nombre_tienda: HTMLInputElement, instagram:  HTMLInputElement, twitt
       res => {
         console.log(res);
         var aux = this.user._id;
-        console.log(aux)
-        this.router.navigate(['/tienda',aux])
+        console.log(aux);
+        this.router.navigate(['/tienda',aux]);
       },
       err => console.log(err)
     );
@@ -133,16 +142,16 @@ uploadStore(nombre_tienda: HTMLInputElement, instagram:  HTMLInputElement, twitt
     } catch (e) {
       return null;
     }
-    return $event
+    return $event;
   })
   capturarFile(event:any): any {
-    const archivoCapturado = event.target.files[0]
+    const archivoCapturado = event.target.files[0];
     this.extraerBase64(archivoCapturado).then((imagen: any) => {
       this.previsualizacion = imagen.base;
       console.log(imagen);
 
-    })
-    this.archivos.push(archivoCapturado)
+    });
+    this.archivos.push(archivoCapturado);
     //
      console.log(event.target.files);
   }

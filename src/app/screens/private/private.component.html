@@ -59,7 +59,14 @@
                                                 <button type="button" class="btn  fw-bolder btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Editar Perfil</button>
                                             </div>
                                             <div class="col-3">
-                                                <button class="btn  fw-bolder btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda</button>
+                                                <div *ngIf="tienda === true ; else elseBlock"><button class="btn  fw-bolder btn-lg" type="button" [routerLink]="['/tienda',aux2]">
+                                               Ver tienda
+                                              </button>
+                                                </div>
+                                                <ng-template #elseBlock>
+                                                    <button class="btn  fw-bolder btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda</button>
+                                                </ng-template>
+
                                             </div>
                                             <div class="col-3">
                                                 <button class="btn   fw-bolder btn-lg" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Eliminar usuario</button>
@@ -102,7 +109,7 @@
 
                                                         <div class="form-group">
                                                             <h6 class="text mt-2">Contraseña</h6>
-                                                            <input rows="2" type="password" class="form-control" placeholder="Contraseña"  #password />
+                                                            <input rows="2" type="password" class="form-control" placeholder="Contraseña" #password />
                                                         </div>
 
                                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
