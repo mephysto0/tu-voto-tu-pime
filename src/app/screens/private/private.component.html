@@ -8,49 +8,56 @@
         <div class="container-fluid">
             <div class="row">
                 <!--perfil de usuario -->
-                <h3 class="text mt-3">Perfil de usuario</h3>
-                <h3 class="text mt-3">Bienvenido {{ user.nombre }} {{ user.apellido}} </h3>
-                <div class="container">
+                <div class="col-lg-3 offset-2">
+                    <div class="circle">
+                        md
+                    </div>
+                </div>
+                <div class="col-lg-7">
                     <div class="row">
-                        <div class="col-md-7">
-                            <div class="card border-dark mt-2 mb-3 m-lg-5">
+                        <h3 class="text mt-3">Bienvenido </h3>
+                    </div>
+                    <div class="row">
+                        <h3 class="text mt-3">{{ user.nombre }} {{ user.apellido}} </h3>
+                    </div>
+                </div>
+                <div class="container" id="user">
+                    <div class="row">
+                        <div class="col">
+                            <div class="card m-lg-5">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-10">
-                                            <h5>nombre</h5>
-                                            <label>{{ user.nombre }}</label>
+                                        <div class="col-6">
+                                            <p>Nombre</p>
+                                            <p>{{ user.nombre }}</p>
                                         </div>
-
+                                        <div class="col-6">
+                                            <p>Apellido</p>
+                                            <p>{{ user.apellido }}</p>
+                                        </div>
                                     </div>
-                                    <hr />
                                     <div class="row">
-                                        <div class="col-10">
-                                            <h5>apellido</h5>
-                                            <label>{{ user.apellido }}</label>
+                                        <div class="col-6">
+                                            <p>Correo</p>
+                                            <p>{{ user.email }}</p>
                                         </div>
-
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <h5>correo</h5>
-                                            <label>{{ user.email }}</label>
-                                        </div>
-
-
-                                    </div>
-                                    <hr />
-                                    <div class="row">
-                                        <div class="col-10">
-                                            <h5>contraseña</h5>
-                                            <input rows="2" type="password" class="form-control" [value]="user.password" disabled />
+                                        <div class="col-6">
+                                            <p>Contraseña</p>
+                                            <p>********</p>
                                         </div>
                                     </div>
-                                    <hr>
                                     <div class="row mt-3">
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
-                                        Editar Perfil
-                                      </button>
+                                        <div class="d-grid gap-2 d-md-flex">
+                                            <div class="col-2">
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Editar Perfil</button>
+                                            </div>
+                                            <div class="col-2">
+                                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda</button>
+                                            </div>
+                                            <div class="col-2">
+                                                <button class="btn btn-danger justify-content-md-end" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Eliminar usuario</button>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -70,14 +77,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="card border-dark">
-                                                    <form class="card-body" (submit)="
-                                      updateUser(
-                                        nombre,
-                                        apellido,
-                                                                             email,
-                                        password
-                                      )
-                                    ">
+                                                    <form class="card-body" (submit)="updateUser(nombre,apellido,email,password)">
                                                         <div class="form-group">
                                                             <h6 class="text">Nombre</h6>
                                                             <input type="text" class="form-control" placeholder="Nombre producto" [value]="user.nombre" #nombre />
@@ -131,10 +131,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!--agregar productos-->
-                        <div class="col-sm-3">
+                        <!--agregar tienda-->
+                        <div class="container">
                             <form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, numero_telefono, descripcion)">
-                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda de private</button>
+
                                 <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                                     <div class="offcanvas-header mt-4">
                                         <h4 id="offcanvasRightLabel">Datos tienda</h4>

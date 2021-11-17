@@ -14,3 +14,29 @@ img {
     width: 100px;
     height: 100px;
 }
+
+.circle {
+    background: #ed274e;
+    border-radius: 50%;
+    height: 4em;
+    width: 4em;
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+}
+
+#user {
+    height: 560px;
+    width: 1200px;
+    border-style: hidden;
+}
+
+.container-fluid {
+    margin-top: 60px;
+}
+
+p {
+    text-transform: capitalize;
+}
