@@ -33,6 +33,7 @@ export class VistaProductoComponent implements OnInit {
           err => console.log(err)
         ) 
     });
+    
   }
   like(): void{
     this.productService.likeProduct(this.product._id).subscribe();
@@ -45,7 +46,7 @@ export class VistaProductoComponent implements OnInit {
       res=>{
       this.store= res;
       console.log(this.store)
-      this.router.navigate(['/tienda',this.store.usuario ]);
+      this.router.navigate(['/tienda' ]);
       
       },
       err => console.log(err)
