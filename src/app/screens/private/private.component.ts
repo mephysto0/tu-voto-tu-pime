@@ -57,6 +57,9 @@ export class PrivateComponent implements OnInit {
         );
         this.storeservice.getUserStore(this.id).subscribe(res =>{
           this.valor = res;
+          if(this.valor === 'null'){
+            this.tienda = false;
+          }
           this.tienda = true;
           console.log(this.valor)
         },
