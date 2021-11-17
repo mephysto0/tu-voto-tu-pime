@@ -18,18 +18,18 @@ img {
 .circle {
     background: #ed274e;
     border-radius: 50%;
-    height: 4em;
-    width: 4em;
+    height: 130px;
+    width: 130px;
     color: white;
     font-size: 48px;
     text-align: center;
     position: relative;
-    display: inline-block;
+    text-transform: uppercase;
 }
 
 #user {
     height: 560px;
-    width: 1200px;
+    width: 1000px;
     border-style: hidden;
 }
 
@@ -37,6 +37,64 @@ img {
     margin-top: 60px;
 }
 
-p {
+#datos {
     text-transform: capitalize;
+    border-style: outset;
+    border-width: 1px;
+    outline-color: rgb(176, 174, 174);
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#dato {
+    border-style: outset;
+    border-width: 1px;
+    outline-color: rgb(176, 174, 174);
+    margin-left: 5px;
+    text-align: center
+}
+
+#iniciales {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+}
+
+#cont-circle {
+    height: 100px;
+    width: 100px;
+    margin-left: 150px;
+}
+
+#card-datos {
+    border-style: none;
+}
+
+#ini {
+    text-transform: capitalize;
+    margin-left: 60px;
+}
+
+.btn {
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background: #ed274e;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #f0e4e4;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+i {
+    font-size: 55px;
+    margin-left: 200px;
+    color: white;
+}
+
+.modal {
+    border-radius: 25px;
 }

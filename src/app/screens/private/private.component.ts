@@ -22,6 +22,9 @@ export class PrivateComponent implements OnInit {
 
   aux2 : string | undefined;
 
+  a : string | any;
+  b : string | any;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private usuarioservice: UsuarioService,
@@ -33,6 +36,8 @@ export class PrivateComponent implements OnInit {
   ) {  }
 
   ngOnInit(): void {
+
+
     const aux = this.localstorage.get('usuario');
 
     this.aux2 = aux.user;
@@ -43,10 +48,15 @@ export class PrivateComponent implements OnInit {
         .subscribe(
           res => {
             this.user = res;
+            this.a = this.user.nombre.charAt(0);
+            this.b = this.user.apellido.charAt(0);
           },
           err => console.log(err)
         )
     });
+
+
+
   }
 
   eliminarUser(id : string){

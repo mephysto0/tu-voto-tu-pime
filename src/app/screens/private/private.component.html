@@ -2,60 +2,67 @@
     <div class="row" *ngIf="!user; else main_content">
         <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
-          </div>
+        </div>
     </div>
     <ng-template #main_content>
         <div class="container-fluid">
             <div class="row">
                 <!--perfil de usuario -->
-                <div class="col-lg-3 offset-2">
-                    <div class="circle">
-                        md
+                <div class="col-lg-2 offset-1">
+                    <div class="container " id="cont-circle">
+                        <div class="circle">
+                            <p class="text fw-bolder" id="iniciales">{{a}}{{b}}</p>
+                        </div>
                     </div>
+
                 </div>
-                <div class="col-lg-7">
+                <div class="col-lg-8" id="ini">
                     <div class="row">
-                        <h3 class="text mt-3">Bienvenido </h3>
+                        <h3 class="text mt-3 fw-bolder">Bienvenido </h3>
                     </div>
                     <div class="row">
-                        <h3 class="text mt-3">{{ user.nombre }} {{ user.apellido}} </h3>
+                        <h3 class="text mt-3 fw-bolder">{{ user.nombre }} {{ user.apellido}} </h3>
                     </div>
                 </div>
                 <div class="container" id="user">
+
                     <div class="row">
+
                         <div class="col">
-                            <div class="card m-lg-5">
+                            <div class="card m-lg-5" id="card-datos">
+                                <h3 class="text fw-bolder">Datos personales</h3>
                                 <div class="card-body">
+
                                     <div class="row">
                                         <div class="col-6">
                                             <p>Nombre</p>
-                                            <p>{{ user.nombre }}</p>
+                                            <h3 class="text" id="datos">{{ user.nombre }}</h3>
                                         </div>
                                         <div class="col-6">
                                             <p>Apellido</p>
-                                            <p>{{ user.apellido }}</p>
+                                            <h3 id="datos">{{ user.apellido }}</h3>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-6">
                                             <p>Correo</p>
-                                            <p>{{ user.email }}</p>
+                                            <h3 id="dato">{{ user.email }}</h3>
                                         </div>
                                         <div class="col-6">
                                             <p>Contraseña</p>
-                                            <p>********</p>
+                                            <h3 id="datos">********</h3>
                                         </div>
                                     </div>
-                                    <div class="row mt-3">
-                                        <div class="d-grid gap-2 d-md-flex">
-                                            <div class="col-2">
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Editar Perfil</button>
+                                    <div class="row mt-5">
+                                        <div class="d-grid gap-2 d-md-flex mx-auto">
+                                            <div class="col-3">
+                                                <button type="button" class="btn  fw-bolder btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Editar Perfil</button>
                                             </div>
-                                            <div class="col-2">
-                                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda</button>
+                                            <div class="col-3">
+                                                <button class="btn  fw-bolder btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Crea tu tienda</button>
                                             </div>
-                                            <div class="col-2">
-                                                <button class="btn btn-danger justify-content-md-end" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Eliminar usuario</button>
+                                            <div class="col-3">
+                                                <button class="btn   fw-bolder btn-lg" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Eliminar usuario</button>
                                             </div>
                                         </div>
                                     </div>
@@ -99,17 +106,15 @@
                                                         </div>
 
                                                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
-                                                            <button class="btn btn-primary btn-block" (click)="reloadCurrentPage()">Editar</button>
-
+                                                            <button class="btn  fw-bolder  btn-lg" (click)="reloadCurrentPage()">Guardar Datos</button>
+                                                            <button type="button" class="btn fw-bolder  btn-lg" data-bs-dismiss="modal">Cancelar</button>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-danger" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Eliminar usuario</button>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -117,16 +122,17 @@
                             <!--modal 2-->
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalToggleLabel2">Advertencia</h5>
+                                    <div class="modal-header bg-danger ">
+                                        <i class="bi bi-exclamation-triangle-fill"></i>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <h3>Esta seguro de eliminar el usuario?</h3>
+                                        <h3 class="text  text-center fw-bolder" id="exampleModalToggleLabel2">¡Advertencia!</h3>
+                                        <h5 class="text  text-center">¿Esta seguro de eliminar el usuario?</h5>
                                     </div>
                                     <div class="modal-footer">
-                                        <button class="btn btn-danger" (click)="eliminarUser(user._id)">Eliminar usuario</button>
-                                        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Volver</button>
+                                        <button class="btn fw-bolder  btn-lg" (click)="eliminarUser(user._id)">Confirmar</button>
+                                        <button type="button" class="btn fw-bolder  btn-lg" data-bs-dismiss="modal">Cancelar</button>
                                     </div>
                                 </div>
                             </div>
@@ -192,8 +198,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
             </div>
         </div>
     </ng-template>
