@@ -1,5 +1,16 @@
-<p>vista-public-tienda works!</p>
+<div class="container-fluid">
+    <div class="row" *ngIf="!store; else main_content">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+            
+          </div>
+          <p>Es probable que la tienda insertada no exista o ya no encuentre</p>
+    </div>
+    
+    <ng-template #main_content>
 
 <p>{{store.facebook}}</p>
 <p>{{store.instagram}}</p>
 <p>{{store.nombre_tienda}}</p>
+    </ng-template>
+</div>
