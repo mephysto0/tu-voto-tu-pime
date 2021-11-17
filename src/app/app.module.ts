@@ -28,6 +28,7 @@ import { TiendaCardComponent } from './component/tienda-card/tienda-card.compone
 import { FormUserComponent } from './component/form-user/form-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BuscardorPipe } from './pipes/buscardor.pipe';
+import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-public-tienda.component';
 
 
 
@@ -56,6 +57,7 @@ import { BuscardorPipe } from './pipes/buscardor.pipe';
     FormUserComponent,
     PageNotFoundComponent,
     BuscardorPipe,
+    VistaPublicTiendaComponent,
 
   ],
   imports: [
