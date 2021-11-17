@@ -59,7 +59,7 @@
                                                 <button type="button" class="btn  fw-bolder btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">Editar Perfil</button>
                                             </div>
                                             <div class="col-3">
-                                                <div *ngIf="tienda === true ; else elseBlock"><button class="btn  fw-bolder btn-lg" type="button" [routerLink]="['/tienda',aux2]">
+                                                <div *ngIf="tienda; else elseBlock"><button class="btn  fw-bolder btn-lg" type="button" [routerLink]="['/tienda',aux2]">
                                                Ver tienda
                                               </button>
                                                 </div>
