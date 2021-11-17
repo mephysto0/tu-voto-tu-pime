@@ -1,3 +1,10 @@
+<div class="container-fluid">
+    <div class="row" *ngIf="!store; else main_content">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+    </div>
+    <ng-template #main_content>
 <div class="row">
     <div class="col-6 mt-3">
         <div class="container">
@@ -31,9 +38,6 @@
                         <a class="fab fa-whatsapp"> {{store.numero_telefono}}</a>
                     </div>
 
-                    <div class="row">
-                        <a class="fab fa-whatsapp"> {{store._id}}</a>
-                    </div>
 
                 </div>
 
@@ -75,3 +79,5 @@
             </div>
             <!--  Banner derecha  -->
         </div>
+    
+</div>
