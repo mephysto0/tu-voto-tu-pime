@@ -13,6 +13,8 @@ export class VistaProductoComponent implements OnInit {
 
   id: string | any;
   product: Product | any;
+  tienda: any;
+  store: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -36,16 +38,22 @@ export class VistaProductoComponent implements OnInit {
     this.productService.likeProduct(this.product._id).subscribe();
     window.location.reload();
   }
-//-------------------------------funcion de busqueda de tienda----------------------------------------------------------------
-  async searchstoreId(tienda :string) :Promise<void>{
-    this.product.nombre_tienda= tienda
-    console.log(this.product.nombre_tienda)
-    await this.productService.searchStore(this.product.nombre_tienda).subscribe();
+//-----------------------------funcion del boton que redirige a tienda-----------------------------------------------------------
+  searchstoreId(tienda :string) :void{
+    tienda = this.product.tienda;
+    this.productService.searchStore(this.product.tienda).subscribe(
+      res=>{
+      this.store= res;
+      console.log(this.store)
+      this.router.navigate(['/tienda',this.store.usuario ]);
+      
+      },
+      err => console.log(err)
+    )
+    
 
 
-  }
+  };
 
-
-  
 
 }
