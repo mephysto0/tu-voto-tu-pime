@@ -31,7 +31,7 @@ export class VistaProductoComponent implements OnInit {
             this.product = res;
           },
           err => console.log(err)
-        ) 
+        )
     });
     
   }
@@ -46,12 +46,12 @@ export class VistaProductoComponent implements OnInit {
       res=>{
       this.store= res;
       console.log(this.store)
-      this.router.navigate(['/tienda' ]);
-      
+      this.router.navigate(['/tienda-publica',this.store.usuario ]);
+
       },
       err => console.log(err)
     )
-    
+
 
 
   };

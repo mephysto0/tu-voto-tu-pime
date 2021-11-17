@@ -80,8 +80,8 @@ export class ProductService {
   }
 
 
-  searchStore(tienda: string){
-    return this.http.post<any>(`${this.URI3}/${tienda}`,tienda);
+  searchStore(nombreT: string){
+    return this.http.get<any>(`${this.URI3}/${nombreT}`);
   }
 
   

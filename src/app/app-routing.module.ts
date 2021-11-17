@@ -15,6 +15,7 @@ import { ProductformComponent } from './component/productform/productform.compon
 import { AuthGuard } from './auth.guard';
 import { FormUserComponent } from './component/form-user/form-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-public-tienda.component';
 
 const routes: Routes = [
   {
@@ -56,8 +57,15 @@ const routes: Routes = [
     path: 'registro', component:  FormUserComponent
   },
   {
+    path: 'tienda-publica/:nombreT', component:    VistaPublicTiendaComponent
+  },
+  {
     path: '**', component:  PageNotFoundComponent
   },
+
+  
+
+
 
 
 ];
