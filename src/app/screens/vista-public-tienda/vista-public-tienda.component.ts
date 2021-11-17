@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.services';
 import { Store } from 'src/app/models/tienda.model';
+import { Product } from '../../models/producto.model'
 
 @Component({
   selector: 'app-vista-public-tienda',
@@ -11,6 +12,7 @@ import { Store } from 'src/app/models/tienda.model';
 export class VistaPublicTiendaComponent implements OnInit {
   nombreT: string | any;
   store: Store | any;
+  products: Product[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -29,6 +31,14 @@ export class VistaPublicTiendaComponent implements OnInit {
           err => console.log(err)
         ) 
     });
+
+    this.productService.getProducts()
+      .subscribe(
+        res => {
+          this.products = res;
+        },
+        err => console.log(err)
+      )
     
   }
   

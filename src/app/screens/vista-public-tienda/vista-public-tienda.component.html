@@ -4,13 +4,75 @@
             <span class="visually-hidden">Loading...</span>
             
           </div>
-          <p>Es probable que la tienda insertada no exista o ya no encuentre</p>
+          <h3>Es probable que la tienda insertada no exista o ya no encuentre</h3>
     </div>
     
     <ng-template #main_content>
 
-<p>{{store.facebook}}</p>
-<p>{{store.instagram}}</p>
-<p>{{store.nombre_tienda}}</p>
-    </ng-template>
+        <div class="row">
+            <div class="col-6 mt-3">
+                <div class="container">
+                    <img [src]="store.imageUrl" class="img-fluid img-thumbnail border-dark mx-auto d-block rounded" id="imgTienda">
+                </div>
+            </div>
+        
+            <div class="col-5 mb-3">
+                <div class="container mt-4">
+                    <div class="card border-dark" id="">
+                        <div class="card-header">
+                            <h2 class="text">{{store.nombre_tienda}}</h2>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                            </div>
+                            <div class="row">
+        
+                                <a class="fab fa-instagram" href="{{store.instagram}} " target="_blank"> Visitanos en instagram</a>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <a class="fab fa-facebook" href="{{store.facebook}}" target="_blank"> Visitanos en Facebook</a>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <a class="fab fa-twitter-square" href="{{store.twitter}}" target="_blank"> Visitanos en twitter</a>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <a class="fab fa-whatsapp"> {{store.numero_telefono}}</a>
+                            </div>
+        
+        
+                        </div>
+        
+                        
+                    </div>
+                </div>
+            </div>
+            <hr>
+        
+            <div class="row mt-4">
+                <!--  VISTA PRODUCTOS  -->
+                <div class="container" id="card-P">
+                    <div class="col-12">
+                        <div class="card">
+                            <h1 class="text-center">Productos Disponibles </h1>
+                        </div>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-todos" role="tabpanel" aria-labelledby="list-todos-list">
+                                <div class="row row-cols-1 row-cols-md-4">
+                                </div>
+                            </div>
+                            <!--  para mostrar productos -->
+                            <div class="row">
+                                <ng-container *ngFor="let product of products">
+                                    <div class="col-md-4 p-4" *ngIf="product.tienda === store.nombre_tienda" id="card-p">
+                                        <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                                    </div>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  Banner derecha  -->
+                </div>
 </div>
