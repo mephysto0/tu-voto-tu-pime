@@ -13,6 +13,7 @@ export class ProductService {
 
   URI = 'http://localhost:4000/tienda/newpr';
   URI2 = 'http://localhost:4000/tienda/producto';
+  URI3 = 'http://localhost:4000/tienda/irstore';
 
 
 
@@ -77,4 +78,13 @@ export class ProductService {
   {
     return this.http.put(`${this.URI}/${id}`, {nombre, tienda, categoria, comentario ,precio });
   }
+
+
+  searchStore(nombre_tienda: string){
+    return this.http.post<any>(`${this.URI3}`,nombre_tienda);
+  }
+
+  
+
+  
 }

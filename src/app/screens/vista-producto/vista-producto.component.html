@@ -16,6 +16,9 @@
                     <div class="card-header">
                         <h2 class="text">{{product.nombre}}</h2>
                         <h4 class="text-decoration-underline">{{product.tienda}}</h4>
+                        <!---------------------boton para redirigir a tienda-------------------------------->
+                        <button (click)="searchstoreId(product.tienda)">ir a tienda </button>
+                        <!---------------------------------------------------------------------------------->
                         <div class="row">
                             <div class="col-2 ">
                                 <button type="button" (click)="like()" class="btn btn-sm btn-danger">

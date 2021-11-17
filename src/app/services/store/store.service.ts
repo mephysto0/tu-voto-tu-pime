@@ -47,4 +47,7 @@ export class StoreService {
   updateStore(id: string, nombre_tienda: string, instagram: string, twitter: string, facebook: string, numero_telefono: string, descripcion: string) {
     return this.http.put(`${this.URI}/${id}`, {nombre_tienda, instagram, twitter, facebook ,numero_telefono , descripcion});
   }
+
+
+
 }
