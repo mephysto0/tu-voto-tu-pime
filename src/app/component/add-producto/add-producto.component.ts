@@ -87,10 +87,6 @@ export class AddProductoComponent implements OnInit {
   }
 
 
-
-
-
-
   capturarFile(event:any): any {
     const archivoCapturado = event.target.files[0]
     this.extraerBase64(archivoCapturado).then((imagen: any) => {
