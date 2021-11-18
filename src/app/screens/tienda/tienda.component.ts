@@ -71,5 +71,14 @@ export class TiendaComponent implements OnInit {
         err => console.log(err)
       )
   }
+  updateStore(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,numero_telefono: HTMLInputElement,descripcion: HTMLInputElement): boolean {
+    this.storeservice.updateStore(this.store._id, nombre_tienda.value, instagram.value,twitter.value,facebook.value,numero_telefono.value,descripcion.value)
+      .subscribe(res => {
+        console.log(res);
+        //ruta a la cual redigira al editar
+        //this.router.navigate(['/tienda']);
+      });
+    return false;
+  }
 
 }
