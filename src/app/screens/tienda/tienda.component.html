@@ -48,23 +48,59 @@
                             <a href="newpr" [routerLink]="['/newpr',store.nombre_tienda]" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">agregar producto</a>
                         </div>
 
-                        <div class="modal" tabindex="-1">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <h5 class="modal-title">Modal title</h5>
-                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                  <p>Modal body text goes here.</p>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="button" class="btn btn-primary">Save changes</button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <div class="offcanvas-body">
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text"> Nombre tienda</span>
+                        <input type="text" class="form-control" id="nombre_tienda" placeholder="nombre tienda" [value]="store.nombre_tienda" #nombre_tienda required>
+                    </div>
+                    <hr>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text"> instagram</span>
+                        <input type="text" class="form-control" id="instagram" placeholder="instagram" [value]="store.instagram "#instagram required>
+                    </div>
+                    <hr>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text">twitter</span>
+                        <input type="text" class="form-control" id="twitter" placeholder="twitter" [value]="store.twitter " #twitter required>
+                    </div>
+                    <hr>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text"> facebook</span>
+                        <input type="text" class="form-control" id="facebookt" placeholder="facebook" [value]="store.facebook " #facebook required>
+                    </div>
+                    <hr>
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text"> telefono</span>
+                        <input type="text" class="form-control" id="telefono" placeholder="telefono" [value]="store.numero_telefono " #numero_telefono required>
+                    </div>
+
+                    <div class="input-group input-group-sm">
+                        <span class="input-group-text"> descripcion</span>
+                        <input type="text" class="form-control" id="descripcion" placeholder="descripcion"  [value]="store.descripcion "#descripcion required>
+                    </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
+          <button type="button" class="btn btn-primary">guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
                     </div>
                 </div>
