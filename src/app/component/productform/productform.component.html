@@ -11,14 +11,14 @@
                 </div>
                 <div class="form-floating mt-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="nombre tienda" required #tienda disabled readonly>
-                    <label for="floatingInput">Nombre Tienda {{nombreT}}</label>
+                    <label for="floatingInput">Nombre Tienda {{store.nombre_tienda}}</label>
                 </div>
                 <div class="input-group mt-3">
                     <label for="inputSelect" class="input-group-text">Categorias</label>
                     <select class="form-select" id="inputSelect" required #categoria>
             <option selected>Elija su Categoria...</option>
             <option value="Bebe">Bebe</option>
-            <option value="Perfumes y Cosmeticos" m>Perfumes y Cosmeticos</option>
+            <option value="Perfumes y Cosmeticos" >Perfumes y Cosmeticos</option>
             <option value="Mascotas">Mascotas</option>
             <option value="Vestuario">Vestuario</option>
             <option value="Hogar y decoracion">Hogar y decoracion</option>
@@ -34,7 +34,7 @@
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control" placeholder="Precio" required #precio>
                 </div>
-                
+
 
 
 
