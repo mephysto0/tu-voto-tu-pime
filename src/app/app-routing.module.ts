@@ -13,6 +13,7 @@ import { PrivateComponent } from './screens/private/private.component';
 
 import { ProductformComponent } from './component/productform/productform.component';
 import { AuthGuard } from './auth.guard';
+import { NoAuthGuard } from './no-auth.guard';
 import { FormUserComponent } from './component/form-user/form-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-public-tienda.component';
@@ -24,7 +25,8 @@ const routes: Routes = [
   },
 
   {
-    path: 'login', component: LoginComponent
+    path: 'login', component: LoginComponent,
+    canActivate: [NoAuthGuard]
   },
   {
     path: 'votaciones', component: VotacionesComponent
