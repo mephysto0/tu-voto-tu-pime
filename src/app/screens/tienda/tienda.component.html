@@ -11,7 +11,7 @@
         </div>
 
 
-        <h3 class="text text-center">Ops aun no cuentas con una tienda disponible o a ocurrio un error</h3>
+        <h3 class="text text-center">Ops aun no cuentas con una tienda disponible o a ocurrido un error</h3>
         <h3 class="text text-center"> intenta recargar la pagina</h3>
     </div>
     <ng-template #main_content>
@@ -32,21 +32,21 @@
                             <p class="text text-center">{{store.descripcion}}</p>
 
                             <div class="row">
-                                <div *ngIf="!(store.instagram && store.facebook && store.twitter) ">
-                                    <hr>
-                                    <h4 class="text text-center">Visitanos en nuestras redes sociales </h4>
-                                    <div class="d-grid gap-2 d-md-flex  justify-content-center">
-                                        <div *ngIf="store.instagram">
-                                            <a class="fab fa-instagram" href="{{store.instagram}}" target="_blank"> </a>
-                                        </div>
-                                        <div *ngIf="store.facebook">
-                                            <a class="fab fa-facebook" href="{{store.facebook}}" target="_blank"> </a>
-                                        </div>
-                                        <div *ngIf="store.twitter">
-                                            <a class="fab fa-twitter-square" href="{{store.twitter}}" target="_blank"> </a>
-                                        </div>
+
+                                <hr>
+                                <h4 class="text text-center">Visitanos en nuestras redes sociales </h4>
+                                <div class="d-grid gap-2 d-md-flex  justify-content-center">
+                                    <div *ngIf="store.instagram">
+                                        <a class="fab fa-instagram" href="{{store.instagram}}" target="_blank"> </a>
+                                    </div>
+                                    <div *ngIf="store.facebook">
+                                        <a class="fab fa-facebook" href="{{store.facebook}}" target="_blank"> </a>
+                                    </div>
+                                    <div *ngIf="store.twitter">
+                                        <a class="fab fa-twitter-square" href="{{store.twitter}}" target="_blank"> </a>
                                     </div>
                                 </div>
+
                                 <hr>
                             </div>
 
@@ -62,7 +62,7 @@
                         <div class="row">
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4" id="log">
                                 <!--  boton para agregar productos  -->
-                                <a href="newpr" [routerLink]="['/newpr',store.nombre_tienda]" class="btn fw-bolder btn-lg " role="button" aria-pressed="true">agregar producto</a>
+                                <a href="newpr" [routerLink]="['/newpr',store.nombre_tienda]" class="btn fw-bolder btn-lg " role="button" aria-pressed="true">Agregar producto</a>
 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn fw-bolder btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar tienda</button>

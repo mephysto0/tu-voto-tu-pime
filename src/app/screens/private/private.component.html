@@ -1,13 +1,21 @@
 <div class="container-fluid">
     <div class="row" *ngIf="!user; else main_content">
-        <div class="spinner-border" role="status">
-            <span class="visually-hidden">Loading...</span>
+        <div class="container mt-5">
+            <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <div class="spinner-grow " style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
         </div>
+        <h3 class="text text-center">Ops a ocurrido un error</h3>
+        <h3 class="text text-center"> intenta recargar la pagina</h3>
+
     </div>
     <ng-template #main_content>
         <div class="container-fluid">
             <div class="row m-lg-4">
-                <!--perfil de usuario -->
+                <!--perfil de usuario!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
                 <div class="col-lg-2 offset-1">
                     <div class="container " id="cont-circle">
                         <div class="circle">
@@ -76,7 +84,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- editar perfil!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
                         <!-- Modal -->
 
                         <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
@@ -125,6 +133,7 @@
                                 </div>
                             </div>
                         </div>
+                        <!--eliminar usuario!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
                         <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
                             <!--modal 2-->
                             <div class="modal-dialog modal-dialog-centered">
@@ -144,59 +153,103 @@
                                 </div>
                             </div>
                         </div>
-                        <!--agregar tienda-->
+                        <!--agregar tienda!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
                         <div class="container">
-                            <form (submit)="uploadStore(nombre_tienda, instagram, twitter, facebook, numero_telefono, descripcion)">
+                            <form [formGroup]="form" (ngSubmit)="save($event)">
 
-                                <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                                     <div class="offcanvas-header mt-4">
                                         <h4 id="offcanvasRightLabel">Datos tienda</h4>
                                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                                     </div>
-                                    <hr>
+
                                     <div class="offcanvas-body">
+                                        <!--nombre tienda-->
                                         <div class="input-group input-group-sm">
                                             <span class="input-group-text"> Nombre tienda</span>
-                                            <input type="text" class="form-control" id="nombre_tienda" placeholder="nombre tienda" #nombre_tienda required>
+                                            <input type="text" class="form-control" formControlName="nombre_tienda" id="nombre_tienda" placeholder="nombre tienda">
                                         </div>
-                                        <hr>
-                                        <div class="input-group input-group-sm">
-                                            <span class="input-group-text"> instagram</span>
-                                            <input type="text" class="form-control" id="instagram" placeholder="instagram" #instagram required>
-                                        </div>
-                                        <hr>
-                                        <div class="input-group input-group-sm">
-                                            <span class="input-group-text">twitter</span>
-                                            <input type="text" class="form-control" id="twitter" placeholder="twitter" #twitter required>
-                                        </div>
-                                        <hr>
-                                        <div class="input-group input-group-sm">
-                                            <span class="input-group-text"> facebook</span>
-                                            <input type="text" class="form-control" id="facebookt" placeholder="facebook" #facebook required>
-                                        </div>
-                                        <hr>
-                                        <div class="input-group input-group-sm">
-                                            <span class="input-group-text"> telefono</span>
-                                            <input type="text" class="form-control" id="telefono" placeholder="telefono" #numero_telefono required>
+                                        <!--validadores-->
+                                        <div *ngIf="nombre_tiendaField.errors && nombre_tiendaField.touched">
+                                            <p id="vali1" *ngIf="nombre_tiendaField.hasError('required')">
+                                                * Es un campo requerido *
+                                            </p>
+                                            <p id="vali" *ngIf="nombre_tiendaField.hasError('pattern')">
+                                                * Caracter invalido *
+                                            </p>
                                         </div>
 
-                                        <div class="input-group input-group-sm">
-                                            <span class="input-group-text"> descripcion</span>
-                                            <input type="text" class="form-control" id="descripcion" placeholder="descripcion" #descripcion required>
+                                        <!--instagram-->
+                                        <div class="input-group input-group-sm mt-3">
+                                            <span class="input-group-text"> instagram</span>
+                                            <input type="text" class="form-control" formControlName="instagram" id="instagram" placeholder="instagram">
                                         </div>
-                                        <hr>
-                                        <h4>Subir imagen</h4>
+
+
+                                        <!--twitter-->
+                                        <div class="input-group input-group-sm mt-3">
+                                            <span class="input-group-text">twitter</span>
+                                            <input type="text" class="form-control" formControlName="twitter" id="twitter" placeholder="twitter">
+                                        </div>
+
+
+                                        <!--facebook-->
+                                        <div class="input-group input-group-sm mt-3">
+                                            <span class="input-group-text"> facebook</span>
+                                            <input type="text" class="form-control" formControlName="facebook" id="facebook" placeholder="facebook">
+                                        </div>
+
+
+                                        <!--telefono-->
+                                        <div class="input-group input-group-sm mt-3">
+                                            <span class="input-group-text"> telefono</span>
+                                            <input type="text" class="form-control" formControlName="numero_telefono" id="numero_telefono" placeholder="telefono">
+                                        </div>
+                                        <!--validadores-->
+                                        <div *ngIf="numero_telefonoField.errors && numero_telefonoField.touched">
+                                            <p id="vali" *ngIf="numero_telefonoField.hasError('required')">
+                                                * Es un campo requerido *
+                                            </p>
+                                            <p id="vali" *ngIf="numero_telefonoField.hasError('pattern')">
+                                                * El formato es 987654321 *
+                                            </p>
+                                            <p id="vali" *ngIf="numero_telefonoField.hasError('minLength')">
+                                                * El minimo es de 8 caracteres *
+                                            </p>
+                                            <p id="vali" *ngIf="numero_telefonoField.hasError('maxLength')">
+                                                * El maximo es de 9 caracteres*
+                                            </p>
+
+                                        </div>
+
+                                        <!--descripcion-->
+                                        <div class="input-group input-group-sm mt-3">
+                                            <span class="input-group-text"> descripcion</span>
+                                            <input type="text" class="form-control" formControlName="descripcion" id="descripcion" placeholder="descripcion">
+                                        </div>
+                                        <!--validadores-->
+                                        <div *ngIf="descripcionField.errors && descripcionField.touched">
+                                            <p id="vali" *ngIf="nombre_tiendaField.hasError('required')">
+                                                * Es un campo requerido *
+                                            </p>
+
+                                            <p id="vali" *ngIf="descripcionField.hasError('maxLength')">
+                                                * Tiene un maximo de 200 caracteres *
+                                            </p>
+                                        </div>
+
+                                        <h4 class="text fw-bolder">Subir imagen</h4>
                                         <input class="input-file" (change)="capturarFile($event)" type="file">
                                         <div class="preview-img" *ngIf="previsualizacion">
-                                            <button class="clear-image" type="button" (click)="clearImage()">Clear</button>
+                                            <button class="btn clear-image  fw-bolder" type="button" (click)="clearImage()">Clear</button>
                                             <img [src]="previsualizacion" alt="">
                                         </div>
                                         <div class="p-1">
-                                            <small>Se aceptan archivos imágenes de tipo .png</small>
+                                            <small>Se aceptan archivos e imágenes formato jpg y .png</small>
                                         </div>
                                         <div class="wrapper-button" *ngIf="previsualizacion">
-                                            <button type="button" class="button" [disabled]="loading" (click)="uploadStore(nombre_tienda, instagram, twitter, facebook, numero_telefono, descripcion)">
-                                         {{(loading) ? 'Cargando.....' : 'uploadStore'}}
+                                            <button type="submit" class="btn  fw-bolder" [disabled]="loading" (ngSubmit)="save($event)">
+                                         {{(loading) ? 'Cargando.....' : 'Crear tienda'}}
                                         </button>
                                         </div>
                                     </div>

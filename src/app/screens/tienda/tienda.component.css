@@ -47,7 +47,8 @@
 }
 
 p,
-h3 {
+h3,
+h2 {
     text-transform: capitalize;
 }
 
