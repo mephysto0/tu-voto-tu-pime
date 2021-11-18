@@ -3,8 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../../services/product.services';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
-import { StoreService } from 'src/app/services/store/store.service';
-import { Store } from 'src/app/models/tienda.model';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -20,17 +18,16 @@ export class ProductformComponent implements OnInit {
   photoSelected: any;
 
   aux2 : string | undefined;
-  store :  Store | any;
+
   nombreT : string | any;
-  idU: any;
+
 
   constructor(
     private productService: ProductService,
     private router: Router,
     private sanitizer: DomSanitizer,
     private localstorage : LocalStorageService,
-    private storeservice: StoreService,
-    private activatedRoute: ActivatedRoute) { }
+    private rutaActiva: ActivatedRoute) { }
 
   public previsualizacion: any;
   public archivos: any = [];
@@ -40,26 +37,12 @@ export class ProductformComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.idU= this.activatedRoute.snapshot.params.id;
-
-
-      this.storeservice.getUserStore(this.idU)
-        .subscribe(
-          res => {
-            this.store = res;
-
-          },
-          err => console.log(err)
-        )
-
-
+    this.nombreT= this.rutaActiva.snapshot.params.id;
 
 
     const aux = this.localstorage.get('usuario');
     this.aux2 = aux.user;
   }
-
-
 
   capturarFile(event:any): any {
     const archivoCapturado = event.target.files[0]
@@ -74,7 +57,7 @@ export class ProductformComponent implements OnInit {
   }
 
 
-// esta id se agrega ,this.store._id
+
 
 //enviara los datos del formulario
   uploadProduct(nombre: HTMLInputElement, tienda:  HTMLInputElement, categoria: HTMLSelectElement, comentario:  HTMLInputElement, precio:  HTMLInputElement ) {

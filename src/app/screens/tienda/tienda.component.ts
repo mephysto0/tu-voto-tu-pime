@@ -62,6 +62,7 @@ export class TiendaComponent implements OnInit {
     console.log(aux.user);
     this.aux2 = aux.user;
 
+
     this.productService.getProducts()
       .subscribe(
         res => {
@@ -79,9 +80,5 @@ export class TiendaComponent implements OnInit {
       });
     return false;
   }
-  reloadCurrentPage() {
-    window.location.reload();
-   }
-
 
 }
