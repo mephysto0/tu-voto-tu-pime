@@ -6,6 +6,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { StoreService } from 'src/app/services/store/store.service';
 import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
 import { AuthService } from 'src/app/services/auth/auth.services';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-private',
@@ -16,7 +17,7 @@ export class PrivateComponent implements OnInit {
   id: string | any;
   user: UserStore | any;
   emial : string | undefined;
-
+  form: FormGroup | any;
   public previsualizacion: any;
   public archivos: any = [];
   public loading: boolean | undefined;
@@ -28,6 +29,7 @@ export class PrivateComponent implements OnInit {
   a : string | any;
   b : string | any;
 
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private usuarioservice: UsuarioService,
@@ -36,14 +38,16 @@ export class PrivateComponent implements OnInit {
     private storeservice: StoreService,
     private localstorage : LocalStorageService,
     public authService: AuthService,
-  ) {  }
+    private formBuilder: FormBuilder,
+  ) {
+    this.buildForm();
+   }
 
   ngOnInit(): void {
-
+    //datos local storage
     const aux = this.localstorage.get('usuario');
-
     this.aux2 = aux.user;
-
+  //datos ruta
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
       this.usuarioservice.getUser(this.id)
@@ -55,28 +59,83 @@ export class PrivateComponent implements OnInit {
           },
           err => console.log(err)
         );
+        //si existe tienda o no
         this.storeservice.getUserStore(this.id).subscribe(res =>{
           this.valor = res;
-          console.log(this.valor)
           if(this.valor.usuario = this.id){
             this.tienda = true;
-            console.log('si')
           }
           else{
              this.tienda = false;
-          console.log('no')
           }
-
-
         },
         err => console.log(err)
         );
     });
+  } //fin de ngoninit
 
 
-
+  //funciones formulario
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      nombre_tienda: ['',  [Validators.required,Validators.pattern(/^[a-zA-Z-0-9 ]+$/)]],
+      instagram: [''],
+      twitter: [''],
+      facebook: [''],
+      numero_telefono: ['', [Validators.required,  Validators.pattern(/^[0-9]+$/),Validators.minLength(8),Validators.maxLength(9)]],
+      descripcion: ['', [Validators.required,Validators.maxLength(200)]],
+    });
+  }
+  //BOTON GUARDAR DATOS
+  save(event: Event){
+    event.preventDefault();
+    if(this.form.valid){
+      const value = this.form.value;
+      console.log(value)
+      this.storeservice
+      .createStore(
+        this.user._id,
+        this.form.value.nombre_tienda,
+        this.form.value.instagram,
+        this.archivos[0],
+        this.form.value.twitter,
+        this.form.value.facebook,
+        this.form.value.numero_telefono,
+        this.form.value.descripcion)
+      .subscribe(
+        res => {
+          var aux = this.user._id;
+          this.router.navigate(['/tienda',aux]);
+        },
+        err => console.log(err)
+      );
+    }
+    else{
+      this.form.markAllAsTouched();
+    }
   }
 
+  get nombre_tiendaField(){
+    return this.form.get('nombre_tienda');
+  }
+  get instagramField(){
+    return this.form.get('instagram');
+  }
+  get twitterField(){
+    return this.form.get('twitter');
+  }
+  get facebookField(){
+    return this.form.get('facebook');
+  }
+  get numero_telefonoField(){
+    return this.form.get('numero_telefono');
+  }
+  get descripcionField(){
+    return this.form.get('descripcion');
+  }
+
+
+  //funciones usuario
   eliminarUser(id : string){
     this.deleteUser(id);
     this.authService.logout();
@@ -110,20 +169,7 @@ export class PrivateComponent implements OnInit {
 
 //---------------------------------------------------------------seccion tienda---------------------------------------------------
 //enviara los datos del formulario
-uploadStore(nombre_tienda: HTMLInputElement, instagram:  HTMLInputElement, twitter:  HTMLInputElement, facebook:  HTMLInputElement, numero_telefono:  HTMLInputElement,descripcion:  HTMLInputElement ) {
-  this.storeservice
-    .createStore(this.user._id,nombre_tienda.value, instagram.value, this.archivos[0], twitter.value, facebook.value, numero_telefono.value, descripcion.value)
-    .subscribe(
-      res => {
-        console.log(res);
-        var aux = this.user._id;
-        console.log(aux);
-        this.router.navigate(['/tienda',aux]);
-      },
-      err => console.log(err)
-    );
-  return false;
-}
+
 
   clearImage(): any {
     this.previsualizacion = '';

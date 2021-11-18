@@ -33,6 +33,10 @@ img {
     border-style: hidden;
 }
 
+h3 {
+    text-transform: capitalize;
+}
+
 .container-fluid {
     margin-top: 60px;
 }
@@ -97,4 +101,32 @@ i {
 
 .modal {
     border-radius: 25px;
+}
+
+.ng-invalid:not(form) {
+    border: none;
+    border-bottom: 2px solid #ed274e;
+    border-left: 2px solid #ed274e;
+    /* red */
+}
+
+.ng-valid:not(form),
+.ng-valid.required:not(form) {
+    border: none;
+    border-bottom: 2px solid #42A948;
+    border-left: 2px solid #42A948;
+    /* green */
+}
+
+small {
+    color: #ed274e;
+}
+
+#vali1,
+#vali {
+    color: #ed274e;
+}
+
+.offcanvas {
+    width: 600px;
 }
