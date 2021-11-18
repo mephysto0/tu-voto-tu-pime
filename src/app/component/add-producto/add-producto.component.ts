@@ -56,7 +56,17 @@ export class AddProductoComponent implements OnInit {
     if(this.form.valid){
       const value = this.form.value;
       console.log(value);
-      this.subirProduct();
+      this.productService.createProduct
+      (this.form.value.nombre,this.nombreT,this.archivos[0],this.form.value.categoria,this.form.value.comentario,this.form.value.precio)
+      .subscribe(
+        res =>{
+          console.log(res);
+
+          this.router.navigate(['/tienda',this.aux2])
+        },
+        err => console.log(err)
+      );
+
     }
     else{
       this.form.markAllAsTouched();
@@ -77,19 +87,7 @@ export class AddProductoComponent implements OnInit {
   }
 
 
-  subirProduct(){
-    this.productService.createProduct
-      (this.form.nombre,this.nombreT,this.archivos[0],this.form.categoria,this.form.comentario,this.form.precio)
-      .subscribe(
-        res =>{
-          console.log(res);
 
-          this.router.navigate(['/tienda',this.aux2])
-        },
-        err => console.log(err)
-      );
-    return false
-  }
 
 
 
