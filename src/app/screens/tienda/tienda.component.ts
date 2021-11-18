@@ -59,7 +59,7 @@ export class TiendaComponent implements OnInit {
 
 
     const aux = this.localstorage.get('usuario');
-    console.log(aux.user);
+    //console.log(aux.user);
     this.aux2 = aux.user;
 
 
@@ -71,7 +71,7 @@ export class TiendaComponent implements OnInit {
         err => console.log(err)
       )
   }
-  updateStore(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,numero_telefono: HTMLInputElement,descripcion: HTMLInputElement): boolean {
+  updateTienda(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,numero_telefono: HTMLInputElement,descripcion: HTMLInputElement): boolean {
     this.storeservice.updateStore(this.store._id, nombre_tienda.value, instagram.value,twitter.value,facebook.value,numero_telefono.value,descripcion.value)
       .subscribe(res => {
         console.log(res);

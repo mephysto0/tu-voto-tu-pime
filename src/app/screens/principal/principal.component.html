@@ -14,8 +14,7 @@
                     <div class="carousel-item active">
                         <img src="..\..\assets\imagenes\le_tallere\Sintítulo.png" class="d-block w-100 rounded-2" alt="...">
                         <div class="card-img-overlay">
-                            <a type="button" class="btn btn-danger" [routerLink]="['/tienda','A1']">
-                Ver Tienda</a>
+                            <button type="button " class="btn btn-danger btn-lg" [routerLink]="['/tienda-publica','Le tallere']">Ir a tienda destacada</button>
                         </div>
                     </div>
 
@@ -24,7 +23,7 @@
                         <div class="card-img-overlay">
                             <h3>Vota por tus productos Favoritos</h3>
                             <div class="d-grid gap-3 col-4 ">
-                                <button type="button " class="btn btn-danger btn-lg">Vota aqui</button>
+                                <button type="button " class="btn btn-danger btn-lg" [routerLink]="['/categorias']">Vota aqui</button>
                             </div>
                         </div>
                     </div>
@@ -54,6 +53,7 @@
                 </div>
                 <div class="card">
                     <i class="fas fa-air-freshener mt-4"></i>
+                    
                     <h4 class="text-center">Perfumes y Cosmeticos</h4>
                 </div>
                 <div class="card">
