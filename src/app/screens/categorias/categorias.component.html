@@ -25,7 +25,7 @@
         <div class="col-9">
 
             <h3 class="text-center">Productos</h3>
-<!-----------------------------------------------------buscador----------------------------------------------------------------->
+            <!-----------------------------------------------------buscador----------------------------------------------------------------->
             <input type="text" class="form-control" name="filterPost" placeholder="Buscar producto" [(ngModel)]="filterPost">
             <hr>
 
@@ -40,7 +40,7 @@
 
                 <div class="tab-pane fade" id="v-pills-bebe" role="tabpanel" aria-labelledby="v-pills-bebe-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <ng-container *ngFor='let product of products'>
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
                             <div class="col" *ngIf="product.categoria === bebe">
                                 <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
                             </div>
@@ -49,7 +49,7 @@
                 </div>
                 <div class="tab-pane fade" id="v-pills-Perfumes" role="tabpanel" aria-labelledby="v-pills-Perfumes-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <ng-container *ngFor='let product of products'>
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
                             <div class="col" *ngIf="product.categoria === PeryCos">
                                 <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
                             </div>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="tab-pane fade" id="v-pills-mascotas" role="tabpanel" aria-labelledby="v-pills-mascotas-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <ng-container *ngFor='let product of products'>
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
                             <div class="col" *ngIf="product.categoria === mascotas">
                                 <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
                             </div>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="tab-pane fade" id="v-pills-vestuario" role="tabpanel" aria-labelledby="v-pills-vestuario-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <ng-container *ngFor='let product of products'>
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
                             <div class="col" *ngIf="product.categoria === vestuario">
                                 <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
                             </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="tab-pane fade" id="v-pills-hogar" role="tabpanel" aria-labelledby="v-pills-hogar-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <ng-container *ngFor='let product of products'>
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
                             <div class="col" *ngIf="product.categoria === hogar">
                                 <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
                             </div>
@@ -85,7 +85,7 @@
                 </div>
                 <div class="tab-pane fade" id="v-pills-alimentos" role="tabpanel" aria-labelledby="v-pills-alimentos-tab">
                     <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <ng-container *ngFor='let product of products'>
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
                             <div class="col" *ngIf="product.categoria === alimentos">
                                 <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
                             </div>
