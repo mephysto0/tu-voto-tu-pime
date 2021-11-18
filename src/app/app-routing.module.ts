@@ -26,7 +26,7 @@ const routes: Routes = [
 
   {
     path: 'login', component: LoginComponent,
-    canActivate: [NoAuthGuard]
+    
   },
   {
     path: 'votaciones', component: VotacionesComponent
