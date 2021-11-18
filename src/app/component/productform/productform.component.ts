@@ -3,7 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../../services/product.services';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -17,20 +16,18 @@ interface HtmlInputEvent extends Event {
 export class ProductformComponent implements OnInit {
   //file: File | undefined |any;
   photoSelected: any;
+
   aux2 : string | undefined;
+
   nombreT : string | any;
-  form: FormGroup | any;
+
 
   constructor(
     private productService: ProductService,
     private router: Router,
     private sanitizer: DomSanitizer,
     private localstorage : LocalStorageService,
-    private rutaActiva: ActivatedRoute,
-    private formBuilder: FormBuilder,)
-    {
-      this.buildForm();
-    }
+    private rutaActiva: ActivatedRoute) { }
 
   public previsualizacion: any;
   public archivos: any = [];
@@ -39,32 +36,28 @@ export class ProductformComponent implements OnInit {
 
 
   ngOnInit(): void {
+
     this.nombreT= this.rutaActiva.snapshot.params.id;
+
+
     const aux = this.localstorage.get('usuario');
     this.aux2 = aux.user;
   }
-
-  //Formulario validaciones
-  private buildForm() {
-    this.form = this.formBuilder.group({
-      nombre: ['',  [Validators.required,Validators.pattern(/^[a-zA-Z ]+$/)]],
-      categoria: ['', [Validators.required]],
-      comentario: ['', [Validators.required,Validators.pattern(/^[a-zA-Z ]+$/)]],
-      precio: ['', [Validators.required,  Validators.pattern(/^[0-9]+$/)]],
-    });
-
-  }
-
 
   capturarFile(event:any): any {
     const archivoCapturado = event.target.files[0]
     this.extraerBase64(archivoCapturado).then((imagen: any) => {
       this.previsualizacion = imagen.base;
       console.log(imagen);
+
     })
     this.archivos.push(archivoCapturado)
-    console.log(event.target.files);
+    //
+     console.log(event.target.files);
   }
+
+
+
 
 //enviara los datos del formulario
   uploadProduct(nombre: HTMLInputElement, tienda:  HTMLInputElement, categoria: HTMLSelectElement, comentario:  HTMLInputElement, precio:  HTMLInputElement ) {
@@ -86,7 +79,6 @@ export class ProductformComponent implements OnInit {
     this.previsualizacion = '';
     this.archivos = [];
   }
-
 //pasa las imagenes a formato 64 bits
   extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
     try {
@@ -104,6 +96,7 @@ export class ProductformComponent implements OnInit {
           base: null
         });
       };
+
     } catch (e) {
       return null;
     }

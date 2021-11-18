@@ -35,6 +35,9 @@ export class AddProductoComponent implements OnInit {
     this.nombreT= this.rutaActiva.snapshot.params.id;
     const aux = this.localstorage.get('usuario');
     this.aux2 = aux.user;
+
+    console.log(this.nombreT)
+
   }
 
 
@@ -52,7 +55,7 @@ export class AddProductoComponent implements OnInit {
     event.preventDefault();
     if(this.form.valid){
       const value = this.form.value;
-      console.log(this.form.value);
+      console.log(value);
       this.subirProduct();
     }
     else{
@@ -81,7 +84,7 @@ export class AddProductoComponent implements OnInit {
         res =>{
           console.log(res);
 
-          //this.router.navigate(['/tienda',this.aux2])
+          this.router.navigate(['/tienda',this.aux2])
         },
         err => console.log(err)
       );

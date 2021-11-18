@@ -26,7 +26,6 @@
           </select>
                 </div>
 
-
                 <div class="form-floating mt-3">
                     <input type="text" class="form-control" id="floatingInput" placeholder="comentario" required #comentario>
                     <label for="floatingInput">Descripcion</label>
@@ -35,6 +34,11 @@
                     <span class="input-group-text">$</span>
                     <input type="text" class="form-control" placeholder="Precio" required #precio>
                 </div>
+
+
+
+
+
                 <h3>Subir imagen</h3>
                 <input class="input-file" (change)="capturarFile($event)" type="file">
                 <div class="preview-img" *ngIf="previsualizacion">

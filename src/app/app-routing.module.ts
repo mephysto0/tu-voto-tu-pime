@@ -16,7 +16,6 @@ import { AuthGuard } from './auth.guard';
 import { FormUserComponent } from './component/form-user/form-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-public-tienda.component';
-import { AddProductoComponent } from './component/add-producto/add-producto.component';
 
 const routes: Routes = [
   {
@@ -37,7 +36,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'newpr/:id', component: AddProductoComponent
+    path: 'newpr/:id', component: ProductformComponent
   },
   {
     path: 'edit_producto/:id', component: ProductoComponent,

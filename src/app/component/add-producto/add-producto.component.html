@@ -28,7 +28,6 @@
                 <div class="input-group mt-3">
                     <label for="inputSelect" class="input-group-text">Categorias</label>
                     <select class="form-select" formControlName="categoria" id="categorias">
-
           <option value="Bebe">Bebe</option>
           <option value="Perfumes y Cosmeticos" >Perfumes y Cosmeticos</option>
           <option value="Mascotas">Mascotas</option>
@@ -79,7 +78,7 @@
                     <small>Se aceptan archivos e imágenes formato .png</small>
                 </div>
                 <div class="wrapper-button" *ngIf="previsualizacion">
-                    <button type="submit" class="btn  fw-bolder" [disabled]="loading" [routerLink]="['/tienda',aux2]">
+                    <button type="submit" class="btn  fw-bolder" [disabled]="loading">
           {{(loading) ? 'Cargando.....' : 'Guardar producto'}}
         </button>
                 </div>
