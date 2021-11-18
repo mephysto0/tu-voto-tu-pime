@@ -1,11 +1,11 @@
-.ng-invalid:not(form) {
+.ng-invalid.ng-untouched {
     border: none;
     border-bottom: 2px solid #ed274e;
     /* red */
 }
 
-.ng-valid:not(form),
-.ng-valid.required:not(form) {
+.ng-valid,
+.ng-valid.required {
     border: none;
     border-bottom: 2px solid #42A948;
     /* green */

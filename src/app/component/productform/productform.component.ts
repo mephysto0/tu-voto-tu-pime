@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from '../../services/product.services';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LocalStorageService } from 'src/app/services/localStorage/local-storage.service';
+import { FormGroup } from '@angular/forms';
 
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
@@ -16,7 +17,7 @@ interface HtmlInputEvent extends Event {
 export class ProductformComponent implements OnInit {
   //file: File | undefined |any;
   photoSelected: any;
-
+  form: FormGroup | any;
   aux2 : string | undefined;
 
   nombreT : string | any;
