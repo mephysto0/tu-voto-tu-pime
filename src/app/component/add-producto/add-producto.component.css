@@ -1,0 +1,37 @@
+.ng-invalid:not(form) {
+    border: none;
+    border-bottom: 2px solid #ed274e;
+    /* red */
+}
+
+.ng-valid:not(form),
+.ng-valid.required:not(form) {
+    border: none;
+    border-bottom: 2px solid #42A948;
+    /* green */
+}
+
+img {
+    width: 100px;
+    height: 100px;
+}
+
+.btn {
+    font-size: 14px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background: #ed274e;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: white;
+}
+
+p {
+    color: #ed274e;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+}
+
+small {
+    color: #ed274e;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}

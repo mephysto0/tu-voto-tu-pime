@@ -1,0 +1,92 @@
+<div class="col-lg-4 mx-auto mt-5">
+    <div class="card border-dark">
+        <div class="card-header">
+            <h3 class="text-center">Agregar Producto de prueba</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="save($event)">
+                <!--campo nombre-->
+                <div class="form-floating mt-3">
+                    <input type="text" formControlName="nombre" class="form-control" id="producto" placeholder="nombre ">
+                    <label for="floatingInput">Nombre producto</label>
+                </div>
+                <!--validadores-->
+                <div *ngIf="nombreField.errors && nombreField.touched">
+                    <p *ngIf="nombreField.hasError('required')">
+                        * Es un campo requerido *
+                    </p>
+                    <p *ngIf="nombreField.hasError('pattern')">
+                        * El campo debe contener solo letras *
+                    </p>
+                </div>
+                <!--nombre tienda-->
+                <div class="form-floating mt-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="nombre tienda" disabled readonly>
+                    <label for="floatingInput">Nombre Tienda {{nombreT}}</label>
+                </div>
+
+                <div class="input-group mt-3">
+                    <label for="inputSelect" class="input-group-text">Categorias</label>
+                    <select class="form-select" formControlName="categoria" id="categorias">
+
+          <option value="Bebe">Bebe</option>
+          <option value="Perfumes y Cosmeticos" >Perfumes y Cosmeticos</option>
+          <option value="Mascotas">Mascotas</option>
+          <option value="Vestuario">Vestuario</option>
+          <option value="Hogar y decoracion">Hogar y decoracion</option>
+          <option value="Alimentos">Alimentos</option>
+        </select>
+                </div>
+                <!--nombre descripcion-->
+                <div class="form-floating mt-3">
+                    <input type="text" formControlName="comentario" class="form-control" id="comentario" placeholder="comentario">
+                    <label for="floatingInput">Descripcion</label>
+                </div>
+                <!--validadores-->
+                <div *ngIf="categoriaField.errors && categoriaField.touched">
+                    <p *ngIf="categoriaField.hasError('required')">
+                        * Es un campo requerido *
+                    </p>
+                    <p *ngIf="categoriaField.hasError('pattern')">
+                        * El campo debe contener solo letras *
+                    </p>
+                    <p *ngIf="categoriaField.hasError('maxLength')">
+                        * A excedido el maximo de 100 caracteres *
+                    </p>
+                </div>
+                <!--nombre precio-->
+                <div class="input-group mt-3">
+                    <span class="input-group-text">$</span>
+                    <input type="text" formControlName="precio" id="precio" class="form-control" placeholder="Precio">
+                </div>
+                <!--validadores-->
+                <div *ngIf="precioField.errors && precioField.touched">
+                    <p *ngIf="precioField.hasError('required')">
+                        * Es un campo requerido *
+                    </p>
+                    <p *ngIf="precioField.hasError('pattern')">
+                        * Formato incorrecto, sin puntos ni comas *
+                    </p>
+                </div>
+                <h3 class="text mt-3">Subir imagen</h3>
+                <input class="input-file" (change)="capturarFile($event)" type="file">
+                <div class="preview-img" *ngIf="previsualizacion">
+                    <button class="btn fw-bolder " type="button" (click)="clearImage()">Limpiar imagen</button>
+                    <img [src]="previsualizacion" alt="">
+                </div>
+
+                <div class="p-1">
+                    <small>Se aceptan archivos e imágenes formato .png</small>
+                </div>
+                <div class="wrapper-button" *ngIf="previsualizacion">
+                    <button type="submit" class="btn  fw-bolder" [disabled]="loading" [routerLink]="['/tienda',aux2]">
+          {{(loading) ? 'Cargando.....' : 'Guardar producto'}}
+        </button>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn  fw-bolder  " [routerLink]="['/tienda',aux2]">Cancelar</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
