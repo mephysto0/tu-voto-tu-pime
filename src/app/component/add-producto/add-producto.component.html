@@ -68,7 +68,7 @@
                     </p>
                 </div>
                 <h3 class="text mt-3">Subir imagen</h3>
-                <input class="input-file" (change)="capturarFile($event)" type="file">
+                <input class="input-file" (change)="capturarFile($event)" type="file" id="image" accept="image/gif, image/jpeg, image/png" pattern="([^\s]+(.(?i)(jpg|png|gif|bmp))$)" >
                 <div class="preview-img" *ngIf="previsualizacion">
                     <button class="btn fw-bolder " type="button" (click)="clearImage()">Limpiar imagen</button>
                     <img [src]="previsualizacion" alt="">

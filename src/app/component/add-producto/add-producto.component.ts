@@ -44,9 +44,9 @@ export class AddProductoComponent implements OnInit {
   //Formulario validaciones
   private buildForm() {
     this.form = this.formBuilder.group({
-      nombre: ['',  [Validators.required,Validators.pattern(/^[a-zA-Z ]+$/)]],
+      nombre: ['',  [Validators.required,Validators.pattern(/^[a-zA-Z-0-9 ]+$/)]],
       categoria: ['', [Validators.required]],
-      comentario: ['', [Validators.required,Validators.pattern(/^[a-zA-Z ]+$/),Validators.maxLength(100)]],
+      comentario: ['', [Validators.required,Validators.pattern(/^[a-zA-Z-0-9 ]+$/),Validators.maxLength(100)]],
       precio: ['', [Validators.required,  Validators.pattern(/^[0-9]+$/)]],
     });
   }
