@@ -37,6 +37,7 @@ import { EditarUserComponent } from './admin/editar-user/editar-user.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import { EditarUserComponent } from './admin/editar-user/editar-user.component';
     AddProductoComponent,
     VistaAdminComponent,
     EditarUserComponent,
+
 
   ],
   imports: [
