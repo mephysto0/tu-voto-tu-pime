@@ -55,14 +55,6 @@ export class TiendaComponent implements OnInit {
         )
     });
 
-
-
-
-    const aux = this.localstorage.get('usuario');
-    console.log(aux.user);
-    this.aux2 = aux.user;
-
-
     this.productService.getProducts()
       .subscribe(
         res => {
@@ -71,7 +63,9 @@ export class TiendaComponent implements OnInit {
         err => console.log(err)
       )
   }
+
   updateStore(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,numero_telefono: HTMLInputElement,descripcion: HTMLInputElement): boolean {
+    console.log('entro')
     this.storeservice.updateStore(this.store._id, nombre_tienda.value, instagram.value,twitter.value,facebook.value,numero_telefono.value,descripcion.value)
       .subscribe(res => {
         console.log(res);
@@ -80,5 +74,10 @@ export class TiendaComponent implements OnInit {
       });
     return false;
   }
+
+  reloadCurrentPage() {
+    window.location.reload();
+   }
+
 
 }

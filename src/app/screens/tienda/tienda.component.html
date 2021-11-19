@@ -77,44 +77,47 @@
 
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (submit)="updateStore(nombre_tienda,instagram,twitter,facebook,numero_telefono,descripcion)"></button>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="offcanvas-body">
-                                                <div class="input-group input-group-sm">
-                                                    <span class="input-group-text"> Nombre tienda</span>
-                                                    <input type="text" class="form-control" id="nombre_tienda" placeholder="nombre tienda" [value]="store.nombre_tienda" #nombre_tienda required>
+                                            <form (submit)="updateStore(nombre_tienda,instagram,twitter,facebook,numero_telefono,descripcion)">
+                                                <div class="offcanvas-body">
+                                                    <div class="form-group input-group-sm">
+                                                        <span class="text"> Nombre tienda</span>
+                                                        <input type="text" class="form-control" id="nombre_tienda" placeholder="nombre tienda" [value]="store.nombre_tienda" #nombre_tienda required>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group input-group-sm">
+                                                        <span class="text"> instagram</span>
+                                                        <input type="text" class="form-control" id="instagram" placeholder="instagram" [value]="store.instagram " #instagram required>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group input-group-sm">
+                                                        <span class="text">twitter</span>
+                                                        <input type="text" class="form-control" id="twitter" placeholder="twitter" [value]="store.twitter " #twitter required>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group input-group-sm">
+                                                        <span class="text"> facebook</span>
+                                                        <input type="text" class="form-control" id="facebookt" placeholder="facebook" [value]="store.facebook " #facebook required>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group input-group-sm">
+                                                        <span class="text"> telefono</span>
+                                                        <input type="text" class="form-control" id="telefono" placeholder="telefono" [value]="store.numero_telefono " #numero_telefono required>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="form-group input-group-sm">
+                                                        <span class="text"> descripcion</span>
+                                                        <input type="text" class="form-control" id="descripcion" placeholder="descripcion" [value]="store.descripcion " #descripcion required>
+                                                    </div>
                                                 </div>
-                                                <hr>
-                                                <div class="input-group input-group-sm">
-                                                    <span class="input-group-text"> instagram</span>
-                                                    <input type="text" class="form-control" id="instagram" placeholder="instagram" [value]="store.instagram " #instagram required>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn " data-bs-dismiss="modal">cerrar</button>
+                                                    <button type="sumit" class="btn " (click)="reloadCurrentPage()">guardar cambios</button>
                                                 </div>
-                                                <hr>
-                                                <div class="input-group input-group-sm">
-                                                    <span class="input-group-text">twitter</span>
-                                                    <input type="text" class="form-control" id="twitter" placeholder="twitter" [value]="store.twitter " #twitter required>
-                                                </div>
-                                                <hr>
-                                                <div class="input-group input-group-sm">
-                                                    <span class="input-group-text"> facebook</span>
-                                                    <input type="text" class="form-control" id="facebookt" placeholder="facebook" [value]="store.facebook " #facebook required>
-                                                </div>
-                                                <hr>
-                                                <div class="input-group input-group-sm">
-                                                    <span class="input-group-text"> telefono</span>
-                                                    <input type="text" class="form-control" id="telefono" placeholder="telefono" [value]="store.numero_telefono " #numero_telefono required>
-                                                </div>
+                                            </form>
 
-                                                <div class="input-group input-group-sm">
-                                                    <span class="input-group-text"> descripcion</span>
-                                                    <input type="text" class="form-control" id="descripcion" placeholder="descripcion" [value]="store.descripcion " #descripcion required>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">cerrar</button>
-                                                <button type="button" class="btn btn-primary">guardar cambios</button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
