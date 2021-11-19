@@ -38,7 +38,7 @@ export class RecuperarpassComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         //ruta a la cual redigira al editar
-        //this.router.navigate(['/tienda']);
+        this.router.navigate(['/login']);
       });
     return false;
   }
