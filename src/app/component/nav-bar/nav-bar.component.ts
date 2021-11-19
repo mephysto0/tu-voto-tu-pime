@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
 clear(){
   console.log('funciona?')
   this.clearLS();
-  this.reload();
+
 }
 
 
