@@ -32,6 +32,7 @@ import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-
 import { AddProductoComponent } from './component/add-producto/add-producto.component';
 import { VistaAdminComponent } from './admin/vista-admin/vista-admin.component';
 import { EditarUserComponent } from './admin/editar-user/editar-user.component';
+import { AboutComponent } from './screens/about/about.component';
 
 
 
@@ -64,6 +65,7 @@ import { EditarUserComponent } from './admin/editar-user/editar-user.component';
     AddProductoComponent,
     VistaAdminComponent,
     EditarUserComponent,
+    AboutComponent,
 
   ],
   imports: [
