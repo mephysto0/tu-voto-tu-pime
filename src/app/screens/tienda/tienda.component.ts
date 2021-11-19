@@ -55,6 +55,7 @@ export class TiendaComponent implements OnInit {
         )
     });
 
+<<<<<<< HEAD
 
 
 
@@ -63,6 +64,8 @@ export class TiendaComponent implements OnInit {
     this.aux2 = aux.user;
 
 
+=======
+>>>>>>> f3d13b402f8a84eb24ae8c37479affe0c32d28b6
     this.productService.getProducts()
       .subscribe(
         res => {
@@ -71,7 +74,13 @@ export class TiendaComponent implements OnInit {
         err => console.log(err)
       )
   }
+<<<<<<< HEAD
   updateTienda(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,numero_telefono: HTMLInputElement,descripcion: HTMLInputElement): boolean {
+=======
+
+  updateStore(nombre_tienda: HTMLInputElement, instagram: HTMLInputElement,twitter: HTMLInputElement,facebook: HTMLInputElement,numero_telefono: HTMLInputElement,descripcion: HTMLInputElement): boolean {
+    console.log('entro')
+>>>>>>> f3d13b402f8a84eb24ae8c37479affe0c32d28b6
     this.storeservice.updateStore(this.store._id, nombre_tienda.value, instagram.value,twitter.value,facebook.value,numero_telefono.value,descripcion.value)
       .subscribe(res => {
         console.log(res);
@@ -80,5 +89,10 @@ export class TiendaComponent implements OnInit {
       });
     return false;
   }
+
+  reloadCurrentPage() {
+    window.location.reload();
+   }
+
 
 }
