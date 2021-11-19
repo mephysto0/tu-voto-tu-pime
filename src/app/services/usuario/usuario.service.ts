@@ -23,10 +23,7 @@ export class UsuarioService {
     return this.http.put(`${this.URI}/${id}`, {nombre, apellido,password });
   }
 
-  restablecer(id: string, password : string) {
-    return this.http.post(`${this.URI}/${id}`, {password });
+  getUsers(){
+    return this.http.get<UserStore>(`${this.URI}`);
   }
-
-
-
 }

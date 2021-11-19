@@ -19,16 +19,20 @@ import { FormUserComponent } from './component/form-user/form-user.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-public-tienda.component';
 import { AddProductoComponent } from './component/add-producto/add-producto.component';
+import { VistaAdminComponent } from './admin/vista-admin/vista-admin.component';
 import { RecuperarpassComponent } from './recuperarpass/recuperarpass.component';
 
 const routes: Routes = [
   {
     path: '', component: PrincipalComponent
   },
+  {
+    path: 'admin', component: VistaAdminComponent,
 
+  },
   {
     path: 'login', component: LoginComponent,
-    
+
   },
   {
     path: 'votaciones', component: VotacionesComponent
