@@ -1,8 +1,12 @@
-<form (submit)="resetpassword(password)">
-    <div class="mb-3">
-        <label for="exampleInputPassword1" class="form-label">Nueva contraseña</label>
-        <input type="password" class="form-control" id="password" #password>
+<div class="container-fluid mt-5">
+    <div class="col-lg-4 offset-4">
+        <form (submit)="resetpassword(password)">
+            <div class="mb-3">
+                <h4 for="exampleInputPassword1" class="form-label fw-bolder">Nueva contraseña</h4>
+                <input type="password" class="form-control" id="password" #password>
+            </div>
+
+            <button type="submit" class="btn fw-bolder">Reestablecer </button>
+        </form>
     </div>
-  
-    <button type="submit" class="btn btn-primary">Reestablecer </button>
-  </form>
+</div>
