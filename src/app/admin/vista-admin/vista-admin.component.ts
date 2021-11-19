@@ -79,6 +79,34 @@ export class VistaAdminComponent implements OnInit {
       this.route.navigate(['edit-admin',this.user,this.ad,aux])
     }
 
+    eliminarusuario(id:any){
+      this.usuarioservice.deleteUser(id).subscribe(
+        res =>{
+          console.log(res)
+          this.reloadCurrentPage()
+        }
+      )
+    }
+
+    eliminartienda(id:any){
+      this.storeService.deleteStore(id).subscribe(
+        res =>{
+          console.log(res)
+          this.reloadCurrentPage()
+        }
+      )
+    }
+
+    eliminarprodu(id:any){
+      this.productService.deleteProduct(id).subscribe(
+        res =>{
+          console.log(res)
+          this.reloadCurrentPage()
+        }
+      )
+    }
+
+
     reloadCurrentPage() {
       window.location.reload();
      }

@@ -1,88 +1,22 @@
 <hr />
 <div class="container-fluid" id="body">
     <div class="col">
-        <h1 style="text-align: center">Tu voto, Tu emprendimiento</h1>
+        <h1 class="text text-center fw-bolder">Tu voto, Tu emprendimiento</h1>
     </div>
     <hr />
     <div class="row">
-        <div class="col">
-            <h3 style="text-align: center">Producto Destacado</h3>
-            <hr>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
+        <div class="container mt-5" id="cat">
+            <h3 class="text text-center fw-bolder">Vota por tus productos Favoritos</h3>
+            <div class="d-grid gap-2">
+                <button type="button " id="but" class="btn btn-danger btn-lg m-lg-2 fw-bolder" [routerLink]="['/categorias']">Búscalo Aquí</button>
+            </div><img src="https://res.cloudinary.com/mepifotos/image/upload/v1637308534/respaldo/44100_lwiwry.jpg" class="img-fluid" alt="...">
 
-                    <div class="carousel-item active">
-                        <img src="..\..\assets\imagenes\le_tallere\Sintítulo.png" class="d-block w-100 rounded-2" alt="...">
-                        <div class="card-img-overlay">
-                            <button type="button " class="btn btn-danger btn-lg" [routerLink]="['/tienda-publica','Le tallere']">Ir a tienda destacada</button>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="..\..\assets\imagenes\44100.jpg" class="d-block w-100 rounded-2" alt="...">
-                        <div class="card-img-overlay">
-                            <h3>Vota por tus productos Favoritos</h3>
-                            <div class="d-grid gap-3 col-4 ">
-                                <button type="button " class="btn btn-danger btn-lg" [routerLink]="['/categorias']">Vota aqui</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-            </div>
-        </div>
-    </div>
-</div>
-<hr>
-<h3 class="text-center">Categorias</h3>
-<hr>
-<div class="container-fluid border-dark" id="cat">
-    <div class="card border-dark">
-        <div class="col mt-3 mb-3">
-            <div class="card-group" id="car-cat">
-                <div class="card">
-                    <i class="fas fa-baby mt-4"></i>
-                    <h4 class="text-center">Bebe</h4>
-                </div>
-                <div class="card">
-                    <i class="fas fa-air-freshener mt-4"></i>
-                    
-                    <h4 class="text-center">Perfumes y Cosmeticos</h4>
-                </div>
-                <div class="card">
-                    <i class="fas fa-cat"></i>
-                    <h4 class="text-center">Mascotas</h4>
-                </div>
-                <div class="card">
-                    <i class="fas fa-tshirt"></i>
-                    <h4 class="text-center">Vestuario</h4>
-                </div>
-                <div class="card">
-                    <i class="fas fa-house-user"></i>
-                    <h4 class="text-center">Hogar y decoracion</h4>
-                </div>
-                <div class="card">
-                    <i class="fas fa-utensils"></i>
-                    <h4 class="text-center">Alimentos</h4>
-                </div>
-
-
-
-            </div>
         </div>
     </div>
 </div>
 <hr>
 <h3 class="text-center">Otros productos</h3>
 <hr>
-
 <div class="container-fluid border-dark" id="cont-product">
     <div class="col" id="cont-product-vertical">
         <div class="col-4" *ngFor='let product of products' id="card-p">

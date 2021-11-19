@@ -2,7 +2,7 @@
     <div class="row" *ngIf="!product; else main_content">
         <div class="spinner-border" role="status">
             <span class="visually-hidden">Loading...</span>
-          </div>
+        </div>
     </div>
     <ng-template #main_content>
         <div class="row">
@@ -12,23 +12,21 @@
                 </div>
             </div>
             <div class="col-md-5">
-                <div class="card border-dark">
+                <div class="card">
                     <div class="card-header">
                         <h2 class="text">{{product.nombre}}</h2>
                         <h4 class="text-decoration-underline">{{product.tienda}}</h4>
                         <!---------------------boton para redirigir a tienda-------------------------------->
                         <div class="row">
-                            <a class="" href="/tienda-publica/{{product.tienda}}" target="_blank"> Visitanos en {{product.tienda}}</a>
+                            <a class="bi bi-bag-check-fill" id="link" href="/tienda-publica/{{product.tienda}}" target="_blank"> Visitanos en {{product.tienda}}</a>
                         </div>
                         <!---------------------------------------------------------------------------------->
-                        <div class="row">
+                        <div class="row" id="like">
                             <div class="col-2 ">
-                                <button type="button" (click)="like()" class="btn btn-sm btn-danger">
-                                 <i class="bi bi-suit-heart"></i>
-                              </button>
+                                <span class="bi bi-suit-heart-fill" [class.highlighted]="isActive" (click)="onClick()" aria-hidden="true"></span> &nbsp;
                             </div>
                             <div class="col-8 text-start">
-                                <h4>{{product.likes}} Votos</h4>
+                                <h3>{{product.likes}} Votos</h3>
                             </div>
                         </div>
                     </div>

@@ -38,6 +38,7 @@ import { AboutComponent } from './screens/about/about.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +67,7 @@ import { AboutComponent } from './screens/about/about.component';
     VistaAdminComponent,
     EditarUserComponent,
     AboutComponent,
+
 
   ],
   imports: [

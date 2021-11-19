@@ -14,6 +14,7 @@ export class PrincipalComponent implements OnInit {
 
   public productos : Product[] | undefined;
   products: Product[] = [];
+  sort: Product[] = [];
 
   constructor(
     private productService: ProductService,
@@ -28,6 +29,7 @@ export class PrincipalComponent implements OnInit {
     .subscribe(
       res => {
         this.products = res;
+        this.sort =  res.sort((a,b)=>(a.likes > b.likes ? -1:1))
       },
       err => console.log(err)
     )

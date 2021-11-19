@@ -10,7 +10,7 @@
                 </div>
             </div>
             <div class="col-md-7">
-                <div class="card border-dark">
+                <div class="card ">
                     <form class="card-body" (submit)="updateProduct(nombre,tienda,categoria,comentario,precio)">
                         <div class="form-group">
                             <h6 class="text">Nombre </h6>
@@ -41,25 +41,26 @@
                             <input rows="2" class="form-control" placeholder="precio del producto" [value]="product.precio" #precio>
                         </div>
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
-                            <button class="btn btn-primary btn-block "  >Editar</button>
+                            <button class="btn  btn-block fw-bolder ">Editar</button>
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal">Eliminar producto</button>
+                            <button type="button" class="btn btn-danger fw-bolder" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-dismiss="modal">Eliminar producto</button>
 
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Advertencia</h5>
+                                        <div class="modal-header bg-danger">
+                                            <i class="bi bi-exclamation-triangle-fill"></i>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <h3> Esta seguro de eliminar este producto?</h3>
+                                            <h3 class="text  text-center fw-bolder" id="exampleModalToggleLabel2">¡Advertencia!</h3>
+                                            <h5 class="text  text-center">¿Esta seguro de eliminar el usuario?</h5>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">volver</button>
+                                            <button type="button" class="btn  fw-bolder" data-bs-dismiss="modal">volver</button>
 
-                                            <button class="btn btn-danger" (click)="deleteProduct(product._id)" data-backdrop="false" data-bs-dismiss="modal">Eliminar producto</button>
+                                            <button class="btn btn-danger fw-bolder" (click)="deleteProduct(product._id)" data-backdrop="false" data-bs-dismiss="modal">Eliminar producto</button>
                                         </div>
                                     </div>
                                 </div>

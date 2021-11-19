@@ -54,8 +54,8 @@
                                         <td>{{usuarios.apellido}}</td>
                                         <td>{{usuarios.email}}</td>
                                         <td>{{admin}}</td>
-                                        <td class="btn btn-outline-primary  btn-sm  btn-sm " type="button" (click)="editarusuario(usuarios._id)"> editar</td>
-                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button"> eliminar</td>
+                                        <td class="btn btn-outline-primary  btn-sm  btn-sm m-lg-4" type="button" (click)="editarusuario(usuarios._id)"> editar</td>
+                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button" (click)="eliminarusuario(usuarios._id)"> eliminar</td>
                                     </tr>
 
                                 </tbody>
@@ -80,8 +80,7 @@
                                         <td>{{tiendas.usuario}}</td>
                                         <td>{{tiendas.nombre_tienda}}</td>
                                         <td>{{tiendas.numero_telefono}}</td>
-                                        <td class="btn btn-outline-primary  btn-sm  btn-sm " type="button"> editar</td>
-                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button"> eliminar</td>
+                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button" (click)="eliminartienda(tiendas._id)"> eliminar</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -107,8 +106,7 @@
                                         <td>{{productos.nombre}}</td>
                                         <td>{{productos.categoria}}</td>
                                         <td>{{productos.precio}}</td>
-                                        <td class="btn btn-outline-primary  btn-sm  btn-sm " type="button"> editar</td>
-                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button"> eliminar</td>
+                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button" (click)="eliminarprodu(productos._id)"> eliminar</td>
                                     </tr>
                                 </tbody>
                             </table>
