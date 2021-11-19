@@ -18,6 +18,16 @@
                         <button class="nav-link" id="v-pills-hogar-tab" data-bs-toggle="pill" data-bs-target="#v-pills-hogar" type="button" role="tab" aria-controls="v-pills-hogar" aria-selected="false">Hogar y
               decoracion</button>
                         <button class="nav-link" id="v-pills-alimentos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-alimentos" type="button" role="tab" aria-controls="v-pills-alimentos" aria-selected="false">Alimentos</button>
+
+                        <button class="nav-link" id="v-pills-Perfumeria-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Perfumeria" type="button" role="tab" aria-controls="v-pills-Perfumeria" aria-selected="false">Perfumeria</button>
+                        <button class="nav-link" id="v-pills-Artesania-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Artesania" type="button" role="tab" aria-controls="v-pills-Artesania" aria-selected="false">Artesania</button>
+                        <button class="nav-link" id="v-pills-Hogar y jardin-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Hogar y jardin" type="button" role="tab" aria-controls="v-pills-Hogar y jardin" aria-selected="false">Hogar y jardin</button>
+                        <button class="nav-link" id="v-pills-Articulos deportivos-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Articulos deportivos" type="button" role="tab" aria-controls="v-pills-Articulos deportivos" aria-selected="false">Articulos deportivos</button>
+                        <button class="nav-link" id="v-pills-joyeria-tab" data-bs-toggle="pill" data-bs-target="#v-pills-joyeria" type="button" role="tab" aria-controls="v-pills-joyeria" aria-selected="false">joyeria</button>
+                        <button class="nav-link" id="v-pills-otros-tab" data-bs-toggle="pill" data-bs-target="#v-pills-otross" type="button" role="tab" aria-controls="v-pills-otros" aria-selected="false">otros</button>
+
+
+
                     </div>
                 </div>
             </div>
@@ -87,6 +97,60 @@
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <ng-container *ngFor='let product of products | buscardor : filterPost'>
                             <div class="col" *ngIf="product.categoria === alimentos">
+                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-Perfumeria" role="tabpanel" aria-labelledby="v-pills-Perfumeria-tab">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
+                            <div class="col" *ngIf="product.categoria === perfumes">
+                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-Artesania" role="tabpanel" aria-labelledby="v-pills-Artesania-tab">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
+                            <div class="col" *ngIf="product.categoria === artesania">
+                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-Hogar y jardin" role="tabpanel" aria-labelledby="v-pills-Hogar y jardin-tab">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
+                            <div class="col" *ngIf="product.categoria === jardin">
+                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-Articulos deportivos" role="tabpanel" aria-labelledby="v-pills-Articulos deportivos-tab">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
+                            <div class="col" *ngIf="product.categoria === deportes">
+                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-joyeria" role="tabpanel" aria-labelledby="v-pills-joyeria-tab">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
+                            <div class="col" *ngIf="product.categoria === joyeria">
+                                <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-otros" role="tabpanel" aria-labelledby="v-pills-otros-tab">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <ng-container *ngFor='let product of products | buscardor : filterPost'>
+                            <div class="col" *ngIf="product.categoria === otros">
                                 <app-producto-tarjeta [producto]='product'></app-producto-tarjeta>
                             </div>
                         </ng-container>

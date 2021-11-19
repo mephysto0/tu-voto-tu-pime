@@ -20,7 +20,13 @@ export class CategoriasComponent implements OnInit {
   public mascotas : string | undefined;
   public vestuario : string | undefined;
   public hogar : string | undefined;
+  public jardin : string | undefined;
   public alimentos : string | undefined;
+  public perfumes : string | undefined;
+  public artesania : string | undefined;
+  public deportes : string | undefined;
+  public joyeria : string | undefined;
+  public otros : string | undefined;
 
   constructor(private productService: ProductService,) { }
 
@@ -34,6 +40,12 @@ export class CategoriasComponent implements OnInit {
     this.vestuario = 'Vestuario';
     this.hogar = 'Hogar y decoracion';
     this.alimentos = 'Alimentos';
+    this.perfumes = 'Perfumeria';
+    this.artesania = 'Artesania';
+    this.jardin = 'Hogar y jardin';
+    this.deportes = 'Articulos deportivos';
+    this.joyeria = 'joyeria';
+    this.otros = 'otros';
 
     this.productService.getProducts()
       .subscribe(
