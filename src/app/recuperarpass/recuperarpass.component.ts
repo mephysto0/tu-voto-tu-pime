@@ -32,9 +32,18 @@ export class RecuperarpassComponent implements OnInit {
           err => console.log(err)
         );
   });
-  
-
-
-
+}
+  resetpassword(password: HTMLInputElement): boolean {
+    this.usuarioservice.resetpass(this.user._id, password.value,)
+      .subscribe(res => {
+        console.log(res);
+        //ruta a la cual redigira al editar
+        //this.router.navigate(['/tienda']);
+      });
+    return false;
   }
+
+
+
+  
 }
