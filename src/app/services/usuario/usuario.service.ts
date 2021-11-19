@@ -22,4 +22,11 @@ export class UsuarioService {
   updateUser(id: string, nombre: string, apellido: string,  email: string, password : string) {
     return this.http.put(`${this.URI}/${id}`, {nombre, apellido,password });
   }
+
+  restablecer(id: string, password : string) {
+    return this.http.post(`${this.URI}/${id}`, {password });
+  }
+
+
+
 }
