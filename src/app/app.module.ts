@@ -30,6 +30,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { BuscardorPipe } from './pipes/buscardor.pipe';
 import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-public-tienda.component';
 import { AddProductoComponent } from './component/add-producto/add-producto.component';
+import { VistaAdminComponent } from './admin/vista-admin/vista-admin.component';
 
 
 
@@ -60,6 +61,7 @@ import { AddProductoComponent } from './component/add-producto/add-producto.comp
     BuscardorPipe,
     VistaPublicTiendaComponent,
     AddProductoComponent,
+    VistaAdminComponent,
 
   ],
   imports: [

@@ -1,0 +1,114 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <h1 class="text text-center mt-5"> Administracion </h1>
+    </div>
+
+
+    <div class="row">
+        <div class="col-2">
+            <div class="card">
+                <div class="d-flex align-items-start">
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Usuario registrados</button>
+                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Tiendas</button>
+                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Productos</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <div class="col-10">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <table class="table caption-top">
+                        <caption>Lista de usuarios </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id</th>
+                                <th scope="col">nombre</th>
+                                <th scope="col">apellido</th>
+                                <th scope="col">correo</th>
+                                <th scope="col">administrador</th>
+                                <th scope="col">editar</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let usuarios of users; index as i">
+                            <tr>
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{usuarios._id}}</td>
+                                <td>{{usuarios.nombre}}</td>
+                                <td>{{usuarios.apellido}}</td>
+                                <td>{{usuarios.email}}</td>
+                                <td>{{admin}}</td>
+                                <button class="btn btn-outline-danger" type="button"> editar</button>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <table class="table caption-top">
+                        <caption>Lista de tiendas</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id</th>
+                                <th scope="col">usuario</th>
+                                <th scope="col">nombre tienda</th>
+                                <th scope="col">telefono</th>
+                                <th scope="col">editar</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let tiendas of store; index as i">
+                            <tr>
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{tiendas._id}}</td>
+                                <td>{{tiendas.usuario}}</td>
+                                <td>{{tiendas.nombre_tienda}}</td>
+                                <td>{{tiendas.numero_telefono}}</td>
+                                <button class="btn btn-outline-danger" type="button"> editar</button>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <table class="table caption-top">
+                        <caption>Lista de productos</caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">id</th>
+                                <th scope="col">Tienda</th>
+                                <th scope="col">nombre producto</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">precio</th>
+                                <th scope="col">editar</th>
+                            </tr>
+                        </thead>
+                        <tbody *ngFor="let productos of product; index as i">
+                            <tr>
+                                <th scope="row">{{i+1}}</th>
+                                <td>{{productos._id}}</td>
+                                <td>{{productos.tienda}}</td>
+                                <td>{{productos.nombre}}</td>
+                                <td>{{productos.categoria}}</td>
+                                <td>{{productos.precio}}</td>
+                                <button class="btn btn-outline-danger" type="button"> editar</button>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

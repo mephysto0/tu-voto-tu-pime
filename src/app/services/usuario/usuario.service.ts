@@ -22,4 +22,8 @@ export class UsuarioService {
   updateUser(id: string, nombre: string, apellido: string,  email: string, password : string) {
     return this.http.put(`${this.URI}/${id}`, {nombre, apellido,password });
   }
+
+  getUsers(){
+    return this.http.get<UserStore>(`${this.URI}`);
+  }
 }
