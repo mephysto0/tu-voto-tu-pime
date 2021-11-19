@@ -8,14 +8,19 @@ import { UsuarioService } from '../services/usuario/usuario.service';
   styleUrls: ['./recuperarpass.component.css']
 })
 export class RecuperarpassComponent implements OnInit {
-
+  id: string | any;
   constructor(
-    
+    private activatedRoute: ActivatedRoute,
+    private usuarioservice: UsuarioService,
+    private router: Router,
   ) { 
     
   }
 
   ngOnInit(): void {
   }
+  
+
+
 
 }

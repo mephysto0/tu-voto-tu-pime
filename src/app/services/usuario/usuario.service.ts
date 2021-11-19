@@ -7,6 +7,8 @@ import { UserStore } from 'src/app/models/UserStore.model';
 })
 export class UsuarioService {
   URI = 'http://localhost:4000/user';
+  URI2 = 'http://localhost:4000/resetpassword';
+  URI3 = 'http://localhost:4000/newpassword';
 
   constructor(private http: HttpClient) { }
 
@@ -26,4 +28,17 @@ export class UsuarioService {
   getUsers(){
     return this.http.get<UserStore>(`${this.URI}`);
   }
+  
+
+  //---------------------------para resetear contraseña--------------------------------------------------------------
+  resetpass(id: string, password: string, ) {
+    return this.http.put(`${this.URI3}/${id}`, {password});
+  }
+
+  sendemail( email: string, ) {
+    return this.http.post(`${this.URI2}`, {email});
+  }
+
+
+
 }
