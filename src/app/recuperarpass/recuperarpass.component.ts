@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserStore } from '../models/UserStore.model';
 import { UsuarioService } from '../services/usuario/usuario.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { UsuarioService } from '../services/usuario/usuario.service';
 })
 export class RecuperarpassComponent implements OnInit {
   id: string | any;
+  user: UserStore | any;
   constructor(
     private activatedRoute: ActivatedRoute,
     private usuarioservice: UsuarioService,
@@ -18,9 +20,20 @@ export class RecuperarpassComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.id = params['id'];
+      console.log(this.id)
+      this.usuarioservice.getUser(this.id)
+        .subscribe(
+          res => {
+            this.user = res;
+            
+          },
+          err => console.log(err)
+        );
+  });
+
+
+
   }
-  
-
-
-
 }
