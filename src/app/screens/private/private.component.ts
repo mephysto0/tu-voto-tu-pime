@@ -50,6 +50,7 @@ export class PrivateComponent implements OnInit {
   //datos ruta
     this.activatedRoute.params.subscribe(params => {
       this.id = params['id'];
+      console.log(this.id)
       this.usuarioservice.getUser(this.id)
         .subscribe(
           res => {

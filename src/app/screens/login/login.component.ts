@@ -70,7 +70,6 @@ export class LoginComponent implements OnInit {
     this.authService.signInUser(this.form.value)
       .subscribe(
         res => {
-          //console.log(res);
           localStorage.setItem('token', res.token);
           //para guardar el id del usuario conectado
           //const idUsuario = res.user;
@@ -80,7 +79,14 @@ export class LoginComponent implements OnInit {
 
           var data = sessionStorage.getItem('id');
 
-          this.router.navigate(['/private', data]);
+          if(res.isadmin){
+            var admin = true
+            this.router.navigate(['/admin',res.user,admin])
+          }
+          else{
+             this.router.navigate(['/private', data]);
+          }
+
         },
         (err) => {
           console.log(err)

@@ -27,7 +27,7 @@ const routes: Routes = [
     path: '', component: PrincipalComponent
   },
   {
-    path: 'admin', component: VistaAdminComponent,
+    path: 'admin/:id/:admin', component: VistaAdminComponent,
 
   },
   {
