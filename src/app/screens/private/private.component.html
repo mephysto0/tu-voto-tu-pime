@@ -239,7 +239,7 @@
                                         </div>
 
                                         <h4 class="text fw-bolder">Subir imagen</h4>
-                                        <input class="input-file" (change)="capturarFile($event)" type="file">
+                                        <input class="input-file" (change)="capturarFile($event)" type="file" accept="image/gif, image/jpeg, image/png" pattern="([^\s]+(.(?i)(jpg|png|gif|bmp))$)">
                                         <div class="preview-img" *ngIf="previsualizacion">
                                             <button class="btn clear-image  fw-bolder" type="button" (click)="clearImage()">Clear</button>
                                             <img [src]="previsualizacion" alt="">
