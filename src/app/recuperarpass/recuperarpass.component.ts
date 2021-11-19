@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UsuarioService } from '../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-recuperarpass',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecuperarpassComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    
+  ) { 
+    
+  }
 
   ngOnInit(): void {
   }
