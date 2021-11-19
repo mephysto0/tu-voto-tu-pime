@@ -32,6 +32,7 @@ export class RecuperarpassComponent implements OnInit {
           err => console.log(err)
         );
   });
+  
 
 
 
