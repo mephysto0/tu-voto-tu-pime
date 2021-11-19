@@ -1,0 +1,26 @@
+<h2 class="text text-center mt-3">Administracion</h2>
+
+<div class="container">
+    <form class="card-body">
+        <div class="form-group">
+            <h6 class="text">Nombre</h6>
+            <input type="text" class="form-control" placeholder="Nombre usuario" [value]="aux.nombre" #nombre />
+        </div>
+        <div class="form-group">
+            <h6 class="text mt-2">Apellido</h6>
+            <input rows="2" class="form-control" placeholder="Apellido usuario" [value]="aux.apellido" #apellido />
+        </div>
+        <div class="form-group">
+            <h6 class="text mt-2">Correo</h6>
+            <input rows="2" class="form-control" placeholder="Email usuario" [value]="aux.email" #email />
+        </div>
+        <div class="form-group">
+            <h6 class="text mt-2">Contraseña</h6>
+            <input rows="2" type="password" class="form-control" placeholder="Contraseña" #password />
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-5">
+            <button type="button" class="btn  fw-bolder  btn-lg" (click)="updateUser(nombre,apellido,email,password)">Guardar Datos</button>
+            <button type="button" class="btn fw-bolder  btn-lg" (click)="volver()">Cancelar</button>
+        </div>
+    </form>
+</div>

@@ -9,7 +9,7 @@
             </div>
         </div>
         <h3 class="text text-center">Ops no tienes los permisos suficientes </h3>
-        <button class="btn" [routerLink]=""></button>
+
 
 
     </div>
@@ -43,7 +43,7 @@
                                         <th scope="col">apellido</th>
                                         <th scope="col">correo</th>
                                         <th scope="col">administrador</th>
-                                        <th scope="col">editar</th>
+
                                     </tr>
                                 </thead>
                                 <tbody *ngFor="let usuarios of users; index as i">
@@ -54,8 +54,10 @@
                                         <td>{{usuarios.apellido}}</td>
                                         <td>{{usuarios.email}}</td>
                                         <td>{{admin}}</td>
-                                        <button class="btn btn-outline-danger" type="button"> editar</button>
+                                        <td class="btn btn-outline-primary  btn-sm  btn-sm " type="button" (click)="editarusuario(usuarios._id)"> editar</td>
+                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button"> eliminar</td>
                                     </tr>
+
                                 </tbody>
                             </table>
                         </div>
@@ -69,7 +71,6 @@
                                         <th scope="col">usuario</th>
                                         <th scope="col">nombre tienda</th>
                                         <th scope="col">telefono</th>
-                                        <th scope="col">editar</th>
                                     </tr>
                                 </thead>
                                 <tbody *ngFor="let tiendas of store; index as i">
@@ -79,9 +80,9 @@
                                         <td>{{tiendas.usuario}}</td>
                                         <td>{{tiendas.nombre_tienda}}</td>
                                         <td>{{tiendas.numero_telefono}}</td>
-                                        <button class="btn btn-outline-danger" type="button"> editar</button>
+                                        <td class="btn btn-outline-primary  btn-sm  btn-sm " type="button"> editar</td>
+                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button"> eliminar</td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
@@ -96,7 +97,6 @@
                                         <th scope="col">nombre producto</th>
                                         <th scope="col">Categoria</th>
                                         <th scope="col">precio</th>
-                                        <th scope="col">editar</th>
                                     </tr>
                                 </thead>
                                 <tbody *ngFor="let productos of product; index as i">
@@ -107,9 +107,9 @@
                                         <td>{{productos.nombre}}</td>
                                         <td>{{productos.categoria}}</td>
                                         <td>{{productos.precio}}</td>
-                                        <button class="btn btn-outline-danger" type="button"> editar</button>
+                                        <td class="btn btn-outline-primary  btn-sm  btn-sm " type="button"> editar</td>
+                                        <td class="btn btn-outline-danger  btn-sm  btn-sm" type="button"> eliminar</td>
                                     </tr>
-
                                 </tbody>
                             </table>
                         </div>
