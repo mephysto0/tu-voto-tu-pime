@@ -32,7 +32,7 @@ export class UsuarioService {
 
   //---------------------------para resetear contraseña--------------------------------------------------------------
   resetpass(id: string, password: string, ) {
-    return this.http.put(`${this.URI3}/${id}`, {password});
+    return this.http.post(`${this.URI3}/${id}`, {password});
   }
 
   sendemail( email: string, ) {

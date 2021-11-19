@@ -74,7 +74,7 @@ const routes: Routes = [
     path: 'forgotpassword', component:    ResetpasswordComponent
   },
   {
-    path: 'restablecer', component:    RecuperarpassComponent
+    path: 'restablecer/:id', component:    RecuperarpassComponent
   },
   {
     path: 'tienda-publica/:nombreT', component:    VistaPublicTiendaComponent
