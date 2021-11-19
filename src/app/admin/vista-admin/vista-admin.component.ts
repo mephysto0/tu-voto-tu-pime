@@ -5,7 +5,7 @@ import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 import { Store } from 'src/app/models/tienda.model';
 import { ProductService } from 'src/app/services/product.services';
 import { Product } from 'src/app/models/producto.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-vista-admin',
@@ -28,13 +28,13 @@ export class VistaAdminComponent implements OnInit {
     private storeService: StoreService,
     private productService: ProductService,
     private activatedRoute: ActivatedRoute,
+    private route: Router,
   ) { }
 
   ngOnInit(): void {
     this.user = this.activatedRoute.snapshot.params.id;
     this.ad = this.activatedRoute.snapshot.params.admin;
-    console.log(this.user)
-    console.log(this.ad)
+
     //obtener usuarios
     this.usuarioservice.getUsers().subscribe(
       res =>{
@@ -60,9 +60,28 @@ export class VistaAdminComponent implements OnInit {
 
       }
     )
-
     };
 
+    //funciones
+
+    updateUser(nombre: HTMLInputElement, apellido: HTMLInputElement,email: HTMLInputElement,password: HTMLInputElement): boolean {
+      this.usuarioservice.updateUser(this.user._id, nombre.value, apellido.value,email.value,password.value)
+        .subscribe(res => {
+          console.log(res);
+          //ruta a la cual redigira al editar
+          //this.router.navigate(['/tienda']);
+        });
+      return false;
+    }
+
+    editarusuario(id:any){
+      let aux = id
+      this.route.navigate(['edit-admin',this.user,this.ad,aux])
+    }
+
+    reloadCurrentPage() {
+      window.location.reload();
+     }
 
   }
 

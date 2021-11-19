@@ -31,6 +31,7 @@ import { BuscardorPipe } from './pipes/buscardor.pipe';
 import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-public-tienda.component';
 import { AddProductoComponent } from './component/add-producto/add-producto.component';
 import { VistaAdminComponent } from './admin/vista-admin/vista-admin.component';
+import { EditarUserComponent } from './admin/editar-user/editar-user.component';
 
 
 
@@ -62,6 +63,7 @@ import { VistaAdminComponent } from './admin/vista-admin/vista-admin.component';
     VistaPublicTiendaComponent,
     AddProductoComponent,
     VistaAdminComponent,
+    EditarUserComponent,
 
   ],
   imports: [

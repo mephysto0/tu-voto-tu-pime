@@ -21,6 +21,7 @@ import { VistaPublicTiendaComponent } from './screens/vista-public-tienda/vista-
 import { AddProductoComponent } from './component/add-producto/add-producto.component';
 import { VistaAdminComponent } from './admin/vista-admin/vista-admin.component';
 import { RecuperarpassComponent } from './recuperarpass/recuperarpass.component';
+import { EditarUserComponent } from './admin/editar-user/editar-user.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   },
   {
     path: 'admin/:id/:admin', component: VistaAdminComponent,
+
+  },
+  {
+    path: 'edit-admin/:id/:admin/:userID', component: EditarUserComponent,
 
   },
   {
